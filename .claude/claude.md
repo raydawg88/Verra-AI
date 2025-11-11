@@ -1,5 +1,15 @@
 # Claude Code Project Rules
 
+## Core Development Principles
+
+**Rule: Don't rush. Always do things right the first time by carefully reading user requirements.**
+
+- Take time to understand what the user is asking for
+- Read specifications thoroughly before implementing
+- Compare your work against the original requirements
+- Use exact assets, colors, and styles provided by the user
+- Don't guess or make assumptions about implementation details
+
 ## Development Server Management
 
 **Rule: The live-reload server is always running. DO NOT restart it after file changes.**

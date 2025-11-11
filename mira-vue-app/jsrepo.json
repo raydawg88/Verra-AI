@@ -1,0 +1,5 @@
+{
+  "$schema": "https://jsrepo.dev/schema.json",
+  "registry": "https://vue-bits.dev/ui",
+  "blocksPath": "./src/components"
+}
