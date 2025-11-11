@@ -1,11 +1,14 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import Aurora from './components/backgrounds/Aurora.vue'
+import AIConsent from './components/AIConsent.vue'
 import { Chart } from 'chart.js/auto'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
 const showBanner = ref(false)
+const showConsentPage = ref(false)
+const aiInsightsEnabled = ref(false)
 const productType = ref('all')
 const fleetFilter = ref('all')
 const tableView = ref('topFleets')
@@ -29,6 +32,27 @@ function handleClickOutside(event) {
   if (showBanner.value && bannerRef.value && !bannerRef.value.contains(event.target)) {
     showBanner.value = false
   }
+}
+
+function showAIConsentPage() {
+  showConsentPage.value = true
+}
+
+function handleConsentAccept() {
+  aiInsightsEnabled.value = true
+  showConsentPage.value = false
+  // TODO: Navigate to AI Insights page
+  alert('AI Insights enabled! Redirecting to insights dashboard...')
+}
+
+function handleConsentDecline() {
+  showConsentPage.value = false
+  // Re-initialize charts after returning to dashboard
+  setTimeout(() => {
+    initMap()
+    initLineChart()
+    initBarChart()
+  }, 100)
 }
 
 onMounted(() => {
@@ -183,7 +207,14 @@ function initBarChart() {
 </script>
 
 <template>
-  <div id="app">
+  <!-- AI Consent Page -->
+  <AIConsent
+    v-if="showConsentPage"
+    @accept="handleConsentAccept"
+    @decline="handleConsentDecline"
+  />
+
+  <div v-else id="app">
     <!-- AI Trial Banner -->
     <div ref="bannerRef" class="ai-trial-banner" :class="{ show: showBanner }">
       <div class="banner-background">
@@ -193,7 +224,7 @@ function initBarChart() {
       </div>
       <div class="banner-content">
         <div class="banner-message">Try Verra AI Insights Now</div>
-        <button class="banner-cta">Get Started</button>
+        <button class="banner-cta" @click="showAIConsentPage">Get Started</button>
       </div>
     </div>
 
@@ -255,7 +286,7 @@ function initBarChart() {
           </div>
 
           <div class="menu-group">
-            <div class="menu-item">
+            <div class="menu-item" @click="showAIConsentPage">
               <span class="material-icons">auto_awesome</span>
               AI Insights
             </div>
