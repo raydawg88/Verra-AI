@@ -1,0 +1,136 @@
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-7);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-8);
+}
+
+/* Smooth scrolling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-7) var(--gray-3);
+}
+
+/* Typography enhancements */
+.rt-Heading {
+  letter-spacing: -0.02em;
+}
+
+/* Button enhancements */
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Discovery Card Enhancements */
+.discovery-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.discovery-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: var(--gray-7);
+}
+
+.discovery-card:hover .discovery-card-button {
+  color: #9fc908;
+}
+
+.discovery-card:hover .sparkline-bar {
+  opacity: 1;
+  transform: scaleY(1.05);
+}
+
+/* Chat Panel Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+.chat-panel {
+  transition: all 0.3s ease;
+}
+
+.seeded-prompt {
+  position: relative;
+  overflow: hidden;
+}
+
+.seeded-prompt::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #9fc908;
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+}
+
+.seeded-prompt:hover::before {
+  transform: scaleY(1);
+}
+
+/* Navigation active states */
+.rt-TabsListItem[data-state="active"] {
+  background: #9fc908 !important;
+  color: white !important;
+}
+
+/* Gradient text for special emphasis */
+.gradient-text {
+  background: linear-gradient(135deg, var(--indigo-11), var(--purple-11));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Lime green accents */
+.lime-accent {
+  color: #9fc908;
+}
+
+.lime-bg {
+  background: #9fc908;
+}
+
+.lime-border {
+  border-color: #9fc908;
+}
+
+/* Hero metric cards */
+.rt-Card:has(.metric-trend) {
+  transition: all 0.2s ease;
+  border: 1px solid var(--gray-6);
+}
+
+.rt-Card:has(.metric-trend):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--gray-7);
+}
