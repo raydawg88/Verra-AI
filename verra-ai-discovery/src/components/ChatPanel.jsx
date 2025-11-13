@@ -1,16 +1,88 @@
-import { useState } from 'react'
-import { Card, Flex, Text, Heading, TextField, Button, ScrollArea } from '@radix-ui/themes'
-import { LightningBoltIcon, PaperPlaneIcon } from '@radix-ui/react-icons'
+import { useState, useEffect, useRef } from 'react'
+import { Card, Flex, Text, Heading, TextField, Button, ScrollArea, Avatar } from '@radix-ui/themes'
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
+import SendIcon from '@mui/icons-material/Send'
+import PersonIcon from '@mui/icons-material/Person'
 
-export default function ChatPanel({ activePage }) {
+export default function ChatPanel({ activePage, insightContext, initialQuestion }) {
+  const [input, setInput] = useState('')
+  const processedQuestionRef = useRef(null)
+
+  // Contextual welcome message based on whether we're on a detail page
+  const getInitialMessage = () => {
+    if (insightContext) {
+      return `I've analyzed "${insightContext.title}" in detail. What would you like to know? I can explain the root causes, discuss implementation strategies, compare with industry benchmarks, or dive deeper into the data.`
+    }
+    return "Hi Matt! I'm your AI fleet analyst. I've analyzed 2.3M data points from your fleet. Ask me anything about your tolling, violations, spending patterns, or vehicle performance."
+  }
+
   const [messages, setMessages] = useState([
     {
       id: 0,
       role: 'assistant',
-      text: "Hi Matt! I'm your AI fleet analyst. I've analyzed 2.3M data points from your fleet. Ask me anything about your tolling, violations, spending patterns, or vehicle performance."
+      text: insightContext
+        ? `I've analyzed "${insightContext.title}" in detail. What would you like to know? I can explain the root causes, discuss implementation strategies, compare with industry benchmarks, or dive deeper into the data.`
+        : "Hi Matt! I'm your AI fleet analyst. I've analyzed 2.3M data points from your fleet. Ask me anything about your tolling, violations, spending patterns, or vehicle performance."
     }
   ])
-  const [input, setInput] = useState('')
+
+  // Handle initial question from floating widget
+  useEffect(() => {
+    if (initialQuestion && initialQuestion.trim() && processedQuestionRef.current !== initialQuestion) {
+      processedQuestionRef.current = initialQuestion
+
+      // Add user message
+      const userMessage = {
+        id: Date.now(),
+        role: 'user',
+        text: initialQuestion
+      }
+
+      setMessages(prev => [...prev, userMessage])
+
+      // Simulate AI response
+      setTimeout(() => {
+        setMessages(prev => [...prev, {
+          id: Date.now() + 1,
+          role: 'assistant',
+          text: 'I can help you understand your toll insights better. This is a demo response showing how the AI assistant would respond to your question.'
+        }])
+      }, 800)
+    }
+  }, [initialQuestion])
+
+  // Get contextual prompts based on insight type
+  const getInsightPrompts = () => {
+    if (!insightContext) return null
+
+    const category = insightContext.category?.toLowerCase() || ''
+
+    if (category.includes('anomaly')) {
+      return [
+        "How did the AI detect this anomaly?",
+        "What should I do first to address this?",
+        "Could this be happening elsewhere in my fleet?"
+      ]
+    } else if (category.includes('pattern')) {
+      return [
+        "Why did this pattern develop?",
+        "What's the quickest way to fix this?",
+        "Show me the ROI breakdown in detail"
+      ]
+    } else if (category.includes('forecast')) {
+      return [
+        "How accurate is this prediction?",
+        "What can I do to improve the forecast?",
+        "What if we don't act on this?"
+      ]
+    } else {
+      return [
+        "How was this discovered?",
+        "What's the implementation timeline?",
+        "Are there any risks to fixing this?"
+      ]
+    }
+  }
 
   const promptsByPage = {
     overview: [
@@ -32,7 +104,8 @@ export default function ChatPanel({ activePage }) {
       "What anomalies need attention?",
       "Explain the duplicate toll pattern",
       "Are there recurring issues?"
-    ]
+    ],
+    detail: getInsightPrompts()
   }
 
   const seededPrompts = promptsByPage[activePage] || promptsByPage.overview
@@ -65,90 +138,92 @@ export default function ChatPanel({ activePage }) {
 
   return (
     <Flex direction="column" gap="3"
-      style={{ height: '100%' }}
+      style={{ height: '100%', alignSelf: 'flex-start', margin: 0 }}
     >
-    <Card style={{
-      background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(168, 85, 247, 0.03) 100%)',
-      height: '100%',
+    <Card
+    variant="ghost"
+    style={{
+      background: 'white',
+      height: '600px',
       display: 'flex',
       flexDirection: 'column',
-      border: '2px solid transparent',
-      backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, var(--indigo-6), var(--purple-6))',
-      backgroundOrigin: 'border-box',
-      backgroundClip: 'padding-box, border-box',
+      border: '1px solid var(--gray-4)',
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)',
+      padding: 0,
       position: 'relative',
       overflow: 'hidden'
     }}
     className="chat-panel">
-      {/* Animated glow effect */}
-      <div style={{
-        position: 'absolute',
-        top: '-50%',
-        right: '-20%',
-        width: '200px',
-        height: '200px',
-        background: 'radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%)',
-        borderRadius: '50%',
-        animation: 'pulse 4s ease-in-out infinite',
-        pointerEvents: 'none'
-      }} />
-
       {/* Header */}
-      <Flex align="center" gap="3" mb="4" style={{ padding: '4px 0', position: 'relative', zIndex: 1 }}>
-        <Box style={{
-          width: 40,
-          height: 40,
-          borderRadius: 'var(--radius-3)',
-          background: 'linear-gradient(135deg, #9fc908 0%, #7da706 100%)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexShrink: 0,
-          boxShadow: '0 4px 12px rgba(159, 201, 8, 0.25)'
-        }}>
-          <LightningBoltIcon style={{ color: 'white', width: 20, height: 20 }} />
-        </Box>
+      <Flex
+        align="center"
+        gap="3"
+        style={{
+          padding: '20px 24px',
+          borderBottom: '1px solid var(--gray-4)',
+          background: 'white'
+        }}
+      >
+        <AutoAwesomeIcon style={{ color: 'var(--indigo-9)', width: 28, height: 28, flexShrink: 0 }} />
         <Box style={{ flex: 1 }}>
-          <Heading size="3" style={{ marginBottom: '2px', lineHeight: 1.2 }}>
+          <Heading size="4" style={{ marginBottom: '2px', lineHeight: 1.2, color: 'var(--gray-12)' }}>
             AI Assistant
           </Heading>
-          <Text size="1" style={{ color: 'var(--gray-10)' }}>
-            Your fleet analyst who knows everything
+          <Text size="2" style={{ color: 'var(--gray-10)' }}>
+            {insightContext ? 'Insight-specific expert' : 'Ask me anything about your fleet'}
           </Text>
         </Box>
         <Box style={{
-          padding: '4px 8px',
-          background: '#9fc908',
-          borderRadius: '12px',
-          fontSize: '10px',
-          fontWeight: 700,
-          color: 'white',
-          textTransform: 'uppercase',
-          letterSpacing: '0.5px'
-        }}>
-          Live
-        </Box>
+          width: 8,
+          height: 8,
+          background: 'var(--green-9)',
+          borderRadius: '50%',
+          boxShadow: '0 0 0 2px var(--green-3)'
+        }} />
       </Flex>
 
       {/* Messages */}
-      <ScrollArea style={{ flex: 1, marginBottom: '16px', position: 'relative', zIndex: 1 }}>
-        <Flex direction="column" gap="3">
+      <ScrollArea style={{ flex: 1, padding: '24px', background: 'var(--gray-1)' }}>
+        <Flex direction="column" gap="4">
           {messages.map((msg) => (
-            <Flex key={msg.id} justify={msg.role === 'user' ? 'end' : 'start'}>
+            <Flex key={msg.id} gap="3" align="start" style={{ flexDirection: msg.role === 'user' ? 'row-reverse' : 'row' }}>
+              {/* Avatar */}
+              {msg.role === 'user' ? (
+                <Avatar
+                  size="2"
+                  fallback="M"
+                  color="gray"
+                  style={{ flexShrink: 0 }}
+                />
+              ) : (
+                <div style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  background: 'var(--indigo-3)',
+                  border: '1px solid var(--indigo-6)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}>
+                  <AutoAwesomeIcon style={{ color: 'var(--indigo-9)', width: 16, height: 16 }} />
+                </div>
+              )}
+
+              {/* Message bubble */}
               <Box style={{
-                padding: '12px 16px',
-                borderRadius: 'var(--radius-3)',
-                maxWidth: '85%',
+                padding: '14px 18px',
+                borderRadius: msg.role === 'user' ? '16px 16px 4px 16px' : '16px 16px 16px 4px',
+                maxWidth: '80%',
                 background: msg.role === 'user'
-                  ? 'linear-gradient(135deg, var(--indigo-9), var(--purple-9))'
+                  ? 'var(--gray-12)'
                   : 'white',
                 color: msg.role === 'user' ? 'white' : 'var(--gray-12)',
                 fontSize: '14px',
                 lineHeight: 1.6,
-                boxShadow: msg.role === 'user'
-                  ? '0 4px 12px rgba(99, 102, 241, 0.25)'
-                  : '0 2px 8px rgba(0, 0, 0, 0.08)',
-                border: msg.role === 'user' ? 'none' : '1px solid var(--gray-5)'
+                boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)',
+                border: msg.role === 'user' ? 'none' : '1px solid var(--gray-4)'
               }}>
                 {msg.text}
               </Box>
@@ -158,32 +233,41 @@ export default function ChatPanel({ activePage }) {
       </ScrollArea>
 
       {/* Input */}
-      <Flex gap="2" style={{ position: 'relative', zIndex: 1 }}>
-        <TextField.Root
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-          placeholder="Ask me anything about your fleet..."
-          size="3"
-          style={{
-            flex: 1,
-            border: '1px solid var(--gray-6)',
-            background: 'white'
-          }}
-        />
-        <Button
-          onClick={sendMessage}
-          disabled={!input.trim()}
-          size="3"
-          style={{
-            flexShrink: 0,
-            background: '#9fc908',
-            cursor: input.trim() ? 'pointer' : 'not-allowed'
-          }}
-        >
-          <PaperPlaneIcon />
-        </Button>
-      </Flex>
+      <Box style={{
+        padding: '20px 24px',
+        borderTop: '1px solid var(--gray-4)',
+        background: 'white'
+      }}>
+        <Flex gap="2">
+          <TextField.Root
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+            placeholder="Ask me anything about your fleet..."
+            size="3"
+            style={{
+              flex: 1,
+              border: '1px solid var(--gray-6)',
+              background: 'white',
+              fontSize: '14px'
+            }}
+          />
+          <Button
+            onClick={sendMessage}
+            disabled={!input.trim()}
+            size="3"
+            style={{
+              flexShrink: 0,
+              background: input.trim() ? 'var(--gray-12)' : 'var(--gray-6)',
+              cursor: input.trim() ? 'pointer' : 'not-allowed',
+              color: 'white',
+              border: 'none'
+            }}
+          >
+            <SendIcon style={{ width: 20, height: 20 }} />
+          </Button>
+        </Flex>
+      </Box>
     </Card>
 
     {/* Suggestion Buttons Below Chat */}

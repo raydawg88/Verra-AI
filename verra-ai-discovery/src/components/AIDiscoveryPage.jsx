@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Box, Flex, Badge, Button, Heading, Text } from '@radix-ui/themes'
-import { ArrowLeftIcon } from '@radix-ui/react-icons'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import SidebarNav from './SidebarNav'
 import ChatPanel from './ChatPanel'
 import OverviewPage from '../pages/OverviewPage'
@@ -35,12 +35,24 @@ export default function AIDiscoveryPage({ onBackToDashboard }) {
               alt="Verra"
               style={{ height: '64px' }}
             />
-            <Badge color="indigo" variant="soft" size="2">AI BETA</Badge>
+            <Badge color="indigo" variant="soft" size="2">BETA AI</Badge>
           </Flex>
-          <Button variant="ghost" size="2" onClick={onBackToDashboard}>
-            <ArrowLeftIcon />
-            Back to Classic View
-          </Button>
+          <Flex gap="4" align="center">
+            <Flex align="center" gap="2">
+              <Text size="2" style={{ color: 'var(--gray-10)', fontWeight: 500 }}>
+                Powered by
+              </Text>
+              <img
+                src="https://cdn.sanity.io/images/2p4wcjvv/production/b3e949fab126252c510e028e6fc71a735a0f62e9-987x372.png?auto=format&crop=focalpoint&fit=crop&w=2560"
+                alt="Vin.li"
+                style={{ height: '40px', marginLeft: '-4px' }}
+              />
+            </Flex>
+            <Button variant="ghost" size="2" onClick={onBackToDashboard}>
+              <ArrowBackIcon style={{ width: 16, height: 16 }} />
+              Back to Classic View
+            </Button>
+          </Flex>
         </Flex>
       </Box>
 

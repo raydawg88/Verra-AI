@@ -1,0 +1,126 @@
+import { Flex, Grid, Card, Text, Heading } from '@radix-ui/themes'
+import { ArrowUpIcon, ArrowDownIcon } from '@radix-ui/react-icons'
+import DiscoveryCard from '../components/DiscoveryCard'
+
+export default function PatternsPage({ onOpenDetail }) {
+  return (
+    <Flex direction="column" gap="6">
+      {/* Hero Metrics */}
+      <Grid columns="3" gap="6">
+        <Card style={{ padding: '24px' }}>
+          <Text size="1" style={{ color: 'var(--gray-10)', display: 'block', marginBottom: '8px' }}>
+            Patterns Discovered
+          </Text>
+          <Heading size="7" style={{ marginBottom: '12px' }}>24</Heading>
+          <Flex align="center" gap="1">
+            <ArrowUpIcon style={{ color: 'var(--blue-10)' }} />
+            <Text size="1" style={{ color: 'var(--blue-10)' }}>7 new patterns this month</Text>
+          </Flex>
+        </Card>
+
+        <Card style={{ padding: '24px' }}>
+          <Text size="1" style={{ color: 'var(--gray-10)', display: 'block', marginBottom: '8px' }}>
+            Average Hidden Duration
+          </Text>
+          <Heading size="7" style={{ marginBottom: '12px' }}>18 months</Heading>
+          <Flex align="center" gap="1">
+            <Text size="1" style={{ color: 'var(--gray-10)' }}>Before AI detection</Text>
+          </Flex>
+        </Card>
+
+        <Card style={{ padding: '24px' }}>
+          <Text size="1" style={{ color: 'var(--gray-10)', display: 'block', marginBottom: '8px' }}>
+            Total Pattern Cost Impact
+          </Text>
+          <Heading size="7" style={{ marginBottom: '12px' }}>$124,680</Heading>
+          <Flex align="center" gap="1">
+            <Text size="1" style={{ color: 'var(--green-10)' }}>Annually - now visible and actionable</Text>
+          </Flex>
+        </Card>
+      </Grid>
+
+      {/* Pattern Cards */}
+      <Flex direction="column" gap="6">
+        <DiscoveryCard
+          title="💡 Tuesday 2-4 PM Toll Cost Spike: Port Schedule Correlation"
+          description="Every Tuesday, toll costs spike 47% between 2:00-4:00 PM compared to same time slot Monday/Wednesday/Thursday/Friday. Pattern hidden in aggregate monthly reports for 18 months—AI correlation analysis cross-referenced timestamps with external data and identified root cause: Port of Oakland container ship schedule. Container ships dock Tuesday mornings (avg arrival 8:47 AM), containers cleared by 2 PM, creating surge of 23 delivery vehicles rushing to meet same-day delivery commitments via I-880 toll corridors ($8.50/trip vs $2.10 off-peak). Affected routes: Oakland Port to San Jose (17 vehicles), Oakland Port to Fremont (6 vehicles). Tuesday avg toll cost: $1,847 vs non-Tuesday avg: $1,256 (47% premium = $591/week excess = $30,732 annual waste). Root cause identified: All affected delivery commitments have Tuesday 6 PM deadline regardless of ship arrival time. Recommendation: Negotiate delivery deadline flexibility—if ship arrives Tuesday 9 AM, allow Wednesday delivery to avoid toll surge pricing and congestion. Port publishes ship schedule 72 hours advance—implement dynamic scheduling. Expected savings: $30,732 annually with zero operational impact (customers flexible on 24-hour delivery window)."
+          badge="Time-Based Pattern - Port Schedule Driven"
+          badgeColor="amber"
+          stats={[
+            { value: '$30,732/yr', label: 'Excess costs from pattern' },
+            { value: '47%', label: 'Tuesday cost spike' },
+            { value: '18 mo', label: 'Pattern hidden' }
+          ]}
+          sparklineData={[40, 45, 100, 42, 38, 40, 95, 45, 40, 38, 92, 45, 40, 41]}
+          chartType="bar"
+          chartLabel="Daily Avg Toll Cost by Day of Week (2-4 PM window)"
+          chartYAxis="$1,847"
+        />
+
+        <DiscoveryCard
+          title="💡 End-of-Month Violation Surge: Delivery Quota Pressure"
+          description="Speeding and red-light violations increase 63% during final week of each month (days 24-31) compared to weeks 1-3 average. Pattern consistent across 11 consecutive months, statistically significant (p<0.001). Root cause analysis traced to driver compensation structure: Monthly delivery quotas with performance bonuses paid for completing 180+ deliveries/month. Drivers falling short of quota by day 24 exhibit rushing behavior to hit target before month-end. Week 4 violations: Avg 47 incidents/week. Weeks 1-3: Avg 29 incidents/week. 63% increase = 18 additional violations/week final week = 72 additional violations/month = 864 annual excess violations. Cost impact: $127/violation avg × 864 = $109,728 annual excess violation costs. Affected drivers: 34 of 67 total drivers show pattern (those tracking below quota mid-month). Safety concern: Higher speeds correlate with increased accident risk. Root cause: Quota system incentivizes unsafe behavior when drivers fall behind. Recommendation: (1) Adjust quota to realistic achievable level based on route difficulty, (2) Spread bonus calculation across rolling 90-day window instead of hard monthly cutoff to reduce end-of-month pressure, (3) Implement safety score that reduces bonus if violations spike regardless of delivery count. Expected outcome: Reduce end-of-month violations by 60%, save $65,836 annually, improve safety metrics."
+          badge="Behavioral Pattern - Quota Driven"
+          badgeColor="violet"
+          stats={[
+            { value: '+63%', label: 'Week 4 violation spike' },
+            { value: '$109,728/yr', label: 'Excess violation costs' },
+            { value: '11 mo', label: 'Pattern observed' }
+          ]}
+          sparklineData={[30, 32, 35, 38, 40, 65, 95, 30, 32, 35, 38, 40, 65, 95]}
+          chartType="area"
+          chartLabel="Weekly Violation Count by Week of Month (Last 2 months)"
+          chartYAxis="95 violations"
+        />
+
+        <DiscoveryCard
+          title="💡 Rainy Day Toll Surge: Highway Preference During Precipitation"
+          description="Toll road usage increases 28% on days with measurable precipitation (≥0.1 inches rain) compared to dry days, with proportional 28% cost increase. AI cross-referenced 14 months of toll data with NOAA weather station data (Oakland Int'l Airport station KOAK). Analysis: 127 rainy days in dataset showed avg daily toll cost $1,847 vs 301 dry days avg $1,443 (28% premium). Root cause identified through GPS route analysis: During rain, drivers default to highway/toll routes (I-880, I-580, Bay Bridge) instead of surface street alternatives to avoid perceived safety risk from slick roads, traffic lights, pedestrian crossings. Behavioral pattern: Rain triggers automatic GPS re-routing to 'fastest route' which prioritizes highways. Reality: Time savings minimal (avg 3.2 minutes faster) but cost significant ($12.40 avg per rainy-day trip vs $8.20 dry-day trip = $4.20 premium per trip). Annual impact: Based on Bay Area avg 67 rain days/year × avg 23 vehicles running routes on rainy days × avg 4 trips/vehicle/day × $4.20 premium = $25,942 annual weather-driven excess toll costs. Recommendation: Update GPS routing profiles with 'weather-aware economical routing' that uses surface streets during rain unless time savings >10 minutes. Drivers trained that surface streets are safe in rain at reduced speeds. Expected savings: $18,159 annually (70% of excess preserved for safety, 30% recovered through smarter routing)."
+          badge="Environmental Pattern - Weather Driven"
+          badgeColor="blue"
+          stats={[
+            { value: '+28%', label: 'Rainy day toll increase' },
+            { value: '$25,942/yr', label: 'Weather-driven excess cost' },
+            { value: '127', label: 'Rainy days analyzed' }
+          ]}
+          sparklineData={[50, 52, 78, 55, 53, 80, 54, 52, 76, 55, 53, 79]}
+          chartType="line"
+          chartLabel="Daily Toll Cost: Rainy Days vs Dry Days (Last 12 days)"
+          chartYAxis="$1,847"
+        />
+
+        <DiscoveryCard
+          title="💡 High-Concentration Route Pattern: 4 Routes = 73% of Total Costs"
+          description="AI clustering analysis revealed that just 4 specific routes account for 73% of total annual toll costs ($127,340 of $174,465 total), despite representing only 18% of total route count (4 of 22 active routes). The Four High-Cost Routes: (1) 'Oakland-SJ Express' via I-880 South: 847 trips/month, $18,723/month ($11.15/toll × 2 tolls/trip × 847 trips), 19 vehicles assigned. (2) 'East Bay Corridor' via I-580/I-680: 634 trips/month, $14,203/month, 14 vehicles assigned. (3) 'Bridge Route' via Bay Bridge: 521 trips/month, $12,847/month ($6/toll + $4.50 return × 521 trips), 11 vehicles assigned. (4) 'Peninsula Run' via CA-92 Bridge + I-280: 423 trips/month, $9,982/month, 8 vehicles assigned. Root cause: These 4 routes serve highest-volume customer contracts (tech campus deliveries, medical supply distribution) with premium delivery SLAs requiring fastest routing. However, analysis shows: (1) 3 of 4 routes have toll-free alternatives adding only 8-12 minutes. (2) Customer SLAs allow 4-hour delivery windows, so 10-minute routing variance is invisible. (3) Current policy defaults to 'fastest' without cost consideration. Recommendation: Implement tiered routing strategy: 'Premium' (current toll routing) only for <2 hour SLA deliveries, 'Standard' (toll-free alternatives) for ≥4 hour SLA deliveries. Route analysis shows 67% of trips on these 4 routes have ≥4 hour SLAs and could use alternatives. Expected impact: Reduce high-concentration route costs by 67% = $85,317 annual savings. Maintain service quality (delivery times still within SLA)."
+          badge="Geographic Pattern - Route Concentration"
+          badgeColor="green"
+          stats={[
+            { value: '73%', label: 'Costs from 4 routes' },
+            { value: '$127,340', label: 'Annual concentrated cost' },
+            { value: '$85,317', label: 'Potential savings' }
+          ]}
+          sparklineData={[60, 62, 65, 68, 95, 97, 100, 98, 95, 70, 68, 65]}
+          chartType="bar"
+          chartLabel="Monthly Cost by Route (Top 4 routes highlighted)"
+          chartYAxis="$18,723"
+        />
+
+        <DiscoveryCard
+          title="💡 New Driver Toll Cost Premium: Experience Learning Curve Pattern"
+          description="Drivers with <6 months tenure have 3.2x higher toll costs per delivery compared to drivers with >18 months experience—clear learning curve pattern indicating training gap. Analysis of 67 active drivers over 18-month period: New drivers (0-6 months tenure, n=23): Avg $8.47 toll cost per delivery. Experienced drivers (>18 months tenure, n=31): Avg $2.64 toll cost per delivery. 3.2x cost premium for new drivers. Root cause deep-dive via GPS route analysis and driver interviews revealed: (1) New drivers unfamiliar with toll-free alternative routes—default to GPS 'fastest route' which uses toll roads. (2) GPS doesn't factor toll costs into routing, only time. (3) Experienced drivers learned toll-free alternatives through trial-and-error over months. (4) No formal route training program exists—drivers learn organically. (5) New drivers don't realize many toll routes save only 2-4 minutes vs free alternatives. Example comparison: New driver Sarah Chen (hired June 2024, 4 months tenure): Oakland to Fremont delivery via I-880 toll road ($11.15 toll, 28 minutes). Veteran driver Michael Torres (5 years tenure): Same route via Mission Blvd/Fremont Blvd toll-free (0 toll, 32 minutes)—saves $11.15 for 4-minute time penalty. Annual impact calculation: 23 new drivers × avg 47 deliveries/week × ($8.47 - $2.64 premium) = $276,342 annual excess toll costs from undertrained new drivers. Recommendation: Implement 2-hour 'Route Economics Training' workshop during onboarding showing toll vs toll-free options for every service route with time/cost tradeoffs. Provide route guide reference cards. Expected outcome: Reduce new driver toll premium from 3.2x to 1.4x within 3 months of implementation (60% improvement) = $165,805 annual savings. Faster driver profitability ramp."
+          badge="Operational Pattern - Training Gap"
+          badgeColor="orange"
+          stats={[
+            { value: '3.2x', label: 'New driver cost premium' },
+            { value: '$276,342/yr', label: 'Excess new driver costs' },
+            { value: '23', label: 'Undertrained drivers' }
+          ]}
+          sparklineData={[100, 98, 95, 85, 70, 60, 50, 45, 40, 35, 32, 30]}
+          chartType="area"
+          chartLabel="Avg Toll Cost per Delivery by Driver Tenure (months)"
+          chartYAxis="$8.47"
+        />
+      </Flex>
+    </Flex>
+  )
+}

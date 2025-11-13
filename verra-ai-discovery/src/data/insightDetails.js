@@ -1,0 +1,2133 @@
+// Detailed insight data with McKinsey-level analysis
+
+export const insightDetails = {
+  'ghost-vehicles': {
+    id: 'ghost-vehicles',
+    title: 'Ghost Vehicles Draining $14,964 Annually',
+    subtitle: 'Three sold vehicles remain enrolled in toll program with active transponders, creating systematic waste through toll charges and monthly account fees on assets no longer in your fleet.',
+    badge: 'URGENT',
+    badgeColor: 'red',
+    accentColor: 'var(--red-9)',
+    gradientStart: 'rgba(239, 68, 68, 0.05)',
+    gradientEnd: 'rgba(220, 38, 38, 0.08)',
+    borderColor: 'var(--red-7)',
+
+    keyMetrics: [
+      { label: 'Annual Waste', value: '$14,964', color: 'var(--red-11)' },
+      { label: 'Ghost Vehicles', value: '3', color: 'var(--red-11)' },
+      { label: 'Monthly Drain', value: '$1,247', color: 'var(--red-11)' },
+      { label: 'Hidden Duration', value: '6 months avg', color: 'var(--gray-11)' }
+    ],
+
+    executiveSummary: 'AI cross-reference analysis between your toll account database and fleet management system identified a critical mismatch: 3 vehicles sold between 4-7 months ago remain actively enrolled in your toll program with functioning transponders. These "ghost vehicles" have processed 847 toll transactions totaling $8,234 in the past 6 months, plus $3,456 in account maintenance fees—none of which benefit your operations. The pattern suggests a systematic process gap in your vehicle disposal workflow where toll account deactivation is not triggered by asset sales.',
+
+    sections: [
+      {
+        title: 'Root Cause Analysis',
+        content: [
+          {
+            type: 'text',
+            value: 'Deep process mapping revealed the root cause: Your fleet management system and toll account management system operate independently without integration. When vehicles are sold, your fleet team updates the fleet management database and processes title transfers, but there is no automated trigger to deactivate associated toll transponders.'
+          },
+          {
+            type: 'list',
+            items: [
+              'Fleet disposal checklist does not include "deactivate toll transponder" as a required step',
+              'Toll account management is handled by finance team, separate from fleet operations',
+              'Monthly toll invoice review focuses on cost totals, not individual vehicle validation',
+              'No cross-system reconciliation process exists to flag vehicles with active tolls but inactive fleet status',
+              'Account fees are set to auto-pay, masking the issue from monthly budget reviews'
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Detailed Vehicle Breakdown',
+        content: [
+          {
+            type: 'table',
+            headers: ['Vehicle', 'Sale Date', 'Transponder Status', 'Toll Charges (6mo)', 'Account Fees', 'Total Cost'],
+            rows: [
+              ['2018 Ford Transit #4421', 'May 12, 2024', 'Active', '$3,247', '$1,344', '$4,591'],
+              ['2019 Chevy Express #2847', 'March 8, 2024', 'Active', '$2,891', '$1,152', '$4,043'],
+              ['2020 Ram ProMaster #3156', 'April 22, 2024', 'Active', '$2,096', '$960', '$3,056']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'GPS telematics data confirms zero activity for these vehicles in your system since their respective sale dates, yet toll transaction timestamps show consistent daily usage patterns on routes outside your service territory—indicating the vehicles are being operated by their new owners while still charging to your toll account.'
+          }
+        ]
+      },
+      {
+        title: 'Pattern Discovery Method',
+        content: [
+          {
+            type: 'text',
+            value: 'This issue was discovered through AI multi-system correlation analysis that would be nearly impossible to detect manually:'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '2.3M', label: 'Toll transactions analyzed', color: 'var(--blue-11)' },
+              { value: '847', label: 'Transactions on sold vehicles', color: 'var(--red-11)' },
+              { value: '6 months', label: 'Average detection lag', color: 'var(--amber-11)' },
+              { value: '100%', label: 'Geographic mismatch confidence', color: 'var(--green-11)' },
+              { value: '0', label: 'Internal GPS signals', color: 'var(--gray-11)' },
+              { value: '$14,964', label: 'Annualized waste projection', color: 'var(--red-11)' }
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The AI flagged these vehicles by detecting toll transactions on VINs that showed: (1) Zero GPS telematics pings in your system after specific dates, (2) Toll usage patterns on routes geographically inconsistent with your service area, (3) Continued account fee billing without corresponding operational benefit, and (4) Perfect correlation with fleet management system "sold" status entries.'
+          }
+        ]
+      },
+      {
+        title: 'Financial Impact Analysis',
+        content: [
+          {
+            type: 'text',
+            value: 'Six-month historical impact breakdown:'
+          },
+          {
+            type: 'table',
+            headers: ['Cost Category', 'May 2024', 'Jun 2024', 'Jul 2024', 'Aug 2024', 'Sep 2024', 'Oct 2024', 'Total'],
+            rows: [
+              ['Toll Transactions', '$1,424', '$1,389', '$1,456', '$1,398', '$1,287', '$1,280', '$8,234'],
+              ['Account Maintenance', '$576', '$576', '$576', '$576', '$576', '$576', '$3,456'],
+              ['Late Fees', '$0', '$0', '$0', '$34', '$0', '$0', '$34'],
+              ['Monthly Total', '$2,000', '$1,965', '$2,032', '$2,008', '$1,863', '$1,856', '$11,724']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Projecting forward: At the current run rate of $1,247/month average across these 3 vehicles, this issue will cost $14,964 annually if left unaddressed. The pattern suggests this is not a one-time problem but a systematic process gap—meaning future vehicle sales will likely replicate this issue unless corrective action is taken.'
+          }
+        ]
+      },
+      {
+        title: 'Industry Comparison',
+        content: [
+          {
+            type: 'text',
+            value: 'Benchmarking your situation against 47 similar-sized commercial fleets in our dataset:'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '68%', label: 'Fleets with toll account bloat', color: 'var(--amber-11)' },
+              { value: '4.2', label: 'Average ghost vehicles per 100 units', color: 'var(--gray-11)' },
+              { value: '5.8 months', label: 'Average time to detection', color: 'var(--red-11)' },
+              { value: '$12,400', label: 'Median annual ghost vehicle cost', color: 'var(--red-11)' },
+              { value: '89%', label: 'Lack integrated systems', color: 'var(--amber-11)' },
+              { value: '23%', label: 'Have automated reconciliation', color: 'var(--blue-11)' }
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Your situation (3 ghost vehicles in a ~250 vehicle fleet = 1.2% rate) is actually below the industry median of 4.2%, but your 6-month average detection lag is slightly above the 5.8-month average. The opportunity: Best-in-class fleets with integrated systems detect this issue within 48 hours of vehicle sale through automated cross-system alerts.'
+          }
+        ]
+      }
+    ],
+
+    recommendations: [
+      {
+        title: 'Immediate: Deactivate Ghost Vehicle Transponders',
+        description: 'Contact your toll account provider today to deactivate transponders for vehicles #4421, #2847, and #3156. Request investigation of charges incurred after sale dates and submit dispute documentation (fleet management sale records + GPS telematics showing zero activity). Most toll agencies will credit 30-60 days of post-sale charges upon proof of non-operation. Expected recovery: $2,400-$4,200.',
+        impact: 'High - Stops $1,247/month bleed',
+        effort: 'Low - 2-hour admin task'
+      },
+      {
+        title: 'Short-term: Update Fleet Disposal Checklist',
+        description: 'Add "Deactivate toll transponder + submit final toll report" as a required sign-off step in your vehicle disposal workflow. Assign ownership to fleet operations manager with finance team cc. Create simple form: Vehicle VIN, Sale Date, Transponder ID, Deactivation Confirmation #. This prevents future occurrences with zero technology investment.',
+        impact: 'High - Prevents future ghost vehicles',
+        effort: 'Low - 1-day process update'
+      },
+      {
+        title: 'Medium-term: Implement Monthly Cross-System Reconciliation',
+        description: 'Establish monthly reconciliation process: Export active toll transponder list, cross-reference with active fleet list, flag mismatches for investigation. Assign to finance analyst, 2-hour monthly task. This catches issues within 30 days vs. current 6-month lag. Consider simple spreadsheet-based approach initially, upgrade to automated solution if fleet size grows.',
+        impact: 'Medium - Reduces detection time to <30 days',
+        effort: 'Medium - 4 hours setup, 2 hours/month ongoing'
+      },
+      {
+        title: 'Long-term: System Integration with Automated Alerts',
+        description: 'When fleet management system records vehicle sale (status change to "sold"), automatically trigger API call to toll account provider to flag transponder for deactivation review. Requires IT integration project (estimated 40 hours development + testing) but provides real-time protection. Best suited if fleet turns over >10 vehicles/year.',
+        impact: 'Very High - Eliminates ghost vehicle risk entirely',
+        effort: 'High - IT integration project, 6-8 weeks'
+      }
+    ],
+
+    roiAnalysis: {
+      currentCost: '$14,964/year',
+      savings: '$14,964/year',
+      paybackPeriod: 'Immediate',
+      implementationCost: '$0-$8,000',
+      roi: '187% - 2,493%',
+      details: 'Recommendations 1-3 require minimal investment ($0-$500 for process documentation) with immediate return. Recommendation 4 (system integration) has higher upfront cost (~$8,000 for IT development) but eliminates risk permanently. For a 250-vehicle fleet with 12-15 vehicle sales per year, the fully integrated solution pays for itself in 6-7 months through eliminated ghost vehicle costs alone.'
+    }
+  },
+
+  'personal-use-martinez': {
+    id: 'personal-use-martinez',
+    title: 'Personal Use Pattern: Driver J. Martinez',
+    subtitle: 'AI behavioral analysis identified systematic unauthorized personal use of company vehicle #2847 by driver Jorge Martinez, with 47 weekend toll transactions over 90 days totaling $892, all occurring at residential locations 58 miles outside assigned service territory.',
+    badge: 'POLICY VIOLATION',
+    badgeColor: 'red',
+    accentColor: 'var(--red-9)',
+    gradientStart: 'rgba(239, 68, 68, 0.05)',
+    gradientEnd: 'rgba(220, 38, 38, 0.08)',
+    borderColor: 'var(--red-7)',
+
+    keyMetrics: [
+      { label: 'Personal Use Cost', value: '$892', color: 'var(--red-11)' },
+      { label: 'Weekend Trips', value: '47', color: 'var(--red-11)' },
+      { label: 'Unauthorized Miles', value: '2,840', color: 'var(--red-11)' },
+      { label: 'Pattern Duration', value: '90 days', color: 'var(--gray-11)' }
+    ],
+
+    executiveSummary: 'Multi-source AI correlation analysis combining toll transaction data, GPS telematics, work schedule records, and DMV address cross-referencing has identified a clear pattern of policy-violating personal use. Vehicle #2847 (2021 Ford Transit, CA-4MRT892), assigned to driver Jorge Martinez, shows 47 weekend toll transactions over the past 90 days—all occurring outside business hours at residential locations in San Jose, 58 miles from your service territory. The pattern is highly systematic: Saturday trips begin at 8:47 AM average (Golden Gate Bridge southbound toll) and return at 11:32 PM average (northbound toll), suggesting full-day family visits. Total quantified impact: $892 in unauthorized toll charges, estimated 2,840 miles of personal use, plus wear/tear, fuel, insurance liability, and policy precedent concerns.',
+
+    sections: [
+      {
+        title: 'Behavioral Pattern Analysis',
+        content: [
+          {
+            type: 'text',
+            value: 'The AI detection system identified this violation through multi-dimensional behavioral pattern analysis that cross-referenced four independent data sources:'
+          },
+          {
+            type: 'table',
+            headers: ['Data Source', 'Pattern Identified', 'Confidence Level', 'Corroborating Evidence'],
+            rows: [
+              ['Toll Transactions', '47 weekend tolls, consistent locations', '100%', 'Zero business justification for routes'],
+              ['GPS Telematics', 'Destination: San Jose residential area', '98%', 'Multi-hour stationary periods at residence'],
+              ['Work Schedule System', 'All trips during off-duty hours', '100%', 'No weekend shifts or on-call assignments'],
+              ['DMV Address Records', 'Destination matches family member address', '94%', 'Public records cross-reference']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The convergence of these four independent signals at 98% overall confidence level creates an evidence standard comparable to video surveillance, but discovered automatically through data correlation rather than manual investigation.'
+          }
+        ]
+      },
+      {
+        title: 'Detailed Trip Pattern Breakdown',
+        content: [
+          {
+            type: 'text',
+            value: 'Systematic weekend usage pattern with remarkable consistency over 13 consecutive weekends:'
+          },
+          {
+            type: 'table',
+            headers: ['Day/Time Pattern', 'Route Segment', 'Toll Location', 'Avg Cost', 'Frequency', 'Total Cost'],
+            rows: [
+              ['Saturday 8:47 AM avg', 'Golden Gate Bridge SB', 'San Francisco to Marin', '$8.75', '13 trips', '$113.75'],
+              ['Saturday 11:32 PM avg', 'Golden Gate Bridge NB', 'Marin to San Francisco', '$8.75', '13 trips', '$113.75'],
+              ['Sunday 9:14 AM avg', 'I-880 Toll Plaza SB', 'Oakland to San Jose', '$6.50', '12 trips', '$78.00'],
+              ['Sunday 10:42 PM avg', 'I-880 Toll Plaza NB', 'San Jose to Oakland', '$6.50', '12 trips', '$78.00'],
+              ['Various weekend', 'Bay Bridge tolls', 'SF/Oakland crossings', '$7.00', '34 trips', '$238.00'],
+              ['Off-route personal', 'Highway 237 Express', 'San Jose residential', '$4.25', '71 trips', '$301.75']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'GPS destination analysis reveals vehicle spends average 8.4 hours stationary at residential address 2847 Ridgeview Circle, San Jose—a property that public records link to "Maria L. Martinez," matching the driver\'s surname and age-appropriate generational indicators consistent with parental relationship.'
+          }
+        ]
+      },
+      {
+        title: 'Timeline and Escalation Pattern',
+        content: [
+          {
+            type: 'text',
+            value: 'Martinez was hired 14 months ago (September 2023) with clean background check and excellent initial performance reviews. Personal use pattern emerged suddenly 90 days ago, suggesting a life change or growing comfort with perceived low detection risk:'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '0', label: 'Violations months 1-11', color: 'var(--green-11)' },
+              { value: '5', label: 'Weekend trips month 12', color: 'var(--amber-11)' },
+              { value: '18', label: 'Weekend trips month 13', color: 'var(--red-11)' },
+              { value: '24', label: 'Weekend trips month 14', color: 'var(--red-11)' },
+              { value: '2.4x', label: 'Monthly escalation rate', color: 'var(--red-11)' },
+              { value: '$1,247', label: 'Projected month 15 cost', color: 'var(--red-11)' }
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The escalating frequency suggests the behavior will continue to increase unless intervened upon. At current acceleration rate, this pattern would reach $14,964 annually if extrapolated forward, but the true risk is the policy precedent and potential for pattern spread to other drivers if left unaddressed.'
+          }
+        ]
+      },
+      {
+        title: 'Comprehensive Cost Impact Analysis',
+        content: [
+          {
+            type: 'text',
+            value: 'Direct and indirect costs over 90-day observation period:'
+          },
+          {
+            type: 'table',
+            headers: ['Cost Category', 'Calculation Method', 'Amount', 'Annual Projection'],
+            rows: [
+              ['Unauthorized Toll Charges', '47 trips × $18.98 avg', '$892', '$4,348'],
+              ['Fuel Cost (personal miles)', '2,840 mi ÷ 13.2 MPG × $4.85/gal', '$1,044', '$5,085'],
+              ['Maintenance Acceleration', '2,840 mi × $0.18/mi fleet avg', '$511', '$2,489'],
+              ['Insurance Liability Exposure', 'Personal use voids coverage', 'Unquantified', 'Policy risk'],
+              ['Depreciation (excessive mileage)', '2,840 mi × $0.12/mi residual impact', '$341', '$1,661'],
+              ['Opportunity Cost (vehicle unavailable)', '47 weekend days × $65 rental alternative', '$3,055', '$14,885']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Total quantified 90-day impact: $5,843 ($28,468 annualized). However, the unquantified risks are potentially more significant: (1) Insurance may deny claims if accident occurs during personal use, exposing company to liability; (2) Workers\' comp may not cover injuries during unauthorized activity; (3) IRS could reclassify vehicle benefit as taxable income if personal use is systematic; (4) Policy precedent undermines fleet governance if other drivers observe unpunished violations.'
+          }
+        ]
+      },
+      {
+        title: 'Root Cause and Prevention Analysis',
+        content: [
+          {
+            type: 'text',
+            value: 'Investigation into how this pattern emerged and persisted for 90 days without detection revealed several control weaknesses:'
+          },
+          {
+            type: 'list',
+            items: [
+              'Company policy prohibits personal use but lacks monitoring mechanism—policy exists on paper but not in practice',
+              'Martinez has take-home vehicle privileges (lives 34 miles from depot), creating opportunity for weekend abuse',
+              'Fuel cards have no geographic restrictions or weekend usage alerts',
+              'Toll invoice review is performed monthly by accounting team focused on cost totals, not individual transaction patterns',
+              'No GPS geofence alerts configured for service territory boundaries',
+              'Weekend vehicle usage is not flagged for manager review unless mileage thresholds are egregious (>500 miles)',
+              'Driver acknowledgement of vehicle policy was signed 14 months ago at hire but not reinforced since'
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The combination of weak monitoring, take-home privileges, and gradual behavioral escalation created perfect conditions for systematic policy violation. This suggests other drivers with similar privileges may have undetected patterns.'
+          }
+        ]
+      },
+      {
+        title: 'Industry Benchmarking and Prevalence',
+        content: [
+          {
+            type: 'text',
+            value: 'Analysis of 34 commercial fleets with take-home vehicle programs (aggregate 4,200 vehicles) reveals personal use is a systemic industry challenge:'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '12-18%', label: 'Drivers with detectable personal use', color: 'var(--red-11)' },
+              { value: '$3,400', label: 'Average annual cost per violation', color: 'var(--red-11)' },
+              { value: '127 days', label: 'Average time to detection (manual)', color: 'var(--amber-11)' },
+              { value: '18 days', label: 'Average time to detection (AI)', color: 'var(--green-11)' },
+              { value: '73%', label: 'Violations stop after first intervention', color: 'var(--blue-11)' },
+              { value: '27%', label: 'Require termination or vehicle removal', color: 'var(--gray-11)' }
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Your Martinez situation (detected at 90 days) is below the 127-day manual detection average but represents the industry norm: good employee who gradually rationalized policy violation, likely assuming "everyone does it" or "it\'s not really hurting anyone." Best practice fleets with AI monitoring detect these patterns within 18 days and intervene immediately with 73% success rate in correcting behavior without termination.'
+          }
+        ]
+      }
+    ],
+
+    recommendations: [
+      {
+        title: 'Immediate: HR Intervention and Documentation',
+        description: 'Schedule private meeting with Martinez and HR representative within 48 hours. Present toll and GPS evidence without accusation—focus on "help me understand these weekend trips." Most drivers immediately acknowledge and commit to cessation when confronted with data. Document conversation with written acknowledgment of policy, remove take-home privileges for 90-day probation, require vehicle return to depot on weekends. This approach preserves the employment relationship while clearly establishing consequences.',
+        impact: 'High - Stops ongoing violation immediately',
+        effort: 'Low - 1-2 hour HR intervention'
+      },
+      {
+        title: 'Immediate: Fleet-Wide Policy Reinforcement',
+        description: 'Issue fleet-wide communication (email + toolbox talk) reinforcing personal use policy without naming Martinez—this both prevents pattern spread and demonstrates consistent enforcement to other drivers. Include specific examples of prohibited use: "Weekend trips to personal destinations, errands unrelated to work, family transportation, etc." Reference monitoring capabilities: "We analyze toll, GPS, and fuel data to ensure policy compliance." Expected impact: 60-80% reduction in personal use across fleet through deterrence.',
+        impact: 'High - Prevents pattern spread to other drivers',
+        effort: 'Low - 3-hour communication campaign'
+      },
+      {
+        title: 'Short-term: Implement Automated Personal Use Monitoring',
+        description: 'Configure GPS geofencing alerts for all vehicles with take-home privileges: Flag any weekend usage >20 miles from driver residence or outside service territory. Set fuel card restrictions: Block weekend transactions >50 miles from depot unless pre-authorized. Create weekly manager report showing weekend vehicle activity for review. This shifts from reactive detection (90-day lag) to proactive prevention (real-time alerts). Estimated setup: 8 hours for IT/fleet coordinator.',
+        impact: 'Very High - Creates ongoing deterrent and early detection',
+        effort: 'Medium - 8-hour initial setup, 1 hour/week monitoring'
+      },
+      {
+        title: 'Medium-term: Restructure Take-Home Vehicle Policy',
+        description: 'Evaluate whether take-home privileges are operationally necessary or a legacy perk. Options: (1) Require all vehicles return to depot on weekends unless on-call status, (2) Install driver identification systems that disable vehicle without authorized driver present, (3) Eliminate take-home privileges for roles that don\'t require emergency response capability, (4) Implement mileage-based reimbursement for commute costs rather than unrestricted take-home. Industry trend: 64% of fleets have tightened take-home policies in past 3 years due to abuse detection.',
+        impact: 'Very High - Eliminates root cause opportunity',
+        effort: 'High - Policy redesign requiring leadership approval'
+      }
+    ],
+
+    roiAnalysis: {
+      currentCost: '$28,468/year (Martinez alone)',
+      savings: '$28,468-$142,340/year',
+      paybackPeriod: 'Immediate',
+      implementationCost: '$2,400',
+      roi: '1,186% - 5,931%',
+      details: 'Conservative scenario assumes Martinez is the only violator—intervention stops $28,468 annual cost at implementation cost of ~$2,400 (HR time, monitoring system setup), yielding 1,186% ROI. Realistic scenario: If 12-18% of your 37 take-home vehicles have similar patterns (industry average), total hidden cost is $142,340 annually. Implementing comprehensive monitoring system ($2,400 setup + $1,200/year ongoing) would yield 5,931% first-year ROI. Additional benefits: reduced insurance risk, improved policy compliance culture, elimination of potential IRS vehicle benefit tax reclassification issues.'
+    }
+  },
+
+  'avoidable-toll-routes': {
+    id: 'avoidable-toll-routes',
+    title: 'Avoidable Toll Routes: $31,680 Annual Opportunity',
+    subtitle: 'Spatial-temporal route analysis identified 8 drivers making 2,847 annual trips on I-90 Massachusetts Turnpike toll segments when parallel Route 9 provides toll-free alternative adding only 6.2 minutes average time penalty during non-peak hours.',
+    badge: 'ROUTE OPTIMIZATION',
+    badgeColor: 'amber',
+    accentColor: 'var(--amber-9)',
+    gradientStart: 'rgba(251, 191, 36, 0.05)',
+    gradientEnd: 'rgba(245, 158, 11, 0.08)',
+    borderColor: 'var(--amber-7)',
+
+    keyMetrics: [
+      { label: 'Annual Savings', value: '$31,680', color: 'var(--amber-11)' },
+      { label: 'Avoidable Trips', value: '2,847', color: 'var(--amber-11)' },
+      { label: 'Time Penalty', value: '6.2 min avg', color: 'var(--gray-11)' },
+      { label: 'Affected Vehicles', value: '8', color: 'var(--amber-11)' }
+    ],
+
+    executiveSummary: 'Advanced route optimization AI analyzed 847,000 trip segments across your fleet over 12 months and identified a significant cost-reduction opportunity: 8 drivers consistently choose I-90 Massachusetts Turnpike between exits 10-14 ($11.15 per trip) when parallel Route 9 provides toll-free alternative with minimal time impact. The AI determined these trips occur primarily during non-peak hours (average 11:47 AM) when traffic conditions make Route 9 only 6.2 minutes slower—a time cost that does not justify the $11.15 toll expense for non-urgent deliveries. At 2,847 annual trips, this represents $31,680 in recoverable toll spend with near-zero operational impact. The pattern appears to stem from default GPS routing behavior rather than driver preference or route knowledge.',
+
+    sections: [
+      {
+        title: 'Route Analysis Methodology',
+        content: [
+          {
+            type: 'text',
+            value: 'The AI route optimization engine performed comparative analysis of actual routes versus cost-optimized alternatives using multi-factor evaluation:'
+          },
+          {
+            type: 'table',
+            headers: ['Analysis Component', 'Data Source', 'Processing Method', 'Key Finding'],
+            rows: [
+              ['Route Selection Patterns', '847K GPS trip segments', 'Clustering algorithm', '2,847 trips use I-90 exits 10-14'],
+              ['Alternative Route Viability', 'OpenStreetMap + live traffic', 'Dijkstra pathfinding', 'Route 9 parallel exists entire segment'],
+              ['Time Differential Analysis', 'Historical traffic data', 'Time-of-day correlation', '6.2 min avg penalty, 11:47 AM median'],
+              ['Cost-Benefit Threshold', 'Company delivery SLA', 'Value-of-time calculation', '$11.15 toll not justified <15 min savings'],
+              ['Driver Behavior Clustering', 'Individual driver patterns', 'Behavioral segmentation', '8 drivers account for 89% of occurrences']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The AI cross-referenced each of the 2,847 I-90 toll trips against alternative routing options available at the time of travel, factoring in real-time traffic conditions, delivery time windows, and vehicle type constraints. In 94% of cases (2,676 trips), Route 9 was viable with <10 minute penalty—well within acceptable parameters for standard delivery schedules.'
+          }
+        ]
+      },
+      {
+        title: 'Detailed Vehicle and Driver Breakdown',
+        content: [
+          {
+            type: 'text',
+            value: 'The toll preference pattern is concentrated among 8 specific drivers, suggesting training or GPS configuration issue rather than fleet-wide behavior:'
+          },
+          {
+            type: 'table',
+            headers: ['Vehicle', 'Driver', 'Annual Trips', 'Toll Cost/Trip', 'Annual Cost', 'Avg Time Penalty', 'Savings Potential'],
+            rows: [
+              ['#1204 Ram ProMaster', 'Driver T. Chen', '624', '$11.15', '$6,958', '5.8 min', '$6,958'],
+              ['#1831 Ford Transit', 'Driver M. Johnson', '518', '$11.15', '$5,776', '6.4 min', '$5,776'],
+              ['#2156 Chevy Express', 'Driver R. Patel', '447', '$11.15', '$4,984', '6.1 min', '$4,984'],
+              ['#2847 Ford Transit', 'Driver J. Martinez', '389', '$11.15', '$4,337', '6.9 min', '$4,337'],
+              ['#3401 Mercedes Sprinter', 'Driver K. Williams', '312', '$11.15', '$3,479', '5.5 min', '$3,479'],
+              ['#3782 Ram ProMaster', 'Driver L. Garcia', '287', '$11.15', '$3,200', '6.3 min', '$3,200'],
+              ['#4122 Ford Transit', 'Driver D. Thompson', '184', '$11.15', '$2,052', '7.1 min', '$2,052'],
+              ['#4509 Chevy Express', 'Driver A. Rodriguez', '86', '$11.15', '$959', '6.0 min', '$959']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Driver T. Chen (#1204) accounts for 22% of avoidable toll spend alone—$6,958 annually. Interview with Chen revealed he follows GPS navigation without question, assuming the system optimizes for cost. His GPS is configured for "fastest route" rather than "most economical route," and he was unaware Route 9 existed as an alternative. This suggests simple GPS reconfiguration could eliminate the majority of the issue.'
+          }
+        ]
+      },
+      {
+        title: 'Time-of-Day and Traffic Pattern Analysis',
+        content: [
+          {
+            type: 'text',
+            value: 'Temporal analysis reveals these toll trips occur predominantly during off-peak hours when time savings are minimal:'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '73%', label: 'Trips during 10 AM - 3 PM (off-peak)', color: 'var(--green-11)' },
+              { value: '6.2 min', label: 'Average time penalty off-peak', color: 'var(--blue-11)' },
+              { value: '18%', label: 'Trips during 7-9 AM peak', color: 'var(--amber-11)' },
+              { value: '14.7 min', label: 'Average time penalty AM peak', color: 'var(--amber-11)' },
+              { value: '9%', label: 'Trips during 4-6 PM peak', color: 'var(--red-11)' },
+              { value: '18.3 min', label: 'Average time penalty PM peak', color: 'var(--red-11)' }
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The data suggests a nuanced optimization opportunity: During off-peak hours (73% of trips), Route 9 is clearly superior—saving $11.15 with only 6.2 minute penalty. During peak hours (27% of trips), the decision is more complex. AM peak trips (14.7 min penalty) might still justify toll avoidance for non-urgent deliveries, while PM peak trips (18.3 min penalty) may warrant case-by-case evaluation based on delivery commitments.'
+          },
+          {
+            type: 'table',
+            headers: ['Time Window', 'Trip Count', 'Toll Cost', 'Avg Time Penalty', 'Recommendation', 'Savings Potential'],
+            rows: [
+              ['10 AM - 3 PM (off-peak)', '2,078', '$23,170', '6.2 min', 'Always use Route 9', '$23,170'],
+              ['7-9 AM (peak)', '512', '$5,709', '14.7 min', 'Use Route 9 for standard deliveries', '$4,852 (85% of trips)'],
+              ['4-6 PM (peak)', '257', '$2,866', '18.3 min', 'Evaluate per delivery urgency', '$1,433 (50% of trips)'],
+              ['Other hours', '0', '$0', 'N/A', 'Minimal overnight/early AM traffic', '$0']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Implementing time-of-day routing logic (use Route 9 during off-peak, evaluate during peak) would capture $29,455 of the $31,680 opportunity (93%) while maintaining delivery performance standards.'
+          }
+        ]
+      },
+      {
+        title: 'Delivery Performance Impact Assessment',
+        content: [
+          {
+            type: 'text',
+            value: 'Critical question: Will 6.2 minutes additional travel time negatively impact customer service or delivery SLAs? Deep analysis of delivery windows and actual performance:'
+          },
+          {
+            type: 'table',
+            headers: ['Metric', 'Current State (I-90)', 'Projected State (Route 9)', 'Impact Assessment'],
+            rows: [
+              ['Avg delivery window', '2-hour windows', '2-hour windows', 'No change needed'],
+              ['On-time delivery rate', '94.2%', '93.8% (projected)', '-0.4% (within noise)'],
+              ['Customer complaints', '1.2% of deliveries', '1.3% (projected)', '+0.1% (negligible)'],
+              ['Driver route completion', '11.4 stops/day avg', '11.2 stops/day', '-0.2 stops (1.8% reduction)'],
+              ['Late delivery frequency', '5.8%', '6.2% (projected)', '+0.4% (acceptable threshold <8%)']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Statistical modeling projects minimal operational impact: On-time delivery rate decreases from 94.2% to 93.8% (well within acceptable 92% threshold), and daily route completion decreases by 0.2 stops per vehicle (1.8% productivity reduction). The financial trade-off is clear: $31,680 annual savings vs. estimated $3,200 in lost productivity (0.2 stops × 8 vehicles × $5 margin × 260 days), yielding net savings of $28,480 with 890% ROI.'
+          }
+        ]
+      },
+      {
+        title: 'Root Cause: GPS Configuration and Driver Training Gap',
+        content: [
+          {
+            type: 'text',
+            value: 'Investigation into why 8 drivers consistently choose I-90 over Route 9 revealed two interconnected root causes:'
+          },
+          {
+            type: 'list',
+            items: [
+              'GPS routing systems are configured for "fastest route" optimization by default, which prioritizes time over cost—vehicles with highway tolls enabled will always prefer toll roads unless explicitly configured otherwise',
+              'Driver training focuses on safety and customer service, with zero instruction on route economics or toll avoidance strategies',
+              'Drivers assume GPS optimization includes cost considerations, not realizing "fastest" ignores toll expense',
+              'No visual indicators or alerts when GPS selects toll route vs. free alternative—drivers have no decision-making opportunity',
+              'Monthly toll costs are not reported to individual drivers, eliminating feedback loop that would incentivize cost awareness',
+              'Route 9 is well-maintained state highway with similar speed limits (50-55 MPH) to I-90—drivers have no quality concerns if directed there'
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The pattern is not driver preference but system configuration and knowledge gap. When Driver Chen was asked to test Route 9 for one week, his feedback was: "I didn\'t even notice a difference, and I had no idea I was costing the company $7K a year. Why didn\'t anyone tell me?"'
+          }
+        ]
+      },
+      {
+        title: 'Industry Benchmarking and Best Practices',
+        content: [
+          {
+            type: 'text',
+            value: 'Comparison with 28 commercial fleets operating in toll-heavy regions (Northeast US, Florida, Texas) reveals route optimization is an emerging focus area:'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '34%', label: 'Fleets with cost-optimized routing', color: 'var(--amber-11)' },
+              { value: '$127K', label: 'Avg annual savings for 50-vehicle fleet', color: 'var(--green-11)' },
+              { value: '8.4 min', label: 'Industry avg acceptable time penalty', color: 'var(--blue-11)' },
+              { value: '73%', label: 'Drivers prefer toll-free when educated', color: 'var(--blue-11)' },
+              { value: '14 days', label: 'Avg time to driver behavior change', color: 'var(--green-11)' },
+              { value: '96%', label: 'Savings sustainability after 6 months', color: 'var(--green-11)' }
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Your situation is industry-typical: GPS systems default to time optimization, drivers lack cost awareness training, and simple configuration changes unlock significant savings. Best-in-class fleets have implemented three-tier routing logic: (1) Off-peak hours = always optimize for cost, (2) Peak hours with standard delivery windows = optimize for cost with <15 min penalty threshold, (3) Urgent/same-day deliveries = optimize for time regardless of cost. This approach captures 85-95% of toll savings while maintaining service quality.'
+          }
+        ]
+      }
+    ],
+
+    recommendations: [
+      {
+        title: 'Immediate: Reconfigure GPS for Cost-Optimized Routing',
+        description: 'Access fleet GPS management portal and change routing preference from "fastest route" to "economical route" or equivalent setting for all 8 affected vehicles. Most modern fleet GPS systems (Verizon Connect, Samsara, Geotab) have toll avoidance settings that can be enabled fleet-wide or per-vehicle. Test with Driver Chen\'s vehicle first for 1-week pilot, monitor delivery performance, then roll out to remaining 7 vehicles if no negative impact. Expected implementation time: 2 hours for pilot, 4 hours for full rollout.',
+        impact: 'High - Eliminates 70-80% of avoidable tolls immediately',
+        effort: 'Low - 4-6 hours GPS configuration work'
+      },
+      {
+        title: 'Immediate: Driver Education on Route Economics',
+        description: 'Conduct 30-minute training session with 8 affected drivers showing: (1) Annual toll cost per driver (personalized data), (2) Route 9 alternative with actual time comparison, (3) When to choose toll vs. free route (peak vs. off-peak guidelines), (4) How to manually select route in GPS if system routing seems wrong. Include Route 9 in driver route guides as preferred option for deliveries in that corridor. Provide laminated quick-reference card: "I-90 Exits 10-14: Use Route 9 unless delivery window <30 min or peak traffic >15 min delay."',
+        impact: 'High - Creates cost awareness and decision-making capability',
+        effort: 'Low - 4 hours total (prep + 30 min session)'
+      },
+      {
+        title: 'Short-term: Implement Dynamic Routing Logic',
+        description: 'Work with GPS provider to configure intelligent routing rules: IF (time-of-day = 10 AM - 3 PM) AND (delivery urgency = standard) THEN (prefer Route 9 over I-90). IF (time-of-day = peak hours) AND (Route 9 delay >15 min) THEN (allow I-90 toll). This requires GPS platform with advanced routing logic (Samsara, Verizon Connect premium tiers support this). Estimated setup: 8 hours for IT/fleet coordinator to build rules and test scenarios. Alternative: Use geofencing to trigger driver alerts "Route 9 available - save $11.15 toll" when approaching I-90 interchange.',
+        impact: 'Very High - Automates decision-making, captures 93% of savings',
+        effort: 'Medium - 8-12 hours setup and testing'
+      },
+      {
+        title: 'Medium-term: Fleet-Wide Route Audit and Optimization',
+        description: 'Expand analysis beyond I-90 corridor to identify other route optimization opportunities across entire service territory. Commission comprehensive route audit analyzing all high-frequency routes for toll avoidance, mileage reduction, and time optimization opportunities. Industry benchmark: Fleets typically find 8-12% total route cost reduction through systematic optimization. For your 250-vehicle fleet with $480K annual toll spend, this could identify $38-58K in additional savings beyond the $31,680 I-90 opportunity. Requires: AI route optimization software subscription ($8-12K annually) or one-time consulting engagement ($15-25K).',
+        impact: 'Very High - Uncovers additional hidden savings opportunities',
+        effort: 'High - Requires software investment or consulting engagement'
+      }
+    ],
+
+    roiAnalysis: {
+      currentCost: '$31,680/year (I-90 corridor only)',
+      savings: '$28,480/year (net after productivity impact)',
+      paybackPeriod: '<1 month',
+      implementationCost: '$1,200-$3,600',
+      roi: '792% - 2,373%',
+      details: 'Conservative implementation (Recommendations 1-2): GPS reconfiguration + driver training costs $1,200 (labor only, no software fees), yields $28,480 net annual savings (90% of gross savings after accounting for minor productivity impact), delivering 2,373% ROI with <1 month payback. Moderate implementation (adding Recommendation 3): Dynamic routing logic requires $3,600 total investment (IT setup time + potential GPS platform upgrade), captures 93% of savings opportunity ($29,455), delivering 818% ROI with 1.5-month payback. Aggressive implementation (Recommendation 4): Full fleet route audit costs $15-25K but typically identifies 8-12% additional savings across all routes—for your $480K toll spend, this represents $38-58K in incremental annual savings beyond the I-90 opportunity, yielding 228% ROI in year one and 4,833% cumulative ROI over 5 years.'
+    }
+  },
+
+  'new-driver-training': {
+    id: 'new-driver-training',
+    title: 'New Driver Training Gap: $18,900 Annual Waste',
+    subtitle: 'Comparative performance analysis of 23 drivers hired in past 8 months reveals toll costs 4.7x higher than veteran drivers ($47.30 vs $10.10 per delivery route), indicating systematic onboarding gap in route optimization training that costs $18,900 annually in unnecessary toll expenses.',
+    badge: 'TRAINING ROI',
+    badgeColor: 'blue',
+    accentColor: 'var(--blue-9)',
+    gradientStart: 'rgba(59, 130, 246, 0.05)',
+    gradientEnd: 'rgba(37, 99, 235, 0.08)',
+    borderColor: 'var(--blue-7)',
+
+    keyMetrics: [
+      { label: 'Annual Training ROI', value: '$18,900', color: 'var(--blue-11)' },
+      { label: 'Cost Premium', value: '4.7x', color: 'var(--blue-11)' },
+      { label: 'Undertrained Drivers', value: '23', color: 'var(--blue-11)' },
+      { label: 'Training Gap', value: 'Route economics', color: 'var(--gray-11)' }
+    ],
+
+    executiveSummary: 'Longitudinal cohort analysis comparing driver performance by tenure revealed a striking and costly pattern: Drivers hired in the past 8 months (23 individuals) incur toll costs averaging $47.30 per delivery route, while veteran drivers (5+ years tenure) average just $10.10 per route—a 4.7x cost differential. The pattern is consistent across all new hires regardless of background, indicating a systematic training gap rather than individual performance issues. Root cause analysis identified that current onboarding focuses exclusively on safety protocols, compliance requirements, and customer service standards, with zero instruction on route optimization, toll economics, or local geography knowledge. New drivers default to GPS highway routing without understanding toll-free alternatives that experienced drivers know intuitively. At current hiring pace (32 drivers/year) and 6-month learning curve, this training gap costs $18,900 annually in excess toll charges—entirely preventable through structured route training program.',
+
+    sections: [
+      {
+        title: 'Cohort Performance Analysis by Tenure',
+        content: [
+          {
+            type: 'text',
+            value: 'AI-powered segmentation analysis grouped your 89 active drivers into tenure cohorts and calculated toll cost per delivery route as the primary performance metric:'
+          },
+          {
+            type: 'table',
+            headers: ['Driver Tenure', 'Driver Count', 'Avg Toll Cost/Route', 'Deliveries/Month', 'Monthly Toll Cost', 'Performance vs Veteran'],
+            rows: [
+              ['0-3 months (new hires)', '12', '$52.40', '18.2', '$954', '5.2x worse'],
+              ['4-8 months (learning)', '11', '$42.80', '19.7', '$843', '4.2x worse'],
+              ['9-14 months (developing)', '8', '$28.30', '21.4', '$606', '2.8x worse'],
+              ['15-24 months (competent)', '14', '$18.90', '22.8', '$431', '1.9x worse'],
+              ['25-48 months (experienced)', '21', '$12.50', '23.6', '$295', '1.2x worse'],
+              ['48+ months (veteran)', '23', '$10.10', '24.1', '$243', 'Baseline']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The data reveals a clear learning curve: Toll costs decrease consistently with tenure, reaching veteran performance levels at approximately 48 months. However, the steepest cost differential occurs in the first 8 months—precisely the period where structured training could accelerate learning. The 23 newest drivers (0-8 months tenure) collectively cost $41,322 annually in excess tolls vs. what veterans would spend on same routes.'
+          }
+        ]
+      },
+      {
+        title: 'Case Study: Sarah Chen vs. Michael Torres',
+        content: [
+          {
+            type: 'text',
+            value: 'Deep-dive comparison of two drivers covering identical service territory illustrates the training gap impact with surgical precision:'
+          },
+          {
+            type: 'table',
+            headers: ['Metric', 'Sarah Chen (New)', 'Michael Torres (Veteran)', 'Differential'],
+            rows: [
+              ['Hire Date', 'June 2024 (5 months)', 'March 2019 (5.5 years)', '5 years experience'],
+              ['Vehicle Assigned', '#3891 Ford Transit', '#2204 Ford Transit (identical)', 'Same vehicle type'],
+              ['Territory', 'Metro West Zone', 'Metro West Zone', 'Identical coverage area'],
+              ['Avg Deliveries/Week', '23.4', '24.1', '-3% (within normal variance)'],
+              ['Weekly Toll Cost', '$387', '$82', '$305 excess (4.7x)'],
+              ['Annual Toll Projection', '$20,124', '$4,264', '$15,860 waste']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Chen and Torres provide the perfect natural experiment: identical vehicle, identical territory, similar delivery volume, but Chen costs $305/week more in tolls. When Chen was interviewed and asked to shadow Torres for 2 days, her response was illuminating: "I had no idea Route 9 existed. My GPS always takes me on I-90, and I assumed that was the best way. Michael showed me 4 different toll-free alternatives I never knew about. Why wasn\'t this part of my training?"'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '0 hours', label: 'Route training in current onboarding', color: 'var(--red-11)' },
+              { value: '2 days', label: 'Chen shadow time with Torres', color: 'var(--blue-11)' },
+              { value: '$387→$124', label: 'Chen weekly toll cost after training', color: 'var(--green-11)' },
+              { value: '68%', label: 'Cost reduction from peer training', color: 'var(--green-11)' },
+              { value: '14 days', label: 'Time to sustained behavior change', color: 'var(--blue-11)' },
+              { value: '$13,728', label: 'Annual savings for one driver', color: 'var(--green-11)' }
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Two days of informal shadowing reduced Chen\'s toll costs by 68%, from $387/week to $124/week (still above Torres\' $82 but dramatically improved). Extrapolating this across all 23 new drivers: 68% reduction on $41,322 excess toll spend = $28,099 annual savings from structured training program.'
+          }
+        ]
+      },
+      {
+        title: 'Root Cause: Onboarding Content Analysis',
+        content: [
+          {
+            type: 'text',
+            value: 'Comprehensive audit of current driver onboarding program revealed the training gap mechanics:'
+          },
+          {
+            type: 'table',
+            headers: ['Training Module', 'Time Allocated', 'Content Focus', 'Route Economics Coverage'],
+            rows: [
+              ['Safety & Compliance', '8 hours', 'DOT regulations, vehicle inspections, safety procedures', 'None'],
+              ['Customer Service', '4 hours', 'Professional conduct, communication, problem resolution', 'None'],
+              ['Technology Systems', '3 hours', 'GPS navigation, dispatch software, mobile app', 'Basic GPS operation only'],
+              ['Vehicle Operations', '2 hours', 'Vehicle-specific controls, maintenance reporting', 'None'],
+              ['Territory Familiarization', '1 hour', 'Service area boundaries, key customer locations', 'High-level map review'],
+              ['Route Optimization', '0 hours', 'N/A', 'Not included in curriculum']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Total onboarding: 18 hours over 3 days. Route economics and toll optimization: 0 hours, 0% of curriculum. The single hour of "territory familiarization" consists of reviewing service area boundaries on a wall map—no discussion of highway vs. surface street trade-offs, toll road locations, or cost-effective routing strategies.'
+          },
+          {
+            type: 'list',
+            items: [
+              'GPS training teaches "how to use the device" but not "how to evaluate routing suggestions" or "when to override GPS recommendations"',
+              'New drivers are told to "follow GPS directions" without context on GPS optimization logic (time vs. cost vs. distance)',
+              'No reference materials provided showing toll road locations, costs per segment, or toll-free alternative routes',
+              'No mentorship or ride-along program pairing new drivers with veterans for on-road learning',
+              'No feedback mechanism showing individual driver toll costs—drivers have no visibility into their performance',
+              'Territory assignment is immediate (day 1 solo driving)—no gradual learning curve or supervised route familiarization period'
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The training philosophy appears to be: "GPS will tell you where to go, just follow it." This works for navigation but fails completely for cost optimization, as GPS systems default to time-based routing without cost considerations unless explicitly configured otherwise.'
+          }
+        ]
+      },
+      {
+        title: 'Financial Impact and Hiring Velocity Considerations',
+        content: [
+          {
+            type: 'text',
+            value: 'Annual cost impact calculation based on actual hiring patterns and measured learning curve:'
+          },
+          {
+            type: 'table',
+            headers: ['Cost Component', 'Calculation', 'Annual Impact'],
+            rows: [
+              ['Current new driver excess toll cost', '23 drivers × $1,797 avg annual excess', '$41,322'],
+              ['Expected future hiring pace', '32 new drivers per year (historical avg)', 'N/A'],
+              ['Average tenure before veteran efficiency', '48 months to reach baseline performance', 'N/A'],
+              ['Weighted annual excess toll pool', '(32 × 4 cohorts × avg excess by cohort)', '$52,700'],
+              ['Training program cost (proposed)', '2-hour route workshop × 32 drivers × $65/hr labor', '$4,160'],
+              ['Net annual savings with training', '$52,700 current cost - $4,160 training - $29,640 residual', '$18,900']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Conservative projection assumes training reduces excess toll costs by 68% (based on Chen case study), leaving 32% residual excess as drivers continue learning through experience. Even with this conservative assumption, ROI is 454% in year one. Over 5-year period with consistent hiring pace, cumulative savings: $94,500.'
+          }
+        ]
+      },
+      {
+        title: 'Behavioral Learning Curve Analysis',
+        content: [
+          {
+            type: 'text',
+            value: 'Longitudinal tracking of individual driver toll costs from hire date forward reveals the natural learning pattern and intervention opportunity:'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '6 months', label: 'Time for 50% cost improvement (organic)', color: 'var(--amber-11)' },
+              { value: '18 months', label: 'Time to reach competent performance', color: 'var(--amber-11)' },
+              { value: '48 months', label: 'Time to reach veteran performance', color: 'var(--red-11)' },
+              { value: '2 weeks', label: 'Time for 50% improvement (with training)', color: 'var(--green-11)' },
+              { value: '3 months', label: 'Time to reach competent performance (trained)', color: 'var(--green-11)' },
+              { value: '$37,200', label: 'Cost of 48-month organic learning curve', color: 'var(--red-11)' }
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The "organic learning" approach (current state) costs $37,200 per driver in excess toll charges over 48-month maturation period. Structured training compresses this learning curve dramatically: Chen reached competent performance in 2 weeks post-training vs. 18-month organic timeline, accelerating learning by 44x. The financial implication: Every month of accelerated learning saves $822 per new driver in unnecessary toll costs.'
+          }
+        ]
+      },
+      {
+        title: 'Industry Benchmarking: Fleet Training Best Practices',
+        content: [
+          {
+            type: 'text',
+            value: 'Survey of 41 commercial fleets (aggregate 12,400 drivers) with structured route optimization training programs:'
+          },
+          {
+            type: 'table',
+            headers: ['Training Program Element', '% of Fleets Using', 'Avg Cost Reduction', 'Implementation Complexity'],
+            rows: [
+              ['Classroom route economics workshop', '73%', '42% cost reduction', 'Low - 2-4 hour session'],
+              ['Veteran driver ride-along/shadowing', '61%', '68% cost reduction', 'Medium - requires scheduling'],
+              ['Territory-specific route guides', '54%', '35% cost reduction', 'Low - documentation creation'],
+              ['GPS routing configuration training', '48%', '51% cost reduction', 'Low - included in tech training'],
+              ['Individual toll cost reporting/feedback', '38%', '29% cost reduction', 'Medium - requires reporting system'],
+              ['Incentive programs for cost efficiency', '27%', '63% cost reduction', 'High - requires metric tracking']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Best-practice fleets combine multiple elements: 89% use classroom workshop + ride-along as core curriculum, achieving 74% average cost reduction vs. untrained baseline. The common curriculum: (1) 2-hour classroom session covering toll road locations, costs per segment, time vs. cost trade-offs, and GPS configuration, (2) 1-day ride-along with veteran driver covering actual routes with real-time decision-making coaching, (3) Territory route guide reference card with toll-free alternatives highlighted. Total training investment: 10 hours per new driver, ~$650 in labor costs, yielding average $8,200 in first-year savings per driver (1,262% ROI).'
+          }
+        ]
+      }
+    ],
+
+    recommendations: [
+      {
+        title: 'Immediate: Implement 2-Hour Route Economics Workshop',
+        description: 'Develop and deploy mandatory route optimization training module for all drivers hired in past 12 months (current cohort) plus all future new hires. Workshop content: (1) Service territory toll road map with costs per segment clearly labeled, (2) Side-by-side route comparisons showing toll vs. free options with time/cost trade-offs, (3) GPS configuration training for "economical routing" mode, (4) When to choose toll vs. free (urgency criteria), (5) Territory-specific route guides with recommended alternatives. Deliver as part of existing monthly driver meeting for current drivers, add to day-3 onboarding for future hires. Cost: 2 hours instructor time × 55 participants (23 current + 32 annual new hires) = $7,150 labor investment.',
+        impact: 'High - 42% immediate cost reduction for trained cohort',
+        effort: 'Low - 12 hours curriculum development + delivery'
+      },
+      {
+        title: 'Immediate: Deploy Territory Route Reference Guides',
+        description: 'Create laminated route guide cards for each service territory showing: Primary routes with toll costs, Toll-free alternatives with time penalties, Peak vs. off-peak recommendations, GPS waypoints for preferred routes. Example format: "Metro West Zone - I-90 Exits 10-14 ($11.15) vs. Route 9 Free (add 6 min off-peak, 15 min peak). Recommendation: Use Route 9 10 AM-3 PM." Mount in each vehicle with velcro for easy reference. Work with veteran drivers to document their route knowledge. Cost: 8 territories × 4 hours documentation × $45/hr = $1,440 + $340 printing = $1,780 total.',
+        impact: 'Medium - Provides ongoing reference for decision-making',
+        effort: 'Low - 32 hours documentation + printing'
+      },
+      {
+        title: 'Short-term: Establish Veteran Driver Mentorship Program',
+        description: 'Pair each new driver with veteran mentor for 1-day ride-along during week 2 of employment (after initial solo driving but before habits solidify). Mentor demonstrates route selection decision-making in real-world scenarios, explains local geography knowledge, and answers questions. Compensate mentors with $100 stipend per mentee to incentivize participation and knowledge transfer. Structure: Morning classroom route workshop (Rec #1), Week 1 solo driving with route guides (Rec #2), Week 2 ride-along with mentor, Week 3+ independent with check-ins. Cost: 32 new drivers/year × $100 mentor stipend + $520 mentor labor (1 day × $65/hr × 8 hr) = $19,840 annually.',
+        impact: 'Very High - 68% cost reduction (proven by Chen case study)',
+        effort: 'Medium - Program structure and mentor recruitment'
+      },
+      {
+        title: 'Medium-term: Deploy Individual Toll Cost Reporting Dashboard',
+        description: 'Build monthly driver scorecard showing: Individual toll cost per delivery, Peer comparison (anonymized), Trend vs. previous month, Highlight of most costly routes with suggestions. Share via email + posted in driver break room. Creates accountability, visibility, and continuous learning feedback loop. Drivers with toll costs >$250/week trigger manager coaching conversation. Cost: Reporting system development 20 hours × $95/hr = $1,900 one-time + 2 hours/month ongoing administration = $1,560/year. Behavioral economics research shows feedback loops reduce costs by 15-30% independent of training.',
+        impact: 'High - Creates ongoing behavior reinforcement',
+        effort: 'Medium - Reporting system build and maintenance'
+      }
+    ],
+
+    roiAnalysis: {
+      currentCost: '$41,322/year (current cohort) + $52,700/year (ongoing with hiring)',
+      savings: '$18,900/year (net after training costs)',
+      paybackPeriod: '<1 month',
+      implementationCost: '$10,770 (year 1), $21,400 ongoing',
+      roi: '176% (year 1), 454% (ongoing)',
+      details: 'Year 1 implementation: Workshop ($7,150) + Route guides ($1,780) + Mentorship program ($19,840) + Reporting dashboard ($3,460) = $32,230 total investment. Expected savings: 68% reduction on $41,322 current excess + 68% reduction on future new hire excess (average $28,099) = $47,206 first-year savings. Net year 1: $14,976 savings, 46% ROI. Year 2-5 ongoing: Annual training investment drops to $21,400 (32 new drivers × workshop/mentorship only, route guides already created). Annual savings stabilizes at $35,876 (68% of $52,700 steady-state excess toll pool). Net ongoing: $14,476/year savings, 68% ROI. 5-year cumulative: $87,380 net savings on $118,830 investment, 74% total ROI. However, this conservative analysis excludes secondary benefits: (1) Faster route learning improves delivery efficiency beyond toll savings, (2) Reduced vehicle wear from highway toll road usage, (3) Enhanced driver job satisfaction and retention from comprehensive training, (4) Reputational benefits of environmental stewardship (fewer highway miles = lower emissions). Including secondary benefits, total ROI estimated at 240-320%.'
+    }
+  },
+
+  'billing-errors': {
+    id: 'billing-errors',
+    title: 'Duplicate Billing Errors: $7,847 Recoverable',
+    subtitle: 'Multi-source transaction validation AI cross-referenced toll authority billing against GPS timestamps, vehicle maintenance logs, and driver PTO records, discovering 127 erroneous charges across 18 vehicles in past 6 months—$7,847 in recoverable revenue with documentation automatically generated for dispute submission.',
+    badge: 'REVENUE RECOVERY',
+    badgeColor: 'green',
+    accentColor: 'var(--green-9)',
+    gradientStart: 'rgba(34, 197, 94, 0.05)',
+    gradientEnd: 'rgba(22, 163, 74, 0.08)',
+    borderColor: 'var(--green-7)',
+
+    keyMetrics: [
+      { label: 'Total Recoverable', value: '$7,847', color: 'var(--green-11)' },
+      { label: 'Erroneous Charges', value: '127', color: 'var(--green-11)' },
+      { label: 'Affected Vehicles', value: '18', color: 'var(--green-11)' },
+      { label: 'Recovery Timeline', value: '60-90 days', color: 'var(--gray-11)' }
+    ],
+
+    executiveSummary: 'Forensic billing analysis using AI-powered cross-system validation identified 127 erroneous toll charges totaling $7,847 over the past 6 months across 18 vehicles. The errors fall into four distinct categories: (1) 47 duplicate charges where same toll plaza and timestamp were billed twice due to transponder read errors, concentrated at I-90 Exit 12 westbound during morning rush (7-9 AM), (2) 31 charges during documented vehicle maintenance periods with service bay GPS confirming vehicles were off-road, (3) 28 charges during verified driver PTO periods when vehicles were confirmed parked in depot lot, (4) 21 charges at incorrect toll rates—commercial peak pricing applied to passenger-rated vehicles. For each error, the AI automatically generated dispute documentation packages including GPS evidence, maintenance work orders, PTO records, and vehicle registration proof. These packages are ready for immediate submission to E-ZPass MA and Bay State Toll Authority with expected 75-85% recovery rate ($5,885-$6,670) within 60-90 day dispute resolution timeline.',
+
+    sections: [
+      {
+        title: 'Error Detection Methodology',
+        content: [
+          {
+            type: 'text',
+            value: 'Traditional toll invoice review focuses on total costs and obvious anomalies, missing systematic billing errors that appear legitimate in isolation. The AI detection engine employed multi-source validation logic to identify discrepancies:'
+          },
+          {
+            type: 'table',
+            headers: ['Validation Check', 'Data Sources Cross-Referenced', 'Errors Detected', 'Example'],
+            rows: [
+              ['Duplicate Charge Detection', 'Toll invoice × toll transaction log', '47 duplicates', 'Same plaza, same minute, charged twice'],
+              ['Maintenance Period Validation', 'Toll charges × shop work orders × GPS', '31 impossible charges', 'Vehicle in service bay, toll 40 miles away'],
+              ['PTO Period Validation', 'Toll charges × HR system × depot GPS', '28 impossible charges', 'Driver on vacation, vehicle parked, toll charged'],
+              ['Rate Classification Validation', 'Charged rate × vehicle registration × published toll schedule', '21 overcharges', 'Passenger vehicle charged commercial rate']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Each validation check operates independently, creating high-confidence error identification when multiple data sources corroborate the discrepancy. For example, a duplicate charge appears in both invoice and transaction log with identical timestamps but separate charge IDs, making it invisible to single-source auditing but obvious to cross-system correlation.'
+          }
+        ]
+      },
+      {
+        title: 'Category 1: Duplicate Charges (47 errors, $2,847)',
+        content: [
+          {
+            type: 'text',
+            value: 'The largest error category by count: Same toll plaza and time charged twice due to transponder reader malfunctions or data processing errors. Pattern analysis reveals concentration at specific location and time:'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '47', label: 'Total duplicate charge instances', color: 'var(--red-11)' },
+              { value: '$2,847', label: 'Total duplicate billing', color: 'var(--red-11)' },
+              { value: '68%', label: 'Occur at I-90 Exit 12 westbound', color: 'var(--amber-11)' },
+              { value: '7-9 AM', label: 'Peak occurrence time window', color: 'var(--amber-11)' },
+              { value: '12', label: 'Vehicles affected', color: 'var(--gray-11)' },
+              { value: '$60.57', label: 'Average duplicate charge amount', color: 'var(--gray-11)' }
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The concentration at I-90 Exit 12 westbound during 7-9 AM suggests a systematic issue with that specific toll reader equipment during high-volume periods. When transponders are read twice in quick succession (likely due to reader sensitivity or vehicle speed), the system generates two separate charge events rather than deduplicating them.'
+          },
+          {
+            type: 'table',
+            headers: ['Date', 'Vehicle', 'Plaza', 'Time', 'Charge 1', 'Charge 2', 'Total Duplicate', 'Evidence'],
+            rows: [
+              ['Oct 3, 2024', '#2847', 'I-90 Exit 12 WB', '7:42 AM', '$11.15', '$11.15', '$11.15', 'GPS shows single pass'],
+              ['Oct 8, 2024', '#1204', 'I-90 Exit 12 WB', '8:14 AM', '$11.15', '$11.15', '$11.15', 'GPS shows single pass'],
+              ['Oct 12, 2024', '#3401', 'I-90 Exit 12 WB', '7:58 AM', '$11.15', '$11.15', '$11.15', 'GPS shows single pass'],
+              ['Oct 15, 2024', '#2847', 'I-90 Exit 12 WB', '7:45 AM', '$11.15', '$11.15', '$11.15', 'GPS shows single pass'],
+              ['Oct 22, 2024', '#4122', 'I-90 Exit 12 WB', '8:07 AM', '$11.15', '$11.15', '$11.15', 'GPS shows single pass']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'GPS telematics data provides irrefutable evidence: Vehicle location logs show single passage through toll plaza at specified time with continuous speed (no stop-and-return pattern), confirming duplicate charge is billing error rather than legitimate two separate trips.'
+          }
+        ]
+      },
+      {
+        title: 'Category 2: Maintenance Period Charges (31 errors, $1,876)',
+        content: [
+          {
+            type: 'text',
+            value: 'Toll charges appearing during documented vehicle maintenance periods when shop GPS confirms vehicle was off-road in service bay:'
+          },
+          {
+            type: 'table',
+            headers: ['Date', 'Vehicle', 'Toll Charged', 'Amount', 'Actual Location (GPS)', 'Work Order #', 'Service Type'],
+            rows: [
+              ['Sep 14, 2024', '#1831', 'I-90 Exit 15 EB, 9:42 AM', '$11.15', 'Main Street Garage, Bay 3', 'WO-8847', 'Brake service'],
+              ['Sep 18, 2024', '#3782', 'Mass Pike Plaza 6, 2:17 PM', '$8.75', 'Main Street Garage, Bay 1', 'WO-8891', 'Transmission repair'],
+              ['Oct 2, 2024', '#2156', 'I-90 Exit 10 WB, 11:04 AM', '$11.15', 'Main Street Garage, Bay 5', 'WO-9124', 'Oil change + inspection'],
+              ['Oct 9, 2024', '#4509', 'Golden Gate Bridge NB, 3:38 PM', '$8.75', 'Main Street Garage, Bay 2', 'WO-9247', 'Engine diagnostic'],
+              ['Oct 24, 2024', '#1204', 'Bay Bridge WB, 8:52 AM', '$7.00', 'Main Street Garage, Bay 4', 'WO-9489', 'Tire replacement']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'These errors likely stem from transponder cloning, stolen transponders, or administrative cross-assignment where your transponder ID was incorrectly linked to another vehicle. The evidence package for dispute includes: (1) GPS location logs showing vehicle stationary at service facility during claimed toll time, (2) Work order with technician signature and time stamps, (3) Shop security camera footage (available for 8 of 31 cases), (4) Toll authority transaction details showing implausible scenarios (e.g., vehicle in Boston service bay while toll charged in San Francisco).'
+          }
+        ]
+      },
+      {
+        title: 'Category 3: PTO Period Charges (28 errors, $1,694)',
+        content: [
+          {
+            type: 'text',
+            value: 'Toll charges during verified driver paid time off periods when vehicle was confirmed parked in depot lot:'
+          },
+          {
+            type: 'table',
+            headers: ['Date Range', 'Driver', 'Vehicle', 'PTO Type', 'Toll Charges', 'Amount', 'Depot GPS Confirmation'],
+            rows: [
+              ['Sep 5-9, 2024', 'M. Johnson', '#1831', 'Vacation', '7 charges', '$78.05', 'Vehicle stationary entire period'],
+              ['Sep 20-22, 2024', 'R. Patel', '#2156', 'Personal days', '4 charges', '$44.60', 'Vehicle stationary entire period'],
+              ['Oct 1-5, 2024', 'K. Williams', '#3401', 'Vacation', '9 charges', '$100.35', 'Vehicle stationary entire period'],
+              ['Oct 14-18, 2024', 'L. Garcia', '#3782', 'Sick leave', '6 charges', '$66.90', 'Vehicle stationary entire period'],
+              ['Oct 28-30, 2024', 'A. Rodriguez', '#4509', 'Personal days', '2 charges', '$22.30', 'Vehicle stationary entire period']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Cross-reference logic: HR system shows approved PTO → Fleet management system shows vehicle unassigned during dates → GPS shows vehicle location = depot parking lot coordinates → Toll invoice shows charges during this period = impossible. High probability these are transponder ID errors where your account was charged for another vehicle\'s tolls due to data entry mistakes or system bugs. Dispute evidence package includes: HR PTO approval records, GPS location logs, Fleet assignment records showing "unassigned" status.'
+          }
+        ]
+      },
+      {
+        title: 'Category 4: Rate Misclassification (21 errors, $1,430)',
+        content: [
+          {
+            type: 'text',
+            value: 'Vehicles incorrectly charged at commercial peak rate when vehicle registration and published toll schedules indicate passenger rate should apply:'
+          },
+          {
+            type: 'table',
+            headers: ['Vehicle', 'Registration Class', 'Rate Charged', 'Correct Rate', 'Overcharge/Trip', 'Occurrences', 'Total Overcharge'],
+            rows: [
+              ['#2847 Ford Transit', 'Passenger', '$16.25 (commercial peak)', '$11.15 (passenger)', '$5.10', '8', '$40.80'],
+              ['#3891 Ford Transit', 'Passenger', '$16.25 (commercial peak)', '$11.15 (passenger)', '$5.10', '12', '$61.20'],
+              ['#1204 Ram ProMaster', 'Light commercial', '$16.25 (commercial peak)', '$11.15 (light commercial)', '$5.10', '6', '$30.60'],
+              ['#3401 Mercedes Sprinter', 'Passenger', '$16.25 (commercial peak)', '$11.15 (passenger)', '$5.10', '9', '$45.90'],
+              ['#4122 Ford Transit', 'Passenger', '$16.25 (commercial peak)', '$11.15 (passenger)', '$5.10', '7', '$35.70']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Rate misclassification errors occur when toll authority database has incorrect vehicle classification on file. Your Ford Transits are registered as passenger vehicles (GVWR <10,000 lbs, primary use non-commercial per registration), but toll system database shows them as commercial heavy, triggering highest rate tier. Dispute requires submitting vehicle registration certificates proving passenger classification. Massachusetts Turnpike Authority has published dispute resolution process for rate classification errors with 85% success rate when proper documentation is provided.'
+          }
+        ]
+      },
+      {
+        title: 'Dispute Success Probability and Recovery Timeline',
+        content: [
+          {
+            type: 'text',
+            value: 'Historical success rates for toll billing disputes by error category, based on industry data from 127 commercial fleet dispute submissions:'
+          },
+          {
+            type: 'table',
+            headers: ['Error Category', 'Dispute Success Rate', 'Avg Resolution Time', 'Your Recoverable Amount', 'Expected Recovery'],
+            rows: [
+              ['Duplicate charges with GPS proof', '92%', '45 days', '$2,847', '$2,619'],
+              ['Maintenance period with work orders', '78%', '60 days', '$1,876', '$1,463'],
+              ['PTO period with HR records', '68%', '75 days', '$1,694', '$1,152'],
+              ['Rate misclassification with registration', '85%', '90 days', '$1,430', '$1,216']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Weighted average expected recovery: $6,450 (82% of $7,847 total erroneous charges). Conservative estimate accounting for partial denials, documentation gaps, and administrative overhead. The AI-generated dispute packages significantly increase success probability vs. manual submissions by providing comprehensive, cross-referenced evidence that toll authorities can easily validate.'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '$7,847', label: 'Total erroneous charges identified', color: 'var(--red-11)' },
+              { value: '82%', label: 'Weighted avg expected recovery rate', color: 'var(--green-11)' },
+              { value: '$6,450', label: 'Expected recovered amount', color: 'var(--green-11)' },
+              { value: '60-90 days', label: 'Average dispute resolution time', color: 'var(--blue-11)' },
+              { value: '127', label: 'Individual dispute submissions required', color: 'var(--gray-11)' },
+              { value: '$1,397', label: 'Remaining unrecoverable (est)', color: 'var(--gray-11)' }
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Prevention and Ongoing Monitoring',
+        content: [
+          {
+            type: 'text',
+            value: 'Root cause analysis suggests these errors are ongoing and systematic rather than one-time anomalies. Without intervention, expect similar error rates to continue:'
+          },
+          {
+            type: 'list',
+            items: [
+              'Duplicate charges at I-90 Exit 12 WB appear to be equipment malfunction at toll plaza—not your issue to fix, but pattern suggests errors will continue until toll authority addresses reader calibration',
+              'Maintenance period charges likely stem from transponder ID cross-assignment in toll authority database—requires audit of your account transponder list vs. actual vehicle assignments',
+              'PTO period charges have same root cause as maintenance charges—transponder ID errors enabling other vehicles to charge to your account',
+              'Rate misclassification requires one-time database correction by toll authority using vehicle registration certificates—should be permanent fix once corrected',
+              'Monthly invoice review process currently catches zero of these errors because they appear as legitimate toll charges without cross-system validation'
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Recommendation: Implement monthly automated validation process using same AI cross-reference logic. Run toll invoice through multi-source validation checks (GPS, maintenance logs, PTO records, rate schedules) on 1st of each month. Flag errors immediately for dispute submission while evidence is fresh. Expected ongoing recovery: $13,000-$16,000 annually based on 6-month sample extrapolation.'
+          }
+        ]
+      }
+    ],
+
+    recommendations: [
+      {
+        title: 'Immediate: Submit Pre-Generated Dispute Packages',
+        description: 'AI has automatically compiled 127 individual dispute packages containing: Charge details (date, time, amount, plaza, vehicle), GPS evidence logs showing actual vehicle location at time of charge, Supporting documentation (work orders for maintenance charges, PTO records for vacation charges, vehicle registration for rate misclassification), Cross-reference summary explaining the discrepancy. These packages are formatted per E-ZPass MA and Bay State Toll Authority dispute submission requirements. Task: Review packages for accuracy (2 hours), submit via toll authority online dispute portal (6 hours for batch upload), track submissions in spreadsheet (1 hour setup). Total effort: 9 hours. Expected recovery: $6,450 within 60-90 days.',
+        impact: 'High - Recovers $6,450 (82% of erroneous charges)',
+        effort: 'Low - 9 hours administrative work'
+      },
+      {
+        title: 'Immediate: Audit Transponder ID Database',
+        description: 'Root cause of 59 errors (maintenance + PTO charges) is likely transponder ID cross-assignment where your account is being charged for other vehicles\' tolls. Request full transponder list from toll authority showing: Transponder ID, Associated vehicle (VIN or plate), Account status. Cross-reference against your fleet inventory to identify orphaned transponders, incorrect VINs, or duplicate assignments. Deactivate any transponders not matching active fleet vehicles. This is same issue as "ghost vehicles" but inverse—other vehicles ghosting onto your account. Expected finding: 3-6 transponders incorrectly assigned. Effort: 4 hours for data export, cross-reference, and correction requests.',
+        impact: 'High - Prevents $3,570 annual recurring errors',
+        effort: 'Low - 4 hours audit work'
+      },
+      {
+        title: 'Short-term: Correct Vehicle Rate Classifications',
+        description: 'Submit vehicle registration certificates to toll authority for 5 vehicles being charged commercial rates despite passenger classification (Ford Transits #2847, #3891, #4122, Mercedes Sprinter #3401, Ram ProMaster #1204). Request database correction to passenger rate tier. Include in submission: Vehicle registration showing GVWR <10,000 lbs and passenger use classification, Historical toll charge examples showing commercial rate being applied, Request for retroactive credit on past 6 months of overcharges plus database correction going forward. Expected outcome: $1,216 retroactive credit + $2,860/year ongoing savings from correct rate application. Effort: 3 hours documentation compilation and submission.',
+        impact: 'High - Recovers $1,216 + prevents $2,860 annual overcharges',
+        effort: 'Low - 3 hours documentation work'
+      },
+      {
+        title: 'Medium-term: Implement Monthly Automated Billing Validation',
+        description: 'Deploy same AI cross-reference validation logic as ongoing monthly process: Export toll invoice on 1st of month, Run through automated validation checks (GPS, maintenance, PTO, rate schedule), Generate dispute packages for any errors detected, Submit disputes within 15 days while evidence is fresh. Build into existing fleet management workflow as 2-hour monthly task assigned to fleet coordinator. Requires: One-time IT setup to automate data exports and validation logic (12 hours), monthly administration (2 hours). Based on 6-month error rate, expect to identify and recover $1,300/month ongoing ($15,600 annually). As toll authorities see consistent dispute submissions, error rates typically decrease 40-60% over 12 months due to root cause corrections.',
+        impact: 'Very High - Ongoing $15,600 annual recovery',
+        effort: 'Medium - 12 hours setup + 2 hours/month ongoing'
+      }
+    ],
+
+    roiAnalysis: {
+      currentCost: '$15,694/year (annualized billing error rate)',
+      savings: '$6,450 (immediate recovery) + $15,600/year (ongoing)',
+      paybackPeriod: 'Immediate (recovery exceeds implementation cost)',
+      implementationCost: '$2,340',
+      roi: '276% (year 1), 667% (ongoing)',
+      details: 'Immediate recovery opportunity (Recommendations 1-3): 16 hours total administrative effort ($1,040 labor cost) to submit disputes, audit transponders, and correct rate classifications. Expected recovery: $6,450 immediate + $2,860/year ongoing rate correction savings = $9,310 first-year benefit. ROI: 895% year one. Ongoing prevention system (Recommendation 4): 12 hours initial IT setup ($1,140) + $1,560/year ongoing administration (2 hours/month × $65/hr). Expected ongoing recovery: $15,600/year (monthly validation and dispute of new errors). Net ongoing: $14,040/year savings. ROI: 1,231% year one (includes immediate recovery), 900% ongoing years 2-5. Five-year cumulative: $62,610 recovered on $9,380 total investment (setup + 5 years administration) = 667% total ROI. Additionally, as you establish pattern of consistent dispute submissions with strong documentation, toll authorities typically prioritize fixing systemic issues—expected 40-60% reduction in error rates by year 2, meaning ongoing recovery needs decline as prevention improves (virtuous cycle). Conservative 5-year projection assumes 50% error rate reduction by year 3, yielding $71,200 total recovered charges.'
+    }
+  },
+
+  // ANOMALIES PAGE INSIGHTS (5 new cards)
+
+  'transponder-cloning-4421': {
+    id: 'transponder-cloning-4421',
+    title: 'Transponder Cloning: Vehicle #4421 Fraud',
+    subtitle: 'Impossible toll pattern detected for Vehicle #4421 with 47 simultaneous plaza crossings over 30 days, indicating transponder cloning fraud costing $3,847/month.',
+    badge: 'FRAUD ALERT',
+    badgeColor: 'red',
+    accentColor: 'var(--red-9)',
+    gradientStart: 'rgba(239, 68, 68, 0.05)',
+    gradientEnd: 'rgba(220, 38, 38, 0.08)',
+    borderColor: 'var(--red-7)',
+
+    keyMetrics: [
+      { label: 'Monthly Fraud Cost', value: '$3,847', color: 'var(--red-11)' },
+      { label: 'Impossible Crossings', value: '47', color: 'var(--red-11)' },
+      { label: 'Detection Period', value: '30 days', color: 'var(--gray-11)' },
+      { label: 'Confidence Level', value: '100%', color: 'var(--red-11)' }
+    ],
+
+    executiveSummary: 'Physics-based anomaly detection identified a statistically impossible toll pattern for Vehicle #4421 (2019 Ford F-150, Plate CA-8XYZ123): 47 instances over the past 30 days where the vehicle was charged tolls at multiple plaza locations simultaneously, or with time gaps physically impossible given distance and posted speed limits. Example: October 15 at 8:42 AM charged at Golden Gate Bridge southbound AND Bay Bridge westbound (14 miles apart) within the same minute. GPS telematics confirms vehicle was actually at your San Jose depot during 34 of these 47 fraudulent charges. This pattern is a hallmark of transponder cloning—where criminals copy your transponder RF signature to another vehicle, causing your account to be billed for their toll usage. Total verified fraudulent charges: $3,847 in past 30 days ($46,164 annualized). Immediate action required to deactivate compromised transponder and dispute charges.',
+
+    sections: [
+      {
+        title: 'Physics-Based Fraud Detection Method',
+        content: [
+          {
+            type: 'text',
+            value: 'The AI fraud detection system identified this cloning pattern through multi-dimensional impossibility analysis that would be invisible to human invoice review:'
+          },
+          {
+            type: 'table',
+            headers: ['Detection Method', 'Data Sources', 'Anomalies Found', 'Physical Constraint Violated'],
+            rows: [
+              ['Simultaneous location', 'Toll timestamps × GPS telematry', '13 instances', 'Cannot be in two places at once'],
+              ['Impossible travel time', 'Sequential toll timestamps × distance × speed', '21 instances', 'Would require 180+ MPH between plazas'],
+              ['GPS contradiction', 'Toll location × actual GPS coordinates', '34 instances', 'Vehicle stationary at depot while toll charged 40+ miles away'],
+              ['Transponder signal analysis', 'RF signature variance across charges', '47 instances', 'Signal strength patterns inconsistent with single device']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Each detection method operates independently, creating 100% confidence when multiple physical impossibilities converge on the same charge. For example, October 15 at 8:42 AM charge shows: (1) Toll at Golden Gate AND Bay Bridge simultaneously, (2) GPS logs vehicle at San Jose depot, (3) Prior and subsequent tolls also at depot, (4) RF signal strength suggests two different transponder devices.'
+          }
+        ]
+      },
+      {
+        title: 'Detailed Fraud Event Analysis',
+        content: [
+          {
+            type: 'text',
+            value: 'Sample of impossible toll events from the past 30 days with physics-based proof of fraud:'
+          },
+          {
+            type: 'table',
+            headers: ['Date', 'Time', 'Fraudulent Toll Location', 'Amount', 'Actual Vehicle Location (GPS)', 'Physical Impossibility'],
+            rows: [
+              ['Oct 3, 2024', '7:18 AM', 'I-90 Exit 12 WB, Boston', '$11.15', 'San Jose depot parking lot', '2,847 miles away'],
+              ['Oct 3, 2024', '7:22 AM', 'Mass Pike Plaza 6, Boston', '$8.75', 'San Jose depot parking lot', '4 minutes, 12 miles - requires 180 MPH'],
+              ['Oct 8, 2024', '2:47 PM', 'Golden Gate Bridge SB', '$8.75', 'San Jose depot parking lot', 'Vehicle stationary 58 miles away'],
+              ['Oct 15, 2024', '8:42 AM', 'Golden Gate + Bay Bridge', '$16.50', 'San Jose depot parking lot', 'Two locations simultaneously'],
+              ['Oct 22, 2024', '9:14 AM', 'I-880 Express, Oakland', '$6.50', 'Main Street Garage (maintenance)', 'Work order confirms vehicle in service bay']
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The pattern reveals two distinct cloned transponders in operation: (1) Clone #1 operating primarily in Boston area (I-90, Mass Pike) - 26 fraudulent charges totaling $1,847, (2) Clone #2 operating in Bay Area (Golden Gate, Bay Bridge, I-880) - 21 fraudulent charges totaling $2,000. Your legitimate vehicle has been charged $0 in actual tolls during this period—it has been parked at depot or in maintenance the entire month.'
+          }
+        ]
+      },
+      {
+        title: 'Financial Impact and Pattern Timeline',
+        content: [
+          {
+            type: 'text',
+            value: 'The fraud escalated rapidly over the past 30 days, suggesting recent transponder cloning event:'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '$0', label: 'Fraudulent charges week 1', color: 'var(--green-11)' },
+              { value: '$347', label: 'Fraudulent charges week 2', color: 'var(--amber-11)' },
+              { value: '$1,650', label: 'Fraudulent charges week 3', color: 'var(--red-11)' },
+              { value: '$1,850', label: 'Fraudulent charges week 4', color: 'var(--red-11)' },
+              { value: '2.3x', label: 'Weekly escalation rate', color: 'var(--red-11)' },
+              { value: '$46,164', label: 'Annualized fraud projection', color: 'var(--red-11)' }
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The sudden appearance and rapid escalation starting October 1 suggests transponder was cloned in late September, likely through: (1) RF signal interception at toll plaza by criminal with cloning equipment, (2) Stolen or photographed transponder that was copied, (3) Data breach at toll authority or fleet management provider. The two geographic clone locations (Boston and Bay Area) suggest organized fraud ring distributing cloned transponders to multiple criminal vehicles.'
+          }
+        ]
+      },
+      {
+        title: 'Root Cause: How Transponder Cloning Works',
+        content: [
+          {
+            type: 'text',
+            value: 'Transponder cloning is a growing fleet fraud vector exploiting RFID technology vulnerabilities:'
+          },
+          {
+            type: 'list',
+            items: [
+              'Fleet transponders use RFID chips that broadcast unique ID codes when passing toll readers—these signals can be intercepted and copied using $200-500 cloning equipment available online',
+              'Criminals position cloning equipment near toll plazas to capture transponder signals from passing vehicles, then program blank RFID chips with stolen IDs',
+              'Cloned transponders function identically to originals—toll system cannot distinguish between legitimate device and clone',
+              'Criminals install cloned transponders in their own vehicles, causing all their toll usage to bill to your account',
+              'Fraud is difficult to detect through normal invoice review because individual charges appear legitimate—only cross-referencing with GPS reveals the impossibility',
+              'Organized fraud rings often clone hundreds of transponders and distribute them across multiple vehicles and regions to maximize exploitation before detection'
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Your Vehicle #4421 transponder was likely cloned at a toll plaza during legitimate use in late September. The criminals then distributed copies to at least two vehicles operating in Boston and Bay Area, exploiting your account for 30 days before AI detection.'
+          }
+        ]
+      },
+      {
+        title: 'Industry Prevalence and Benchmarking',
+        content: [
+          {
+            type: 'text',
+            value: 'Transponder cloning fraud has increased 340% in commercial fleets over the past 18 months according to International Bridge Tunnel and Turnpike Association data:'
+          },
+          {
+            type: 'metric-grid',
+            metrics: [
+              { value: '8.2%', label: 'Fleets experiencing cloning fraud annually', color: 'var(--red-11)' },
+              { value: '$37,400', label: 'Average fraud amount before detection', color: 'var(--red-11)' },
+              { value: '127 days', label: 'Average time to manual detection', color: 'var(--amber-11)' },
+              { value: '18 days', label: 'Average time to AI detection', color: 'var(--green-11)' },
+              { value: '23%', label: 'Toll authority dispute success rate (manual)', color: 'var(--red-11)' },
+              { value: '89%', label: 'Toll authority dispute success rate (GPS evidence)', color: 'var(--green-11)' }
+            ]
+          },
+          {
+            type: 'text',
+            value: 'Your situation (detected at 30 days, $3,847 loss) is better than industry average (127 days, $37,400 average loss) due to AI monitoring. However, without GPS evidence, most fleets fail to prove fraud to toll authorities and cannot recover charges—only 23% dispute success rate for manual detection vs. 89% with GPS proof.'
+          }
+        ]
+      },
+      {
+        title: 'Legal and Dispute Process',
+        content: [
+          {
+            type: 'text',
+            value: 'Transponder cloning is federal fraud (18 U.S. Code § 1029 - Access Device Fraud) carrying 10-15 year prison sentences. Recovery process requires specific evidence and procedures:'
+          },
+          {
+            type: 'list',
+            items: [
+              'File fraud report with toll authority fraud investigation unit (E-ZPass MA, Bay State Toll Authority) with GPS evidence package proving vehicle was elsewhere during charges',
+              'Request law enforcement report—toll authority fraud units work with state police to investigate organized cloning rings',
+              'Submit formal dispute for all 47 fraudulent charges with documentation: GPS logs, work orders, depot security camera footage (if available)',
+              'Request immediate transponder deactivation and reissuance with new ID to prevent further fraud',
+              'Expect 60-90 day investigation period with 85-90% charge reversal success rate when GPS evidence is strong',
+              'Toll authorities prioritize cloning cases because they indicate organized fraud rings affecting multiple accounts—your evidence may help identify pattern affecting other fleets'
+            ]
+          },
+          {
+            type: 'text',
+            value: 'The AI has automatically compiled a dispute package containing: (1) All 47 fraudulent charges with timestamps, amounts, locations, (2) GPS logs proving vehicle was elsewhere for each charge, (3) Work orders for the 13 charges during maintenance periods, (4) Depot security logs showing vehicle parked during 34 charges, (5) Physical impossibility analysis showing travel speeds exceeding 180 MPH. This package is ready for immediate submission and meets toll authority fraud investigation requirements.'
+          }
+        ]
+      }
+    ],
+
+    recommendations: [
+      {
+        title: 'URGENT: Deactivate Compromised Transponder Immediately',
+        description: 'Contact toll account provider today (E-ZPass MA: 877-627-7745, Bay State: 888-844-4310) and request emergency transponder deactivation for Vehicle #4421. Explain fraud situation, reference 47 impossible charges detected. Request new transponder with different ID to be issued. Stop all toll usage with current device immediately—treat as compromised. Expected timeline: Deactivation within 24 hours, new transponder mailed within 3-5 business days. Cost: $0 (fraud replacement), potential $25 rush fee if expedited shipping needed.',
+        impact: 'Critical - Stops ongoing $130/day fraud bleed',
+        effort: 'Low - 30 minute phone call + documentation'
+      },
+      {
+        title: 'Immediate: Submit Fraud Dispute Package with GPS Evidence',
+        description: 'File formal fraud report with toll authority using AI-generated dispute package. Package includes: (1) Fraud affidavit documenting cloning, (2) GPS evidence for all 47 charges showing vehicle was elsewhere, (3) Work orders and depot logs, (4) Physical impossibility analysis, (5) Request for full charge reversal ($3,847) and law enforcement referral. Submit via certified mail + online fraud portal for both jurisdictions (Massachusetts and California). Expected outcome: 85-90% charge reversal ($3,270-$3,462 recovery) within 60-90 days. Effort: 4 hours to review documentation, complete affidavits, submit packages.',
+        impact: 'High - Recovers $3,270-$3,462 (85-90% of fraud)',
+        effort: 'Low - 4 hours documentation work'
+      },
+      {
+        title: 'Immediate: File Law Enforcement Report',
+        description: 'Contact local police and/or state police fraud units to file criminal report for transponder cloning (federal fraud statute 18 USC 1029). Provide toll authority fraud investigation contact info so they can coordinate. While criminal investigation rarely leads to individual recovery, it creates official record that: (1) Strengthens your civil dispute with toll authority, (2) May reveal organized ring affecting other fleets, (3) Protects you if toll authority alleges your negligence enabled fraud, (4) Required by some insurance policies for fraud claims. Expected effort: 2-hour police station visit or online report filing.',
+        impact: 'Medium - Strengthens dispute case and fraud documentation',
+        effort: 'Low - 2 hour police report process'
+      },
+      {
+        title: 'Short-term: Audit Entire Fleet for Cloning Indicators',
+        description: 'The criminals who cloned Vehicle #4421 may have cloned other transponders in your fleet. Run same AI analysis across all 250 vehicles looking for physics-based impossibilities: simultaneous locations, impossible travel times, GPS contradictions. Flag any suspicious patterns for investigation. Industry data shows cloning typically affects 3-8 vehicles per fleet when one is discovered (criminals clone multiple transponders during same operation). Expected finding: 2-5 additional cloned transponders. Effort: AI analysis runs automatically (1 hour to configure), 2-4 hours to review findings and investigate flagged vehicles.',
+        impact: 'High - Identifies additional hidden fraud before escalation',
+        effort: 'Medium - 3-5 hours audit work'
+      },
+      {
+        title: 'Medium-term: Implement Enhanced Transponder Security',
+        description: 'Upgrade to next-generation encrypted transponders that cannot be cloned using basic RF interception. Options: (1) E-ZPass Flex devices with rolling code encryption ($40/unit, 99.9% clone-resistant), (2) Mobile app-based toll payment (no physical transponder to clone, license plate backup), (3) Sticker transponders mounted inside windshield (harder to access/copy vs. external hang-tag style). For 250-vehicle fleet: $10,000 hardware upgrade + $2,500 installation labor. Payback: <3 months if prevents single cloning incident. Industry trend: 67% of large fleets migrating to encrypted transponders by end of 2025 due to cloning fraud epidemic.',
+        impact: 'Very High - Eliminates cloning vulnerability permanently',
+        effort: 'High - Capital investment + fleet-wide device replacement'
+      }
+    ],
+
+    roiAnalysis: {
+      currentCost: '$46,164/year (projected if fraud continues)',
+      savings: '$3,270-$3,462 (immediate recovery) + $46,164/year (prevention)',
+      paybackPeriod: 'Immediate',
+      implementationCost: '$1,800-$12,500',
+      roi: '271% - 2,734%',
+      details: 'Immediate actions (Recommendations 1-3): Deactivate transponder ($0-25), file disputes ($260 labor), file police report ($130 labor) = $390-415 total investment. Expected recovery: $3,270-$3,462 (85-90% of fraudulent charges). ROI: 788-835% immediate. Fleet audit (Recommendation 4): $390 labor cost, expected to identify 2-5 additional cloned transponders averaging $2,400/month fraud each = $57,600-$144,000 additional annual fraud prevention. ROI: 14,769% - 36,923%. Enhanced transponder security (Recommendation 5): $12,500 full fleet upgrade prevents future cloning fraud entirely. Based on 8.2% annual fleet cloning rate and $37,400 average incident cost, expected value of prevention = $76,788 over 5 years. ROI: 614% over 5 years. Conservative total: Spend $13,305 (all recommendations), recover/prevent $52,734-$51,062 year one, yielding 296% - 384% ROI. Five-year cumulative: $142,554 benefit on $13,305 investment = 1,071% total ROI.'
+    }
+  },
+
+  'after-hours-usage': {
+    title: 'Unauthorized After-Hours Vehicle Use: 5 Drivers',
+    summary: 'Five vehicles consistently using tolls between 2:00-4:30 AM, outside company operating hours (6 AM-10 PM policy). Pattern shows 67 after-hours toll events past 60 days, primarily Thursday-Saturday nights. Total unauthorized toll charges: $892 past 60 days. GPS telematics confirm vehicles leaving company lot 1:45-2:30 AM, returning 4:30-5:15 AM. Moonlighting for ride-share services suspected. HR investigation opened for policy violation.',
+    category: 'Policy Violation',
+    impact: 'High',
+    confidence: '98%',
+    detectionMethod: 'AI time-based pattern analysis + GPS telematics correlation + operating hours policy mapping',
+    discoveredDate: 'November 8, 2024',
+    affectedAssets: [
+      { type: 'Vehicle', id: '#3421 - 2021 Ford Transit', plate: 'CA-9TRN421', driver: 'Lisa Chen' },
+      { type: 'Vehicle', id: '#2847 - 2019 Chevy Express', plate: 'CA-4EXP847', driver: 'Mike Patterson' },
+      { type: 'Vehicle', id: '#4201 - 2020 Ram ProMaster', plate: 'CA-2PM4201', driver: 'David Kim' },
+      { type: 'Vehicle', id: '#1893 - 2018 Ford Transit', plate: 'CA-7TRN893', driver: 'Carlos Ruiz' },
+      { type: 'Vehicle', id: '#3156 - 2022 Mercedes Sprinter', plate: 'CA-1SPR156', driver: 'Amanda Foster' }
+    ],
+    timeline: [
+      { date: 'Aug 2024', event: 'Pattern begins - sporadic after-hours toll usage detected' },
+      { date: 'Sep 2024', event: 'Frequency increases to 2-3 nights per week' },
+      { date: 'Oct 15, 2024', event: 'AI flags recurring late-night toll pattern across 5 specific vehicles' },
+      { date: 'Oct 22, 2024', event: 'GPS telematics analysis confirms vehicles leaving secured lot after midnight' },
+      { date: 'Nov 1, 2024', event: 'Security footage review: drivers arriving for 6 AM shift in personal vehicles (not company vehicles)' },
+      { date: 'Nov 8, 2024', event: 'Pattern validated - HR investigation opened' }
+    ],
+    keyMetrics: {
+      totalIncidents: { value: '67', label: 'After-hours toll events (past 60 days)' },
+      cost: { value: '$892', label: 'Unauthorized toll charges (60 days)' },
+      vehicles: { value: '5', label: 'Vehicles involved in pattern' },
+      projectedAnnual: { value: '$5,352', label: 'Annualized unauthorized toll cost if unchecked' }
+    },
+    detailedFindings: {
+      patternBreakdown: 'Lisa Chen (Vehicle #3421): 18 after-hours events, primarily Fridays 2:15-4:30 AM. Pattern: Golden Gate Bridge 2:47 AM ($7), Bay Bridge 3:15 AM ($6). Route suggests San Francisco nightlife → East Bay residential runs. Mike Patterson (Vehicle #2847): 15 events, Thursdays-Saturdays 2:00-3:45 AM. Route pattern: Oakland → Berkeley → San Jose corridor via I-880 tolls. David Kim (Vehicle #4201): 14 events, Friday-Saturday nights 1:45-4:15 AM. Consistent Peninsula routes via CA-92 Bridge tolls. Carlos Ruiz (Vehicle #1893): 12 events, weekend nights 2:30-5:00 AM. Pattern includes multiple toll plaza crossings suggesting ride-share pickups. Amanda Foster (Vehicle #3156): 8 events, sporadic schedule but all between 2-4 AM timeframe.',
+      operatingHoursPolicy: 'Company policy explicitly states: "Fleet vehicles authorized for use Monday-Sunday 6:00 AM to 10:00 PM only. After-hours usage requires advance written authorization from Fleet Manager." No authorization records exist for any of the 67 flagged incidents. Employee handbook section 4.2 prohibits personal use and moonlighting with company assets.',
+      telematicsEvidence: 'GPS timestamp correlation: Vehicle #3421 left secured company lot 10/27/24 at 2:12 AM (geofence exit logged), tolls incurred 2:47 AM and 3:15 AM, returned to lot 4:52 AM. Odometer shows 47.3 miles traveled. No dispatch orders, no customer deliveries, no maintenance appointments. Pattern repeated across all 5 vehicles. Security camera footage: All 5 drivers arrived for scheduled 6 AM shifts in personal vehicles on dates matching after-hours company vehicle usage - strong evidence vehicles were returned before shift and drivers drove personal cars to work to avoid detection.',
+      rideShareHypothesis: 'AI cross-referenced toll timestamps with known ride-share surge pricing windows in SF Bay Area. 73% of after-hours toll events occurred during peak ride-share demand periods (bar close 2-3 AM, late-night airport runs 3-5 AM). Routes match typical Uber/Lyft hot zones: SF Marina/Mission → East Bay, SFO Airport runs, Oakland nightlife districts. Commercial insurance implications: Company fleet policy does not cover ride-share/TNC usage - drivers exposed company to massive liability risk.'
+    },
+    businessContext: 'This represents a serious policy violation with multiple risk dimensions beyond the $892 direct toll cost. Insurance liability: If any after-hours incident occurred while moonlighting for ride-share, company commercial auto policy would likely deny coverage, exposing company to unlimited liability for damages, injuries, or fatalities. Employee handbook violations: Moonlighting with company assets is terminable offense per Section 8.4. Theft of services: Unauthorized use of company fuel, maintenance, depreciation = estimated $2,400 additional cost beyond tolls. Reputational risk: Company-branded vehicles operating as unlicensed ride-share presents brand risk. Legal exposure: Ride-share without proper TNC licensing, background checks, insurance.',
+    rootCause: {
+      primary: 'Inadequate after-hours vehicle security controls',
+      contributing: [
+        'Key/transponder access not restricted to authorized hours - drivers retain 24/7 vehicle access',
+        'No real-time GPS geofencing alerts configured - vehicles can exit lot without triggering immediate notification',
+        'Security camera footage not routinely monitored - lot exit/entry events not reviewed unless incident occurs',
+        'Lack of telematics integration with payroll/shift scheduling - system cannot auto-flag vehicle usage outside assigned shift times',
+        'No enforcement of personal vehicle parking requirement - drivers not required to park personal cars on-site during shifts'
+      ]
+    },
+    recommendations: [
+      {
+        title: '1. Immediate: Revoke after-hours vehicle access',
+        description: 'HR and Fleet Manager to meet with all 5 drivers individually. Collect vehicle keys/fobs immediately. Reassign vehicles to other drivers while investigation proceeds. Require written explanation of after-hours usage. Potential outcomes: Policy violation warning (first offense), suspension pending investigation, or termination if moonlighting confirmed.',
+        priority: 'Immediate',
+        effort: '2 hours (HR meetings)',
+        impact: 'Stops ongoing unauthorized usage immediately',
+        timeline: 'Within 24 hours'
+      },
+      {
+        title: '2. Fleet-wide: Implement after-hours key lockbox system',
+        description: 'Install electronic key lockbox system (e.g., KeyTrak, Morse Watchmans) that requires manager approval code for after-hours key checkout. Keys physically inaccessible outside operating hours without logged authorization. Biometric or badge-based access creates audit trail of who accessed which keys when. Integrates with access control system.',
+        priority: 'High',
+        effort: '$8,500 for 70-key lockbox system + $1,200 installation',
+        impact: 'Eliminates unauthorized after-hours access fleet-wide',
+        timeline: '2-week implementation'
+      },
+      {
+        title: '3. Technology: GPS geofencing real-time alerts',
+        description: 'Configure telematics system (appears to be Verizon Connect or Geotab) to send SMS/email alerts when any vehicle exits secured lot outside authorized hours. Alerts go to Fleet Manager and Security simultaneously. Requires geofence definition around company lot + after-hours alert rule in telematics platform. Zero additional hardware cost (uses existing GPS).',
+        priority: 'High',
+        effort: '4 hours configuration + $0 cost (uses existing telematics)',
+        impact: 'Real-time detection and intervention capability',
+        timeline: '1 week'
+      },
+      {
+        title: '4. Policy: Update employee handbook and require acknowledgment',
+        description: 'Strengthen Section 4.2 language to explicitly prohibit ride-share/TNC usage, clarify that after-hours usage without authorization is terminable offense, add liquidated damages clause ($5,000 penalty for unauthorized commercial usage). Require all drivers to re-sign acknowledgment of updated policy. Distribute memo explaining new enforcement mechanisms.',
+        priority: 'Medium',
+        effort: '8 hours (legal review + drafting)',
+        impact: 'Legal clarity for future enforcement actions',
+        timeline: '2 weeks'
+      },
+      {
+        title: '5. Audit: Review all drivers for similar patterns',
+        description: 'Expand AI analysis to full 67-vehicle fleet across past 12 months. Flag any after-hours toll usage, cross-reference with GPS, identify any additional violators. Generate report ranking drivers by after-hours activity frequency. Estimated to identify 2-4 additional drivers with sporadic violations.',
+        priority: 'Medium',
+        effort: '12 hours analysis',
+        impact: 'Comprehensive detection of all policy violators',
+        timeline: '1 week'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$5,352/year (unauthorized tolls if pattern continues) + $14,600/year (est. fuel, maintenance, depreciation theft) + $unknown insurance liability exposure',
+      savings: '$19,952/year recurring cost elimination + liability risk mitigation',
+      paybackPeriod: '4.8 months',
+      implementationCost: '$9,700 (key lockbox) + $2,400 (labor for policies, training, audits) = $12,100',
+      roi: '165% year one, 824% over 5 years',
+      details: 'Direct ROI: Eliminate $5,352/year toll waste + $14,600/year fuel/maintenance/depreciation theft = $19,952/year benefit against $12,100 investment = 165% year-one ROI. Insurance risk mitigation: Average ride-share accident bodily injury claim: $380,000. Probability of accident over 12-month period with 5 vehicles operating unauthorized 60+ nights = 8.7% based on actuarial data. Expected value of insurance risk = $33,060 annual exposure eliminated. Including risk mitigation: Total annual benefit = $53,012, yielding 438% year-one ROI. Long-term: Over 5 years, prevent $265,060 in costs/risks for $12,100 investment = 2,190% total return.'
+    }
+  },
+
+  'duplicate-transponder-registration': {
+    title: 'Duplicate Transponder Registration: 3 VINs with Multiple Active IDs',
+    summary: 'Three vehicles registered with multiple active transponder IDs simultaneously - administrative error or potential fraud setup. Total duplicate charge exposure: $2,340 over past 4 months where tolls billed to multiple accounts for same crossing. Requires immediate transponder audit, deactivation of duplicates, and implementation of single-transponder-per-VIN policy.',
+    category: 'Administrative Error & Fraud Risk',
+    impact: 'Medium',
+    confidence: '100%',
+    detectionMethod: 'AI VIN-to-transponder mapping analysis + billing system cross-reference',
+    discoveredDate: 'November 10, 2024',
+    affectedAssets: [
+      { type: 'Vehicle #2847', vin: '1FTFW1E52LKE24891', plate: 'CA-8TRK847', transponders: 'E-ZPass #8847-2401-9982 + #8847-3309-7721' },
+      { type: 'Vehicle #4201', vin: '3C6TRVDG5ME567234', plate: 'CA-5RAM201', transponders: '#8847-4201-5563 (company account) + #8847-4298-1147 (personal account - David Kim)' },
+      { type: 'Vehicle #1556', vin: '1GCVKREC4FZ234567', plate: 'CA-2CHV556', transponders: '#8847-1556-8821 + #8847-1598-4429 + #8847-9104-3381 (THREE active)' }
+    ],
+    timeline: [
+      { date: 'Aug 2024', event: 'Vehicle #2847 transponder malfunctioned - replacement transponder issued' },
+      { date: 'Aug 15, 2024', event: 'Replacement transponder activated BUT old transponder never deactivated in system' },
+      { date: 'Sep 2024', event: 'Driver David Kim (Vehicle #4201) enrolls personal E-ZPass account using company vehicle VIN' },
+      { date: 'Oct 2024', event: 'AI billing analysis detects duplicate charges - same plaza, same timestamp, two transponder IDs' },
+      { date: 'Nov 10, 2024', event: 'Full fleet VIN audit reveals Vehicle #1556 has THREE active transponders from historical admin errors' }
+    ],
+    keyMetrics: {
+      vehiclesAffected: { value: '3', label: 'Vehicles with duplicate transponders' },
+      totalTransponders: { value: '7', label: 'Active transponders (should be 3)' },
+      duplicateCharges: { value: '$2,340', label: '4-month exposure from duplicate billing' },
+      accountFees: { value: '$168/year', label: 'Unnecessary account maintenance fees (4 extra transponders × $42/year)' }
+    },
+    detailedFindings: {
+      vehicle2847Analysis: 'Original transponder #8847-2401-9982 issued April 2022. August 2024: Driver reported transponder not reading at toll plazas. Fleet admin ordered replacement transponder #8847-3309-7721, activated August 15, 2024. Admin process failure: Old transponder should have been marked "lost/stolen" and deactivated in E-ZPass system. Instead, remained active. Result: Both transponders billing to company account. September-October 2024: 23 toll crossings where BOTH transponders charged for same vehicle passage (within 2-second timestamp window). Duplicate charges totaled $847 over 2-month period. Old transponder still physically in vehicle - driver unaware both were active.',
+      vehicle4201Analysis: 'Company transponder #8847-4201-5563 issued to Vehicle #4201, assigned to driver David Kim, billing to company account. September 12, 2024: Kim enrolled personal E-ZPass account online, used company vehicle VIN 3C6TRVDG5ME567234 to register personal transponder #8847-4298-1147. Personal account bills to Kim\'s home address. Unclear intent: (a) Kim attempting to hide personal toll usage by routing personal trips through personal account, or (b) Kim unaware VIN was company vehicle, or (c) Kim intentionally setting up dual-billing scheme. September-November: Company transponder used for 89% of trips, personal transponder used for 11% of trips (primarily evening/weekend). Personal account billed $456, company account billed $3,201 same period. Analysis shows personal transponder usage correlates with trips near Kim\'s residential neighborhood - suggests personal errand usage being hidden from company reporting.',
+      vehicle1556Analysis: 'Historical admin nightmare. Vehicle #1556 (2015 Chevy 2500HD) has THREE simultaneously active transponders. Transponder timeline: (1) Original #8847-1556-8821 issued 2016. (2) January 2019 replacement #8847-1598-4429 issued when driver reported lost transponder, but original never deactivated. (3) July 2021 another replacement #8847-9104-3381 issued during fleet-wide transponder upgrade project, but prior two never deactivated. Current state: All three transponders billing to company account. Past 4 months: 67 toll crossings generated 134 total billing events (most crossings charged twice, some charged three times). Duplicate/triplicate charge exposure: $1,037 over 4 months. This vehicle alone represents $3,111 annual duplicate billing exposure if uncorrected.',
+      systemicProblem: 'Root cause: No automated transponder lifecycle management. When replacement transponders issued, admin manually activates new but doesn\'t deactivate old in E-ZPass portal. No reconciliation process matching VINs to active transponder counts. No alerts when single VIN has >1 active transponder. Fleet has grown from 40 vehicles (2015) to 67 vehicles (2024) but same manual admin process - scale revealed the gaps.'
+    },
+    businessContext: 'Beyond immediate duplicate charge waste ($2,340 past 4 months = $7,020/year run rate), this presents control weaknesses with fraud implications. Vehicle #4201 scenario (driver enrolling personal transponder on company VIN) is a fraud vector: Driver could systematically route personal usage through personal account to hide from company, while company pays for business usage. If scaled across fleet, financial exposure significant. Additionally, accounting complexity: CFO reconciling toll invoices against known vehicle count finds discrepancies, wastes finance team time investigating "ghost charges" that are actually duplicate transponders. IRS mileage reporting: If personal transponder usage not captured in company telematics, personal miles claimed as business miles for tax purposes creates tax compliance risk.',
+    rootCause: {
+      primary: 'No automated transponder lifecycle management system',
+      contributing: [
+        'Manual activation/deactivation process prone to human error - admin activates new, forgets to deactivate old',
+        'No system validation preventing multiple transponders per VIN - E-ZPass allows unlimited transponders per account',
+        'Lack of regular VIN-to-transponder reconciliation - no monthly audit comparing fleet inventory to active transponder list',
+        'No policy prohibiting drivers from enrolling personal E-ZPass accounts using company vehicle VINs',
+        'Replacement transponder process lacks "old transponder return" requirement - drivers not required to physically return malfunctioning transponders'
+      ]
+    },
+    recommendations: [
+      {
+        title: '1. Immediate: Audit and deactivate duplicate transponders',
+        description: 'Fleet admin to log into E-ZPass account, pull full transponder roster, cross-reference against current 67-vehicle fleet inventory by VIN. Deactivate all duplicate transponders immediately. For Vehicle #1556, keep only the newest transponder #8847-9104-3381, deactivate the two older ones. For Vehicle #2847, keep replacement #8847-3309-7721, deactivate original #8847-2401-9982. For Vehicle #4201, deactivate personal transponder #8847-4298-1147 (enrolled by David Kim), investigate Kim for policy violation.',
+        priority: 'Immediate',
+        effort: '3 hours',
+        impact: 'Stops ongoing duplicate billing immediately - saves $7,020/year',
+        timeline: 'Complete within 48 hours'
+      },
+      {
+        title: '2. Immediate: Recover duplicate charges via dispute',
+        description: 'File formal dispute with E-ZPass toll authority for $2,340 in duplicate charges from past 4 months. Provide evidence: GPS telematics showing single vehicle crossing (not two vehicles), transponder serial numbers proving duplication, request refund to company account. E-ZPass customer service disputes typically resolved within 30-45 days. Expected recovery rate: 85-95% ($1,989-$2,223).',
+        priority: 'Immediate',
+        effort: '4 hours to compile evidence + file disputes',
+        impact: 'Recover $1,989-$2,223 in duplicate charge refunds',
+        timeline: 'File within 1 week, resolution within 45 days'
+      },
+      {
+        title: '3. Policy: Implement single-transponder-per-VIN rule',
+        description: 'Document formal policy: "Each fleet vehicle VIN shall have exactly one (1) active toll transponder at any time. When replacement transponder is issued, Fleet Administrator must deactivate prior transponder in toll authority system within 24 hours and document deactivation confirmation number. Drivers must physically return malfunctioning transponders to Fleet Admin within 48 hours of receiving replacement. Personal toll accounts enrolled using company vehicle VINs are strictly prohibited - violation subject to termination." Add policy to Fleet Operations Manual.',
+        priority: 'High',
+        effort: '2 hours drafting + legal review',
+        impact: 'Creates enforceable standard to prevent recurrence',
+        timeline: '1 week'
+      },
+      {
+        title: '4. Process: Monthly VIN-to-transponder reconciliation',
+        description: 'Fleet Admin to conduct monthly reconciliation: (1) Pull fleet inventory list from telematics system (67 vehicles, VINs, plates). (2) Pull active transponder list from E-ZPass portal (should be 67 transponders). (3) Use Excel VLOOKUP or database query to match VINs to transponders 1:1. (4) Flag any VIN with zero transponders (missing) or 2+ transponders (duplicate). (5) Investigate and remediate all exceptions within 48 hours. Document in shared spreadsheet for audit trail. Estimated time: 30 minutes/month.',
+        priority: 'High',
+        effort: '30 minutes/month (recurring)',
+        impact: 'Early detection of future duplicates before significant cost accumulates',
+        timeline: 'Implement immediately, first reconciliation within 1 week'
+      },
+      {
+        title: '5. Technology: Automated transponder lifecycle management',
+        description: 'Upgrade to integrated toll management platform (e.g., Fleet Complete Tolls, Bestpass, PrePass) that links transponder IDs directly to vehicle VIN in centralized database. System enforces 1:1 VIN-to-transponder mapping automatically. When replacement transponder is added, system prompts admin to deactivate old transponder before activation completes. Automated alerts if duplicate detected. Integration with E-ZPass APIs for real-time status sync. Upfront cost: $12/vehicle setup ($804) + $4/vehicle/month ongoing ($268/month = $3,216/year). ROI positive due to eliminated duplicate charges + admin time savings.',
+        priority: 'Medium',
+        effort: '$804 setup + $3,216/year subscription',
+        impact: 'Permanent solution - systemically prevents duplicates + reduces admin labor by 70%',
+        timeline: '6-week implementation'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$7,020/year (duplicate charge run rate) + $168/year (excess transponder account fees) + $780/year (finance team time investigating billing discrepancies) = $7,968/year total waste',
+      savings: '$7,968/year + $1,989-$2,223 one-time recovery',
+      paybackPeriod: '1.8 months',
+      implementationCost: '$1,040 (labor for audit, dispute filing, policy creation, initial reconciliation setup)',
+      roi: '766% year one (not including technology option), 3,831% over 5 years',
+      details: 'Conservative ROI (Recommendations 1-4 only, no technology investment): Spend $1,040 labor, eliminate $7,968/year ongoing waste + recover $2,100 avg one-time refund = $10,068 year-one benefit. ROI: 968% year one. Five-year cumulative: Save $39,840 on $1,040 investment = 3,831% total return. Technology option (Recommendation 5): Add $804 setup + $3,216/year subscription = total 5-year cost $16,884. Five-year benefit: $39,840 duplicate prevention + $15,600 admin labor savings (70% of 10 hrs/month @ $25/hr) + $10,500 fraud prevention (estimated) = $65,940 total benefit. Net ROI with technology: 391% over 5 years. Recommendation: Implement 1-4 immediately for quick ROI, evaluate technology option after 6 months if duplicate issues persist or admin burden remains high.'
+    }
+  },
+
+  'personal-use-morrison': {
+    title: 'Weekend Personal Use: Driver Rachel Morrison (#847)',
+    summary: 'Vehicle #3401 (2021 Mercedes Sprinter) assigned to driver Rachel Morrison shows systematic weekend toll pattern to residential areas inconsistent with business operations. 31 weekend toll events past 90 days, all Saturdays/Sundays. Total personal use tolls: $651. Estimated unauthorized mileage: 3,720 miles. GPS telematics confirm stops at residential addresses with engine off 2-4 hours. Morrison\'s assigned routes are San Francisco/Oakland metro - Livermore is 35 miles outside service territory.',
+    category: 'Policy Violation - Personal Use',
+    impact: 'Medium',
+    confidence: '96%',
+    detectionMethod: 'AI weekend activity pattern detection + GPS route analysis + service territory mapping + residential address correlation',
+    discoveredDate: 'November 5, 2024',
+    affectedAssets: [
+      { type: 'Vehicle', id: '#3401 - 2021 Mercedes Sprinter 2500', plate: 'CA-6SPR401', driver: 'Rachel Morrison', hire_date: 'March 2024' }
+    ],
+    timeline: [
+      { date: 'March 2024', event: 'Rachel Morrison hired as delivery driver, assigned Vehicle #3401' },
+      { date: 'April 2024', event: 'First weekend personal use trip detected (Saturday April 20, Oakland→Livermore)' },
+      { date: 'May-July 2024', event: 'Pattern escalates to 2-3 weekend trips per month' },
+      { date: 'Aug-Oct 2024', event: 'Frequency increases to nearly every weekend (87% of weekends show personal usage)' },
+      { date: 'Nov 5, 2024', event: 'AI flags systematic weekend pattern outside service territory, HR notified' }
+    ],
+    keyMetrics: {
+      weekendEvents: { value: '31', label: 'Weekend toll events (90 days)' },
+      personalTolls: { value: '$651', label: 'Personal use toll charges (90 days)' },
+      unauthorizedMiles: { value: '3,720 mi', label: 'Estimated personal mileage (90 days)' },
+      annualizedCost: { value: '$2,604/year', label: 'Tolls alone (not including fuel, maintenance, insurance exposure)' }
+    },
+    detailedFindings: {
+      saturdayPattern: 'Consistent Saturday routine: Vehicle leaves company facility Oakland 9:15 AM ± 20 min. Bay Bridge toll crossing eastbound 9:42 AM avg ($6). I-580 East toll 10:08 AM avg ($4.50). GPS destination: 4847 Vineyard Ave, Livermore CA 94550 (DMV records cross-reference: property owner Patricia Morrison, age 71 - likely Rachel Morrison\'s mother). Vehicle stationary at residential address avg 2 hours 15 minutes (engine off, no delivery activity). Return trip: Departs Livermore 12:30 PM avg, I-580 West toll ($4.50), Bay Bridge westbound ($6), arrives company facility Oakland 2:45 PM avg. Total Saturday toll cost: $21 per trip. 13 Saturday occurrences past 90 days = $273 Saturday tolls. Round-trip mileage: 120 miles × 13 trips = 1,560 miles unauthorized.',
+      sundayPattern: 'Sunday variation: Vehicle leaves company facility Oakland 1:45 PM avg. Same Bay Bridge + I-580 toll route. GPS destination: 873 Portola Ave, Livermore CA 94551 (public records: residential property, unable to determine relationship). Vehicle stationary avg 4 hours 10 minutes (significantly longer stop than Saturday trips). Return trip: Departs Livermore 7:15 PM avg, returns Oakland facility 9:30 PM avg. Sunday toll cost: $21 per trip (same route). 18 Sunday occurrences past 90 days = $378 Sunday tolls. Round-trip mileage: 120 miles × 18 trips = 2,160 miles unauthorized. Sunday pattern higher frequency (18 vs 13) and longer duration stops (4+ hours vs 2 hours).',
+      serviceTerritory: 'Morrison assigned to San Francisco/Oakland metro delivery routes. Service territory defined as San Francisco County, Alameda County (west of I-580), northern San Mateo County - radius approximately 25 miles from Oakland facility. Livermore is 35 miles east, well outside service territory, in Contra Costa County. No customers in Livermore (verified against customer database). No scheduled deliveries to Livermore on any of the 31 flagged dates (verified against dispatch system). No maintenance facilities in Livermore (fleet maintenance performed in Oakland). Conclusion: Zero legitimate business justification for Livermore trips.',
+      telematicsEvidence: 'GPS telematics data provides irrefutable evidence: 4847 Vineyard Ave stops show "engine off" status for avg 2 hr 15 min, no cargo door open/close sensor activity (Sprinter equipped with door sensors), no delivery scan events in handheld device system, vehicle stationary per GPS coordinates. 873 Portola Ave stops identical profile except longer duration (4+ hr avg). Additional evidence: Fuel card data shows Morrison refueling vehicle on Saturday/Sunday trips at Livermore-area gas stations (not approved fuel vendor locations), further confirming personal use - company fuel cards used to fill tank for personal errands.',
+      insuranceLiability: 'Company commercial auto policy (Zurich North America, policy #CA-FL-8847621) explicitly excludes coverage for personal use, commuting, or non-business activities. Policy Section 4.2 states: "Covered autos must be used solely for business purposes as defined in certificate holder operations description." Personal use voids coverage. If Morrison were involved in accident during weekend personal trips, company liability exposure would be catastrophic: (1) Commercial policy denies claim due to personal use exclusion. (2) Morrison\'s personal auto policy denies claim (vehicle titled to company, not her personal vehicle). (3) Result: Company exposed to unlimited out-of-pocket liability for property damage, bodily injury, legal defense. Average serious auto accident claim: $180,000. Morrison\'s unauthorized weekend driving over 90 days (3,720 miles) creates 4.2% probability of accident based on actuarial models = $7,560 expected value of risk exposure.',
+      employmentHistory: 'Morrison hired March 2024 (8 months tenure). Onboarding included signing Vehicle Use Policy form (on file) explicitly stating: "Fleet vehicles are for business use only. Personal use, including errands, commuting, or family transportation, is strictly prohibited. Violation of this policy is grounds for immediate termination." Morrison acknowledged policy in writing. Background check clean. Performance reviews satisfactory (no customer complaints, on-time delivery rate 94%). This is pure policy violation, not performance issue - otherwise solid employee making very poor judgment.'
+    },
+    businessContext: 'The $651 toll cost is merely the visible tip of a much larger cost iceberg. Full cost analysis of 3,720 unauthorized miles: (1) Tolls: $651. (2) Fuel: 3,720 miles ÷ 14 MPG (Sprinter 2500 avg) × $4.20/gallon = $1,114. (3) Maintenance: 3,720 miles × $0.18/mile IRS rate = $670. (4) Depreciation: 3,720 miles × $0.11/mile = $409. (5) Insurance exposure risk premium: $7,560 expected value. Total 90-day cost: $10,404. Annualized: $41,616. This means Morrison\'s personal use habit represents 62% of the vehicle\'s total annual operating cost ($67,000/year for Sprinter 2500 including driver wages, insurance, fuel, maintenance). Put another way: Company is subsidizing Morrison\'s personal transportation to the tune of $3,468/month. Unacceptable.',
+    rootCause: {
+      primary: 'Inadequate weekend vehicle security and driver accountability',
+      contributing: [
+        'Drivers allowed to take vehicles home Friday night - creates opportunity for weekend personal use',
+        'No weekend geofencing alerts configured - GPS system doesn\'t notify management of non-business weekend activity',
+        'Lack of fuel card controls - Morrison able to refuel at non-approved locations without triggering alerts',
+        'No weekend activity review process - Fleet Manager doesn\'t routinely audit weekend GPS/toll data',
+        'Policy enforcement gap - Vehicle Use Policy signed during onboarding but no ongoing training or spot-checks',
+        'Cultural issue - drivers may perceive weekend vehicle access as a "perk" rather than liability'
+      ]
+    },
+    recommendations: [
+      {
+        title: '1. Immediate: HR investigation and corrective action',
+        description: 'HR Director and Fleet Manager meet with Rachel Morrison to present evidence (GPS logs, toll records, fuel receipts, address correlations). Request written explanation. Severity assessment: (a) If Morrison claims ignorance of policy → written warning, mandatory policy re-training, reimbursement requirement. (b) If Morrison knowingly violated policy → probation or suspension. (c) If Morrison refuses accountability → termination for cause. Precedent-setting decision - other drivers will notice outcome. Recommendation: Written warning with reimbursement demand for first offense, given otherwise satisfactory performance, but zero tolerance for future violations.',
+        priority: 'Immediate',
+        effort: '4 hours (investigation meeting, documentation)',
+        impact: 'Stops Morrison\'s ongoing personal use, sets precedent fleet-wide',
+        timeline: 'Schedule meeting within 48 hours'
+      },
+      {
+        title: '2. Immediate: Calculate and demand reimbursement',
+        description: 'Present Morrison with itemized reimbursement invoice: $651 tolls + $1,114 fuel + $670 maintenance + $409 depreciation = $2,844 total for 90-day period. Deduct from paycheck over 6 pay periods ($474/paycheck) with written agreement. Alternative: Allow Morrison to pay lump sum to avoid paycheck deduction. Legal review recommended to ensure wage deduction complies with California labor law (requires written authorization). If Morrison refuses reimbursement, escalate to termination for cause (theft of company resources).',
+        priority: 'Immediate',
+        effort: '2 hours (calculate invoice, draft payroll deduction authorization)',
+        impact: 'Recover $2,844 of unauthorized costs',
+        timeline: 'Present invoice at HR investigation meeting'
+      },
+      {
+        title: '3. Fleet-wide: Eliminate weekend take-home vehicles',
+        description: 'Policy change: Drivers must return vehicles to secured company lot by end of Friday shift. Weekend vehicle access only with advance written authorization from Fleet Manager documenting legitimate business need (emergency deliveries, on-call maintenance, etc.). Saturday/Sunday dispatch requires clock-in via telematics system. Benefit: Eliminates 100% of weekend personal use risk across entire 67-vehicle fleet. Implementation: (1) Announce policy change with 2-week notice. (2) Drivers living >25 miles from facility given option to park vehicles at facility and arrange personal transportation home, OR participate in weekend rideshare program (company subsidizes Uber/Lyft home Friday, to work Monday, cost < vehicle take-home risk). (3) Drivers refusing compliance → disciplinary action. Expected resistance from drivers who view take-home as perk, but firm enforcement necessary.',
+        priority: 'High',
+        effort: '$18,000/year (estimated rideshare subsidy for 8-12 drivers living far from facility)',
+        impact: 'Eliminate $120,000+/year fleet-wide personal use risk (est. 10-15% of drivers engage in similar behavior)',
+        timeline: '1-month implementation with communication/transition period'
+      },
+      {
+        title: '4. Technology: Weekend geofencing alerts',
+        description: 'Configure telematics system to send real-time SMS/email alerts to Fleet Manager when any vehicle moves on Saturday/Sunday without documented authorization. Geofence definition: If vehicle exits 5-mile radius of company facility on weekend AND no weekend dispatch order exists in system, trigger alert immediately. Allows real-time intervention (Fleet Manager can call driver and demand vehicle return). Zero hardware cost (uses existing Verizon Connect or Geotab GPS). Requires 2-hour configuration in telematics portal + testing.',
+        priority: 'High',
+        effort: '2 hours configuration + $0 cost',
+        impact: 'Real-time detection of unauthorized weekend usage - intervention before significant miles/costs accumulate',
+        timeline: 'Implement within 1 week'
+      },
+      {
+        title: '5. Fuel card controls: Restrict to approved vendors + business hours',
+        description: 'Current fuel card program (appears to be WEX or FleetCor) allows purchases 24/7 at any station. Tighten controls: (1) Restrict cards to approved vendor locations only (designate 6-8 convenient stations near service territory). (2) Restrict transaction times to business hours (5 AM - 11 PM weekdays, require authorization code for weekend fueling). (3) Set velocity limits (no more than 1 fuel purchase per 8-hour window - prevents personal vehicle refueling using company card). (4) Configure real-time alerts for declined transactions (triggers when driver attempts unapproved station/time). Most fuel card platforms support these controls via web portal configuration. Improves detection: Morrison refueled at Livermore stations - would have been declined, alerting management immediately.',
+        priority: 'Medium',
+        effort: '3 hours configuration + driver communication',
+        impact: 'Prevents personal fuel theft, creates early warning system for personal use patterns',
+        timeline: '2 weeks'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$41,616/year (Morrison alone, if pattern continues) + $120,000/year estimated (10-15% of 67 drivers likely engaging in similar personal use) = $161,616/year total fleet exposure',
+      savings: '$2,844 immediate recovery (Morrison reimbursement) + $41,616/year (Morrison future prevention) + $120,000/year (fleet-wide prevention) = $164,460 total benefit',
+      paybackPeriod: '1.6 months',
+      implementationCost: '$2,080 (HR investigation, policy updates, technology configuration) + $18,000/year (weekend rideshare subsidy) = $20,080 year one',
+      roi: '819% year one, 4,097% over 5 years',
+      details: 'Year-one ROI: Invest $20,080 (one-time $2,080 + first-year $18,000 subsidy), eliminate $164,460 in personal use costs/risks = net $144,380 benefit = 719% return. Five-year cumulative: Invest $74,080 ($2,080 + $72,000 subsidies), eliminate $822,300 in personal use costs/risks = net $748,220 benefit = 1,010% total return. Note: Insurance liability risk mitigation not included in calculation - avoiding single serious accident during personal use ($180,000+ exposure) pays for entire 5-year program. Conservative recommendation: Implement all recommendations. Even if rideshare subsidy proves expensive, ROI remains overwhelmingly positive due to elimination of massive liability exposure and resource theft.'
+    }
+  },
+
+  'impossible-location-ocr': {
+    title: 'Impossible Location Violation: Plate Misread - $45 Fee Refunded',
+    summary: 'Vehicle #3421 (2022 Ford F-150, plate IL-4TRK321) received NYC Port Authority violation citation claiming toll violation at George Washington Bridge on Nov 3, 2024 at 3:47 PM. GPS telematics irrefutably shows vehicle was in Chicago, IL at that exact time - 789 miles away. Automated toll camera OCR misread different plate as IL-4TRK321. Dispute filed with GPS evidence - violation dismissed, $45 fee refunded. This is 4th such occurrence across fleet in 18 months. Recommendation: Implement automated dispute system.',
+    category: 'Billing Error - OCR Misread',
+    impact: 'Low (but recurring)',
+    confidence: '100%',
+    detectionMethod: 'AI impossible geography detection (GPS timestamp correlation showing vehicle location vs. claimed violation location)',
+    discoveredDate: 'November 6, 2024',
+    affectedAssets: [
+      { type: 'Vehicle', id: '#3421 - 2022 Ford F-150', plate: 'IL-4TRK321', vin: '1FTFW1E88NFB12847', driver: 'Thomas Reynolds' }
+    ],
+    timeline: [
+      { date: 'Nov 3, 2024 - 3:47 PM ET', event: 'Alleged violation: Vehicle IL-4TRK321 crosses George Washington Bridge upper level without E-ZPass, license plate camera captures image' },
+      { date: 'Nov 3, 2024 - 3:47 PM CT', event: 'Actual location: Vehicle #3421 (IL-4TRK321) stationary in Chicago at Lou Malnati\'s warehouse, West Loop (41.8781°N, 87.6298°W)' },
+      { date: 'Nov 6, 2024', event: 'Violation notice received via mail at company headquarters: $15 toll + $30 administrative fee = $45 total' },
+      { date: 'Nov 7, 2024', event: 'Driver Thomas Reynolds confirms delivery to Chicago warehouse, provides signed delivery receipt timestamped 3:42 PM, remained on-site until 4:15 PM' },
+      { date: 'Nov 8, 2024', event: 'AI analysis flags impossible geography: 789 miles Chicago-NYC, physically impossible to be in both locations' },
+      { date: 'Nov 9, 2024', event: 'Dispute package submitted to Port Authority: GPS evidence, telematics data export, delivery receipt, driver affidavit' },
+      { date: 'Nov 21, 2024', event: 'Port Authority confirms citation error, violation dismissed, $45 refunded to company account' }
+    ],
+    keyMetrics: {
+      impossibleDistance: { value: '789 mi', label: 'Chicago to NYC George Washington Bridge' },
+      feeRefunded: { value: '$45', label: 'Violation fee + penalty refunded' },
+      disputeSuccessRate: { value: '100%', label: 'All 4 similar incidents successfully disputed' },
+      laborCost: { value: '$78', label: 'Estimated labor to research, compile evidence, file dispute (3 hours × $26/hour)' }
+    },
+    detailedFindings: {
+      violationDetails: 'Port Authority violation notice #GWB-112847-112024 claimed: Vehicle with Illinois license plate IL-4TRK321 crossed George Washington Bridge upper level Plaza 14 on November 3, 2024 at 15:47:22 Eastern Time without valid E-ZPass transponder. Automated license plate recognition (ALPR) camera photographed rear plate. OCR system read plate as "IL 4TRK321". Toll amount: $15.00 (standard 2-axle rate). Administrative processing fee: $30.00 (penalty for E-ZPass non-payment). Total amount due: $45.00. Payment deadline: 30 days from notice date or additional $50 late fee applied.',
+      gpsEvidence: 'Irrefutable GPS telematics data from Vehicle #3421 (actual Illinois plate IL-4TRK321): Nov 3, 2024 15:47:22 Eastern (14:47:22 Central) - GPS coordinates: 41.8781°N, 87.6298°W (Chicago West Loop, Lou Malnati\'s warehouse loading dock). Vehicle status: Stationary (0 MPH), engine on (idling), location unchanged since 14:42 Central (3:42 PM). Telematics timestamp log shows: 14:42 CT - Arrived warehouse. 14:47 CT - Stationary (cited "violation" time). 16:15 CT - Departed warehouse. Total time on-site: 93 minutes. Odometer reading during cited time: No change (vehicle did not move). Distance from Chicago to GWB: 789 miles. Conclusion: Physically impossible for Vehicle #3421 to be at George Washington Bridge in New York at the time Port Authority claims.',
+      deliveryReceipt: 'Driver Thomas Reynolds provided signed delivery documentation: Lou Malnati\'s Pizzeria warehouse, 1120 W Grand Ave, Chicago IL. Delivery receipt #LM-884721 signed by receiving manager "J. Patterson" with timestamp 11/03/2024 3:42 PM. Receipt documents delivery of restaurant supply shipment (food service equipment parts). Driver remained on-site for forklift unloading (heavy items) until 4:15 PM per driver log. Driver affidavit states: "I was in Chicago Illinois all day November 3rd 2024. I never left the state of Illinois. I have never driven in New York. The vehicle has never been to New York since I was assigned to it in March 2024." Background: Reynolds assigned to Midwest routes only (IL, IN, WI) - NYC assignments would be different driver/vehicle pool.',
+      ocrMisreadAnalysis: 'Root cause: Automated optical character recognition (OCR) error by Port Authority toll camera system. Likely scenario: Different vehicle with similar-looking Illinois plate (possibly IL-4TRK821, IL-4TRK322, or IL-4TRK121 - common OCR confusion with digit/letter similarities) crossed GWB at cited time. Camera captured image, OCR software misinterpreted characters, generated violation notice for wrong plate number. This is known systemic issue with ALPR/OCR technology - error rates typically 0.1-1.0% depending on camera angle, lighting, plate condition, OCR algorithm quality. Port Authority operates hundreds of toll cameras processing millions of transactions monthly - even 0.1% error rate yields thousands of mis-cited violations annually. Unfortunately, burden of proof falls on motorist to dispute, not on toll authority to verify accuracy before billing.',
+      historicalPattern: 'This is the 4th impossible geography violation in 18 months for this fleet: (1) June 2023: Vehicle #2847 cited for Massachusetts Turnpike toll while GPS showed vehicle in Texas - 1,847 miles away. Disputed, $38 refunded. (2) January 2024: Vehicle #1556 cited for Florida Turnpike toll while GPS showed vehicle in Michigan - 1,456 miles away. Disputed, $52 refunded. (3) July 2024: Vehicle #4201 cited for Pennsylvania Turnpike toll while GPS showed vehicle in California - 2,847 miles away. Disputed, $41 refunded. (4) November 2024: This incident (Vehicle #3421). Total: $176 in erroneous violation fees over 18 months. 100% dispute success rate when GPS evidence provided. However, labor cost to dispute: 4 incidents × 3 hours avg × $26/hour = $312 labor cost to recover $176 fees = net loss of $136. Recommendation: Automate dispute process to reduce labor burden.'
+    },
+    businessContext: 'While $45 per incident seems trivial, the recurring pattern and labor burden warrant attention. Across a 67-vehicle fleet operating nationwide, OCR misreads are statistically inevitable. At observed rate (4 incidents per 18 months), fleet averages 2.67 incidents/year. If left unaddressed (violations not disputed), annual cost: 2.67 incidents × $45 avg = $120/year. However, dispute labor cost ($78/incident) exceeds recovery value ($45), creating perverse incentive to ignore violations and pay the $45 rather than spend $78 in labor to dispute. Over 5 years, paying invalid fees = $600 total. Additionally, unpaid/undisputed violations can escalate: (1) Late fees: $50 additional after 30 days. (2) Registration holds: Some states allow toll authorities to place holds on vehicle registration renewals for unpaid violations. (3) Collections: Violations sent to collections agencies, damaging company credit. Therefore, despite negative ROI on individual dispute, best practice is to dispute all invalid violations to avoid escalation and maintain clean toll account standing.',
+    rootCause: {
+      primary: 'Systemic OCR error rate in automated toll camera systems',
+      contributing: [
+        'Lighting/angle variability in toll camera photography - cameras not always optimally positioned, weather affects image quality',
+        'Similar-looking plate characters - OCR algorithms confuse visually similar characters (0/O, 1/I, 8/B, 4/A, etc.)',
+        'Dirty or damaged plates on violating vehicles - mud, snow, deliberate obscuration reduces OCR accuracy',
+        'Cross-state plate similarity - toll authority databases may not validate state/format patterns (e.g., valid Illinois plates vs. impossible combinations)',
+        'Lack of pre-billing verification - toll authorities don\'t cross-check violations against geographic plausibility before issuing citations',
+        'Burden of proof on motorist - system assumes ALPR is correct until proven otherwise, rather than validating before charging'
+      ]
+    },
+    recommendations: [
+      {
+        title: '1. Continue disputing all impossible geography violations',
+        description: 'Maintain 100% dispute rate for violations where GPS evidence proves vehicle was in different location. Even though labor cost ($78) exceeds recovery ($45), disputing prevents escalation to late fees ($50+), registration holds, and collections. Protocol: Fleet admin receives violation notice → Check GPS telematics for cited date/time → If vehicle location >100 miles from violation location, auto-flag as "impossible geography" → Compile dispute package (GPS screenshot, telematics export, driver statement) → Submit to toll authority → Track to resolution.',
+        priority: 'High',
+        effort: '3 hours per incident (recurring)',
+        impact: 'Prevents fee escalation, maintains clean toll account, 100% refund success rate',
+        timeline: 'Ongoing operational process'
+      },
+      {
+        title: '2. Implement automated GPS-based violation flagging',
+        description: 'Build simple automation to eliminate manual research: When violation notice received (typically via email to fleet admin), extract key data (plate, date/time, location). Query telematics system API for vehicle GPS coordinates at cited timestamp. Calculate distance between actual location and violation location. If distance >100 miles, auto-generate dispute evidence package: (a) GPS coordinates + timestamp. (b) Screenshot of vehicle location on map. (c) Telematics data export for ±2 hour window around violation time. (d) Template dispute letter pre-filled with evidence. Reduces labor from 3 hours to 30 minutes per incident (85% reduction). Implementation: Could use Zapier/Make.com workflow automation or custom Python script.',
+        priority: 'Medium',
+        effort: '$1,200 setup (automation development) + $15/month (Zapier subscription or API costs) = $1,380 year one',
+        impact: 'Reduces dispute labor cost from $78 to $12 per incident (85% savings), $176/year labor savings on recurring incidents',
+        timeline: '6-week development + testing'
+      },
+      {
+        title: '3. Proactive communication to toll authorities',
+        description: 'Contact Port Authority (GWB), MassDOT (MA Turnpike), Florida Turnpike, PennDOT toll divisions to: (a) Report recurring OCR accuracy issues affecting your fleet. (b) Request improved pre-billing validation (e.g., flag violations where cited plate state doesn\'t match typical geographic operating area). (c) Provide fleet vehicle roster (plates, states, VINs) to toll authorities - request they validate violations against known fleet before billing. (d) Request streamlined dispute process for fleets with telematics (e.g., API integration where toll authority can query your GPS directly). Benefits: (1) Improves toll authority awareness of OCR issues. (2) May prevent future mis-citations if toll authority implements better validation. (3) Builds relationship for faster dispute resolution.',
+        priority: 'Low',
+        effort: '8 hours (draft letters, contact multiple toll authorities, follow up)',
+        impact: 'Long-term reduction in OCR mis-citation rate if toll authorities improve validation',
+        timeline: '1 month (outreach campaign)'
+      },
+      {
+        title: '4. Annual fleet OCR violation audit',
+        description: 'Once per year, audit all toll violations received across fleet: (1) Pull all violation notices from past 12 months. (2) Cross-reference against GPS data to identify any "impossible geography" violations that were paid without dispute (oversight/error). (3) File late disputes with toll authorities (most allow dispute within 12 months with valid evidence). (4) Identify any patterns (specific toll authorities with higher error rates, specific vehicles/plates more prone to misreads). (5) Generate report for CFO showing: total violation costs, dispute success rate, labor costs, net impact. Helps quantify problem and justify investment in automation or other solutions.',
+        priority: 'Low',
+        effort: '4 hours annually',
+        impact: 'Ensures no erroneous violations slip through, identifies systemic patterns for targeted solutions',
+        timeline: 'Schedule for January each year (calendar year audit)'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$120/year (2.67 avg incidents × $45 per violation if paid without dispute) + $208/year (2.67 incidents × $78 labor to dispute manually) = $328/year total burden',
+      savings: '$176/year (labor savings from automation: 2.67 incidents × $66 saved per incident)',
+      paybackPeriod: '7.8 years (automation)',
+      implementationCost: '$1,380 year one (automation) + $2,080 (proactive outreach + audit setup)',
+      roi: 'Negative short-term, positive long-term goodwill and risk mitigation',
+      details: 'Honest assessment: Direct financial ROI is negative. Spending $1,380 to save $176/year labor = 7.8-year payback. Not compelling. However, recommendations justified on risk mitigation and operational efficiency grounds: (1) Disputing prevents escalation - unpaid $45 violation becomes $95+ with late fees, plus registration hold risk. (2) Automation frees fleet admin time for higher-value work (3 hours/incident → 30 min/incident = 6.7 hours/year saved for other tasks). (3) Annual audit prevents oversight - even one missed $95 violation paid erroneously would justify audit cost. (4) Toll authority outreach may yield systemic improvements benefiting entire industry. (5) Clean toll account standing protects company credit and fleet operations. Recommendation: Implement Recommendation 1 (continue disputing) immediately - non-negotiable. Implement Recommendation 4 (annual audit) immediately - minimal cost, high value. Delay Recommendation 2 (automation) unless incident rate increases to >5/year (would improve ROI). Implement Recommendation 3 (toll authority outreach) as CSR/industry advocacy initiative, not pure financial ROI play.'
+    }
+  },
+
+  'tuesday-toll-spike': {
+    title: 'Tuesday 2-4 PM Toll Cost Spike: Port Schedule Correlation',
+    summary: 'Every Tuesday, toll costs spike 47% between 2:00-4:00 PM compared to same time slot Monday/Wednesday/Thursday/Friday. Pattern hidden in aggregate monthly reports for 18 months. AI correlation analysis cross-referenced timestamps with external data and identified root cause: Port of Oakland container ship schedule. Container ships dock Tuesday mornings (avg arrival 8:47 AM), containers cleared by 2 PM, creating surge of 23 delivery vehicles rushing to meet same-day delivery commitments via I-880 toll corridors. Expected savings: $30,732 annually with zero operational impact.',
+    category: 'Time-Based Pattern',
+    impact: 'High',
+    confidence: '99%',
+    detectionMethod: 'AI temporal pattern analysis + external data correlation (Port of Oakland ship schedules) + route clustering',
+    discoveredDate: 'October 28, 2024',
+    affectedAssets: [
+      { type: 'Route', id: 'Oakland Port to San Jose', vehicles: '17 vehicles', avgToll: '$8.50/trip' },
+      { type: 'Route', id: 'Oakland Port to Fremont', vehicles: '6 vehicles', avgToll: '$8.50/trip' }
+    ],
+    timeline: [
+      { date: 'May 2023', event: 'Pattern begins but hidden in monthly aggregates' },
+      { date: 'Jan 2024', event: 'CFO notes "Tuesday costs seem high" but no investigation' },
+      { date: 'Oct 15, 2024', event: 'AI flags statistically significant Tuesday 2-4 PM toll spike (47% above baseline)' },
+      { date: 'Oct 22, 2024', event: 'AI correlates spike timing with Port of Oakland container ship arrival schedule' },
+      { date: 'Oct 28, 2024', event: 'Root cause confirmed: Same-day delivery SLAs forcing peak toll window usage' }
+    ],
+    keyMetrics: {
+      costSpike: { value: '47%', label: 'Tuesday 2-4 PM toll cost premium vs. other weekdays same window' },
+      tuesdayAvg: { value: '$1,847', label: 'Avg Tuesday 2-4 PM toll cost' },
+      otherDaysAvg: { value: '$1,256', label: 'Avg Mon/Wed/Thu/Fri 2-4 PM toll cost' },
+      annualWaste: { value: '$30,732', label: 'Annual excess cost from Tuesday pattern' }
+    },
+    detailedFindings: {
+      temporalAnalysis: 'AI analyzed 18 months of toll transaction data (May 2023 - Oct 2024), segmented by day-of-week and 2-hour time windows. Discovered: Monday 2-4 PM avg toll cost: $1,247. Tuesday 2-4 PM avg toll cost: $1,847. Wednesday 2-4 PM avg toll cost: $1,289. Thursday 2-4 PM avg toll cost: $1,234. Friday 2-4 PM avg toll cost: $1,265. Tuesday premium: $591 per Tuesday (47% above 4-day average of $1,259). Pattern statistically significant (p<0.001). 52 Tuesdays/year × $591 excess = $30,732 annual waste. Pattern invisible in monthly reports because $591/day blends into $40,000+ monthly total - only time-windowed analysis revealed it.',
+      externalCorrelation: 'AI hypothesis: "Why Tuesday specifically?" Cross-referenced with external data sources: (1) Port of Oakland public ship arrival schedule (published 72 hours advance). (2) Major container shipping lines (MSC, Maersk, COSCO) schedule analysis. Discovery: 87% of Asia-origin container ships arrive Port of Oakland on Tuesday mornings between 7:00-10:00 AM. Typical timeline: Ship docks 8:47 AM avg → Customs clearance 10:30 AM → Container availability for pickup 1:45 PM → Delivery vehicles dispatched → Vehicles hit toll roads 2:15-3:45 PM to meet same-day 6:00 PM delivery deadlines. This explains the precise Tuesday 2-4 PM spike.',
+      affectedRoutes: 'Oakland Port to San Jose via I-880 South toll corridor: 17 vehicles, avg 1.3 trips/vehicle/Tuesday, toll cost $8.50/trip (peak pricing 2-4 PM). Total: 17 vehicles × 1.3 trips × $8.50 = $188/Tuesday this route. Oakland Port to Fremont via I-880 South + CA-92: 6 vehicles, avg 1.2 trips/vehicle/Tuesday, toll cost $8.50 + $4.50 = $13/trip. Total: 6 vehicles × 1.2 trips × $13 = $94/Tuesday this route. Combined: $282/Tuesday from port-related deliveries. Remaining $309/Tuesday ($591 total - $282 identified) from other deliveries originating near port (warehouse pickups near Oakland Port area, triggered by container availability).',
+      customerSLAs: 'Root cause deep-dive: Why same-day Tuesday delivery deadline? Reviewed contracts with top 3 customers receiving port deliveries: (1) Tech Campus (Fremont): Contract states "Port shipments must deliver same business day as container release." No flexibility. (2) Distribution Center (San Jose): SLA requires "same-day delivery for all port pickups." (3) Medical Supply (Santa Clara): "Critical shipments from port deliver within 6 hours of container release." All three contracts written 2019-2020 when port ship arrivals were more distributed across week. Since 2023 port consolidation, 87% of their shipments now arrive Tuesdays, creating bottleneck. Customers unaware of toll cost impact - contracts don\'t specify routing, only timing.',
+      portSchedulePublic: 'Port of Oakland publishes vessel arrival schedule 72 hours in advance on public website (https://www.portofoakland.com/maritime/vessel-schedule). Data includes: Vessel name, shipping line, origin port, estimated arrival date/time, berth assignment. This advance notice creates opportunity: If company knows ship arriving Tuesday 9 AM (published Saturday), and containers will be available Tuesday 2 PM, could pre-negotiate delivery window extension with customers from "same day" to "next business day" (Wednesday delivery instead of Tuesday). Customers care about predictability, not same-day - if notified 72 hours in advance, they can plan inventory accordingly.'
+    },
+    businessContext: 'This is a perfect example of how aggregate reporting hides expensive patterns. Monthly toll reports show total spend but don\'t break down by time-of-day or day-of-week. $591/Tuesday disappears into $8,000/week total. CFO saw overall budget growth but couldn\'t pinpoint cause. AI\'s temporal segmentation revealed the pattern, then external data correlation (port schedules) explained WHY. This demonstrates AI\'s value: not just finding patterns but connecting dots between internal data (toll timestamps) and external context (shipping schedules) that humans would never manually correlate. The solution is pure contract/schedule optimization - no operational changes, no new technology required. Simply shift Tuesday deliveries to Wednesday when possible, avoiding peak toll window.',
+    rootCause: {
+      primary: 'Customer delivery SLAs designed without consideration of port schedule consolidation + toll peak pricing',
+      contributing: [
+        'Port of Oakland shipping line consolidation (2023) shifted 87% of container arrivals to Tuesdays - was more distributed pre-2023',
+        'Customer contracts written 2019-2020 don\'t reflect current port realities - "same day delivery" made sense when ships arrived all week',
+        'Dispatch system doesn\'t integrate port schedule data - dispatchers react to container availability, don\'t anticipate based on vessel arrivals',
+        'Toll pricing structure charges premium during 2-4 PM window (regional peak congestion pricing) - Tuesday port surge hits peak window perfectly',
+        'No visibility into time-of-day toll costs in existing reporting - aggregate monthly totals mask the Tuesday spike',
+        'Lack of customer communication about delivery timing flexibility - customers assumed to require same-day but never asked if Wednesday acceptable'
+      ]
+    },
+    recommendations: [
+      {
+        title: '1. Negotiate delivery deadline flexibility with port customers',
+        description: 'Approach top 3 port delivery customers (Tech Campus, Distribution Center, Medical Supply) with data-driven proposal: "Your shipments arrive Tuesdays due to shipping line schedules (not your control). Our toll costs spike 47% on Tuesdays 2-4 PM window due to port-related traffic congestion and peak pricing. Proposal: When we receive 72-hour advance notice of Tuesday ship arrival (via port published schedule), we notify you by Saturday, and deliver Wednesday morning instead of Tuesday evening. You gain 72-hour advance planning visibility. We save 47% toll premium. Win-win." Estimated customer adoption: 70% (most customers prioritize predictability over same-day speed for non-critical shipments).',
+        priority: 'High',
+        effort: '12 hours (contract review, customer meetings, SLA amendments)',
+        impact: 'Eliminate $21,512/year in Tuesday toll premium (70% of $30,732)',
+        timeline: '6-week negotiation cycle'
+      },
+      {
+        title: '2. Implement port schedule integration in dispatch system',
+        description: 'Configure dispatch system to ingest Port of Oakland vessel arrival schedule via RSS feed or API (port publishes data publicly). When system detects container ship arrival scheduled for Tuesday, auto-flag associated port pickup orders as "Tuesday surge risk - consider Wednesday routing." Dispatchers empowered to contact customers proactively: "Your shipment arriving Tuesday - we can deliver Tuesday evening (standard) or Wednesday morning (saves toll premium, we pass 15% savings to you as discount)." Creates customer value-sharing model where toll savings fund delivery discounts.',
+        priority: 'Medium',
+        effort: '$4,800 (dispatch system integration + testing)',
+        impact: 'Systemizes Tuesday avoidance, scales beyond initial 3 customers to all future port contracts',
+        timeline: '8-week development'
+      },
+      {
+        title: '3. Shift Tuesday port pickups to off-peak toll windows',
+        description: 'Alternative to Wednesday delivery: Keep Tuesday delivery BUT shift pickup timing to avoid 2-4 PM toll peak. Port containers available 1:45 PM avg. Current: Dispatched immediately, vehicles hit toll roads 2:15 PM (peak pricing). Proposed: Delay dispatch until 4:15 PM, vehicles hit toll roads 4:45 PM (off-peak pricing resumes 4:30 PM). Delivery still completes by 6 PM deadline. Toll savings: Peak $8.50 → off-peak $2.10 (75% reduction). Requires: (a) Port pickups prioritized early afternoon (1:45 PM), held at port facility staging area until 4:15 PM dispatch. (b) Drivers complete other deliveries 2:00-4:00 PM, then return to port for toll route leg 4:15 PM. (c) Route optimization to sequence deliveries accordingly.',
+        priority: 'Medium',
+        effort: '6 hours (route optimization modeling)',
+        impact: 'Saves 75% of Tuesday toll premium without customer SLA changes ($23,049/year savings)',
+        timeline: '2-week implementation'
+      },
+      {
+        title: '4. Create "Tuesday Port Surge" dashboard for ongoing monitoring',
+        description: 'Build real-time dashboard showing: (1) Upcoming Tuesday vessel arrivals (port schedule feed). (2) Associated delivery orders requiring Tuesday routing. (3) Projected toll cost (peak vs off-peak scenarios). (4) Customer SLA flexibility status (green = Wednesday OK, yellow = negotiate, red = must deliver Tuesday). (5) Weekly Tuesday toll cost trend vs. baseline. Empowers Fleet Manager and CFO to actively manage the pattern week-by-week rather than discovering overage at month-end. Dashboard accessible via web browser, email alerts when Tuesday toll projection exceeds $2,000 threshold.',
+        priority: 'Low',
+        effort: '$2,400 (dashboard development using existing BI tool - Tableau or Power BI)',
+        impact: 'Visibility and control - prevents pattern from re-emerging if port schedules shift again',
+        timeline: '4-week development'
+      },
+      {
+        title: '5. Long-term: Diversify port pickup scheduling across weekdays',
+        description: 'Work with shipping lines (MSC, Maersk, COSCO) and customers to shift some container shipments to non-Tuesday arrival schedule. Proposal to shipping lines: "87% Tuesday concentration creates port congestion and logistics costs for all shippers. Request: Distribute Oakland arrivals across Monday/Wednesday/Thursday when possible." Proposal to customers: "Align your Asia shipment schedules to depart origin ports on varied days, arriving Oakland on distributed schedule, reducing bottleneck." This is long-term (18+ month) industry collaboration, but if successful, eliminates root cause entirely. Benefit: Not just toll savings but also port congestion reduction (benefits entire supply chain).',
+        priority: 'Low',
+        effort: '40 hours (industry engagement, coordination meetings with port authority, shipping lines, customers)',
+        impact: 'Eliminates Tuesday spike entirely if successful ($30,732/year) + broader supply chain efficiency gains',
+        timeline: '18-24 month initiative'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$30,732/year (Tuesday toll premium, ongoing if pattern continues)',
+      savings: '$21,512-$30,732/year (depending on recommendation mix)',
+      paybackPeriod: '0.8 months',
+      implementationCost: '$17,200 (customer negotiations + dispatch integration + routing optimization + dashboard)',
+      roi: '179% year one, 893% over 5 years',
+      details: 'Conservative scenario (Recommendations 1-3): Spend $17,200 implementation, achieve 70% customer SLA flexibility ($21,512/year savings) + 75% off-peak routing for remaining 30% ($6,918/year savings) = $28,430 total annual savings. Year-one ROI: ($28,430 - $17,200) / $17,200 = 65% net return. Five-year cumulative: $142,150 savings on $17,200 investment = 826% total return. Best-case scenario (all recommendations including long-term): Eliminate 100% of Tuesday premium ($30,732/year) + achieve broader supply chain efficiency gains (est. $12,000/year in reduced port congestion, faster turnaround times, improved customer satisfaction). Five-year total: $213,660 benefit on $59,600 investment = 358% return. Recommendation: Implement 1-3 immediately for proven ROI. Pursue 4-5 as strategic initiatives with industry-wide benefits beyond pure toll savings.'
+    }
+  },
+
+  'end-of-month-surge': {
+    title: 'End-of-Month Violation Surge: Delivery Quota Pressure',
+    summary: 'Speeding and red-light violations increase 63% during final week of each month compared to weeks 1-3 average. Pattern consistent across 11 consecutive months. Root cause: Monthly delivery quotas with performance bonuses create rushing behavior when drivers fall short by day 24. Week 4: 47 violations avg. Weeks 1-3: 29 violations avg. Annual excess: 864 violations = $109,728 costs. Recommendation: Rolling 90-day bonus window + safety score integration. Expected: 60% reduction, $65,836 annual savings.',
+    category: 'Behavioral Pattern',
+    impact: 'High',
+    confidence: '99%',
+    detectionMethod: 'AI temporal pattern analysis + driver compensation data correlation + statistical significance testing',
+    discoveredDate: 'October 12, 2024',
+    affectedAssets: [
+      { type: 'Drivers', count: '34 of 67', behavior: 'End-of-month rushing pattern' }
+    ],
+    timeline: [
+      { date: 'Jan 2023', event: 'Monthly quota system implemented - 180 deliveries/month for bonus eligibility' },
+      { date: 'Feb-Dec 2023', event: 'Violation rates elevated in week 4 each month, but pattern not yet recognized' },
+      { date: 'Oct 12, 2024', event: 'AI flags statistically significant (p<0.001) end-of-month violation spike across 11 consecutive months' },
+      { date: 'Oct 18, 2024', event: 'Correlation analysis links violation surge to driver compensation structure' }
+    ],
+    keyMetrics: {
+      violationSpike: { value: '+63%', label: 'Week 4 vs weeks 1-3 avg violation increase' },
+      week4Avg: { value: '47', label: 'Avg violations in final week of month' },
+      weeks13Avg: { value: '29', label: 'Avg violations in weeks 1-3 of month' },
+      annualCost: { value: '$109,728', label: 'Annual excess violation costs from pattern' }
+    },
+    detailedFindings: {
+      summary: 'AI analyzed 11 months of violation data and discovered clear end-of-month surge. This analysis would be impossible with manual review.',
+      implementation: 'Implement rolling 90-day bonus calculation instead of hard monthly cutoffs to reduce rushing behavior.'
+    },
+    businessContext: 'Quota system creates perverse incentives that increase accident risk and costs.',
+    rootCause: {
+      primary: 'Monthly hard-cutoff bonus system incentivizes unsafe rushing behavior',
+      contributing: ['180-delivery quota set without route difficulty consideration', 'All-or-nothing bonus structure', 'No safety score integration']
+    },
+    recommendations: [
+      {
+        title: '1. Redesign compensation: Rolling 90-day window',
+        description: 'Replace monthly quota with rolling 90-day average. Eliminates month-end cliff effect.',
+        priority: 'High',
+        effort: '8 hours (payroll system configuration)',
+        impact: 'Eliminate end-of-month rushing behavior',
+        timeline: '2 weeks'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$109,728/year',
+      savings: '$65,836/year',
+      paybackPeriod: '1.2 months',
+      implementationCost: '$7,200',
+      roi: '914% year one'
+    }
+  },
+
+  'rainy-day-toll-surge': {
+    title: 'Rainy Day Toll Surge: Highway Preference During Precipitation',
+    summary: 'Toll road usage increases 28% on rainy days compared to dry days. AI cross-referenced 14 months toll data with NOAA weather data. 127 rainy days showed $1,847 avg cost vs $1,443 dry days (28% premium). Root cause: GPS defaults to fastest-route mode using toll highways during rain. Time savings minimal (3.2 min avg) but cost significant ($4.20 premium/trip). Annual impact: $25,942 weather-driven excess. Recommendation: Weather-aware routing. Savings: $18,159/year.',
+    category: 'Environmental Pattern',
+    impact: 'Medium',
+    confidence: '98%',
+    detectionMethod: 'AI weather correlation analysis + GPS route pattern analysis + external NOAA data integration',
+    discoveredDate: 'November 1, 2024',
+    affectedAssets: [
+      { type: 'Routes', count: 'All routes', impact: 'Highway preference during precipitation' }
+    ],
+    timeline: [
+      { date: 'Sep 2023', event: 'Pattern begins but invisible without weather correlation' },
+      { date: 'Nov 1, 2024', event: 'AI cross-references toll data with NOAA weather station data, discovers 28% rainy-day premium' }
+    ],
+    keyMetrics: {
+      rainyDayPremium: { value: '+28%', label: 'Rainy day toll cost increase vs dry days' },
+      rainyDayAvg: { value: '$1,847', label: 'Avg daily toll cost on rainy days' },
+      dryDayAvg: { value: '$1,443', label: 'Avg daily toll cost on dry days' },
+      annualCost: { value: '$25,942', label: 'Weather-driven excess toll costs annually' }
+    },
+    detailedFindings: {
+      summary: 'Drivers default to toll highways during rain due to GPS routing and perceived safety. Actual time savings minimal.',
+      implementation: 'Configure GPS with weather-aware economical routing that uses surface streets unless time savings exceeds 10 minutes.'
+    },
+    businessContext: 'Behavioral response to weather creates unnecessary costs without meaningful operational benefit.',
+    rootCause: {
+      primary: 'GPS routing defaults to fastest-route during rain, prioritizing toll highways',
+      contributing: ['No weather-aware routing configuration', 'Driver perception that highways safer in rain', 'GPS does not factor toll costs']
+    },
+    recommendations: [
+      {
+        title: '1. Implement weather-aware economical routing',
+        description: 'Configure GPS to prefer toll-free routes during rain unless time savings >10 minutes.',
+        priority: 'High',
+        effort: '6 hours (GPS system configuration)',
+        impact: 'Eliminate 70% of weather-driven toll premium',
+        timeline: '1 week'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$25,942/year',
+      savings: '$18,159/year',
+      paybackPeriod: '0.9 months',
+      implementationCost: '$1,560',
+      roi: '1,164% year one'
+    }
+  },
+
+  'high-concentration-routes': {
+    title: 'High-Concentration Route Pattern: 4 Routes = 73% of Total Costs',
+    summary: 'Just 4 routes account for 73% of total annual toll costs ($127,340 of $174,465). AI clustering analysis revealed concentration. Routes serve high-volume customer contracts with premium SLAs. However: 3 of 4 routes have toll-free alternatives adding only 8-12 minutes, and customer SLAs allow 4-hour windows. 67% of trips on these routes have ≥4hr SLAs. Recommendation: Tiered routing (Premium <2hr, Standard ≥4hr). Expected: $85,317 annual savings while maintaining SLAs.',
+    category: 'Geographic Pattern',
+    impact: 'High',
+    confidence: '100%',
+    detectionMethod: 'AI route clustering analysis + customer SLA review + toll-free alternative mapping',
+    discoveredDate: 'October 25, 2024',
+    affectedAssets: [
+      { type: 'Route', id: 'Oakland-SJ Express via I-880', cost: '$18,723/month', vehicles: 19 },
+      { type: 'Route', id: 'East Bay Corridor via I-580/I-680', cost: '$14,203/month', vehicles: 14 },
+      { type: 'Route', id: 'Bridge Route via Bay Bridge', cost: '$12,847/month', vehicles: 11 },
+      { type: 'Route', id: 'Peninsula Run via CA-92 + I-280', cost: '$9,982/month', vehicles: 8 }
+    ],
+    timeline: [
+      { date: '2019-2020', event: 'Customer contracts established with premium SLA routing requirements' },
+      { date: 'Oct 25, 2024', event: 'AI clustering reveals 4 routes represent 73% of costs but only 18% of route count' },
+      { date: 'Oct 28, 2024', event: 'SLA analysis shows 67% of trips have ≥4hr windows allowing toll-free alternatives' }
+    ],
+    keyMetrics: {
+      concentration: { value: '73%', label: 'Costs from just 4 routes (of 22 total)' },
+      annualCost: { value: '$127,340', label: 'Annual cost from these 4 routes' },
+      potentialSavings: { value: '$85,317', label: 'Annual savings from tiered routing strategy' }
+    },
+    detailedFindings: {
+      summary: 'Pareto principle: 18% of routes drive 73% of costs. Most trips have SLA flexibility allowing cheaper alternatives.',
+      implementation: 'Implement two-tier routing: Premium (toll roads, <2hr SLA) and Standard (toll-free, ≥4hr SLA).'
+    },
+    businessContext: 'Current policy defaults to fastest routing without considering SLA flexibility or toll costs.',
+    rootCause: {
+      primary: 'Policy defaults to fastest routing regardless of SLA window or toll cost',
+      contributing: ['Customer contracts dont specify routing, only delivery timing', 'No tiered routing strategy', 'Dispatchers unaware of SLA flexibility']
+    },
+    recommendations: [
+      {
+        title: '1. Implement tiered routing strategy',
+        description: 'Premium routing (toll roads) only for <2hr SLA. Standard routing (toll-free) for ≥4hr SLA.',
+        priority: 'High',
+        effort: '12 hours (route planning + dispatcher training)',
+        impact: 'Reduce route concentration costs by 67%',
+        timeline: '3 weeks'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$127,340/year (4 routes)',
+      savings: '$85,317/year',
+      paybackPeriod: '0.4 months',
+      implementationCost: '$3,120',
+      roi: '2,734% year one'
+    }
+  },
+
+  'new-driver-premium': {
+    title: 'New Driver Toll Cost Premium: Experience Learning Curve Pattern',
+    summary: 'Drivers with <6 months tenure have 3.2x higher toll costs per delivery vs >18 months experience. New drivers (n=23): $8.47/delivery avg. Experienced (n=31): $2.64/delivery avg. Root cause: New drivers unfamiliar with toll-free alternatives, default to GPS fastest route. No formal route training exists. Annual impact: $276,342 excess costs from undertrained new drivers. Recommendation: 2-hour Route Economics Training workshop. Expected: Reduce premium from 3.2x to 1.4x (60% improvement) = $165,805 annual savings.',
+    category: 'Operational Pattern',
+    impact: 'High',
+    confidence: '97%',
+    detectionMethod: 'AI driver tenure correlation analysis + GPS route pattern analysis + driver interviews',
+    discoveredDate: 'November 3, 2024',
+    affectedAssets: [
+      { type: 'New Drivers', count: '23', avgTenure: '0-6 months', costPerDelivery: '$8.47' },
+      { type: 'Experienced Drivers', count: '31', avgTenure: '>18 months', costPerDelivery: '$2.64' }
+    ],
+    timeline: [
+      { date: 'Mar 2024', event: 'Hiring surge - 23 new drivers onboarded in 8-month period' },
+      { date: 'Apr-Oct 2024', event: 'New driver toll costs elevated but attributed to route assignments' },
+      { date: 'Nov 3, 2024', event: 'AI tenure correlation analysis reveals 3.2x cost premium for new drivers' }
+    ],
+    keyMetrics: {
+      costPremium: { value: '3.2x', label: 'New driver toll cost premium vs experienced' },
+      newDriverCost: { value: '$8.47', label: 'Avg toll cost per delivery (new drivers)' },
+      experiencedCost: { value: '$2.64', label: 'Avg toll cost per delivery (experienced)' },
+      annualWaste: { value: '$276,342', label: 'Annual excess costs from undertrained new drivers' }
+    },
+    detailedFindings: {
+      summary: 'Learning curve pattern clear. New drivers lack knowledge of toll-free alternatives that experienced drivers learned through trial-and-error over months.',
+      implementation: 'Implement 2-hour Route Economics Training during onboarding showing toll vs toll-free options for every service route.'
+    },
+    businessContext: 'Organic learning process takes 12-18 months. Formal training can compress to 3 months.',
+    rootCause: {
+      primary: 'No formal route training program - drivers learn organically through trial-and-error',
+      contributing: ['GPS doesnt factor toll costs', 'New drivers unfamiliar with area geography', 'Experienced drivers knowledge not documented', 'No route reference materials provided']
+    },
+    recommendations: [
+      {
+        title: '1. Create Route Economics Training program',
+        description: '2-hour workshop during onboarding showing toll vs toll-free alternatives for every route with time/cost tradeoffs.',
+        priority: 'High',
+        effort: '$4,800 (curriculum development + materials)',
+        impact: 'Reduce new driver premium from 3.2x to 1.4x within 3 months',
+        timeline: '6-week development'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$276,342/year',
+      savings: '$165,805/year',
+      paybackPeriod: '0.3 months',
+      implementationCost: '$4,800',
+      roi: '3,454% year one'
+    }
+  },
+
+  'toll-rate-increase-jan1': {
+    title: 'Toll Rate Increase: January 1 Peak Pricing Change',
+    summary: 'AI forecasts 23% effective toll cost increase beginning January 1, 2025 based on historical MassDOT rate schedules (18-22% increases every January past 4 years). Current monthly spend: $47,340. Forecasted January: $58,229. Annual impact: +$130,668. Mitigation: Pre-fund E-ZPass accounts to lock December pricing, shift peak trips to off-peak. Net impact reduced from +$130,668 to +$47,240 (64% mitigation).',
+    category: 'Forecasting',
+    impact: 'Critical',
+    confidence: '96%',
+    detectionMethod: 'AI predictive modeling + historical rate analysis + MassDOT board minutes review',
+    discoveredDate: 'November 10, 2024',
+    keyMetrics: {
+      rateIncrease: { value: '23%', label: 'Predicted effective rate increase Jan 1' },
+      annualImpact: { value: '+$130,668', label: 'Annual cost increase if unmitigated' },
+      effectiveDate: { value: 'Jan 1, 2025', label: 'Rate change effective date' }
+    },
+    recommendations: [
+      {
+        title: '1. Pre-fund E-ZPass accounts by Dec 15',
+        description: 'Lock in December pricing by pre-funding with $175,000 credit.',
+        priority: 'Immediate',
+        effort: '$175,000 upfront',
+        impact: 'Save 5.2% vs rate increase',
+        timeline: 'By Dec 15, 2024'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$47,340/month baseline',
+      savings: '$83,428/year (64% mitigation)',
+      implementationCost: '$0 (pre-funding is not a cost)',
+      roi: 'Infinite (pure savings)'
+    }
+  },
+
+  'q4-holiday-surge': {
+    title: 'Q4 Holiday Surge Forecast: +41% Volume October-December',
+    summary: 'Seasonal model predicts 41% toll volume increase Q4 2024 vs Q3 based on 4-year pattern (2021: +38%, 2022: +43%, 2023: +41%). Drivers: E-commerce holiday surge (+67% orders from top 3 retail clients), weather impact (rain/snow triggers highway preference), seasonal staffing (8-12 temp drivers with 3.2x cost premium). Q3 actual: $134,890. Q4 forecast: $190,195. Budget gap: $45,195. Mitigation: Seasonal driver training ($4,800) saves $18,900.',
+    category: 'Forecasting',
+    impact: 'High',
+    confidence: '94%',
+    detectionMethod: 'AI seasonal pattern analysis + client order volume correlation + historical 4-year trend',
+    discoveredDate: 'November 8, 2024',
+    keyMetrics: {
+      volumeIncrease: { value: '+41%', label: 'Q4 volume increase forecast' },
+      forecastedSpend: { value: '$190,195', label: 'Q4 forecasted toll spend' },
+      budgetGap: { value: '$45,195', label: 'Budget gap requiring CFO action' }
+    },
+    recommendations: [
+      {
+        title: '1. Approve budget reallocation by Oct 15',
+        description: 'CFO approve $45,195 from contingency to toll line item.',
+        priority: 'Immediate',
+        effort: '$45,195 reallocation',
+        impact: 'Avoid mid-quarter emergency funding',
+        timeline: 'By Oct 15'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$134,890 Q3 baseline',
+      savings: '$18,900 (via seasonal training)',
+      implementationCost: '$4,800',
+      roi: '394% for Q4'
+    }
+  },
+
+  'fleet-expansion-q1': {
+    title: 'Fleet Expansion Forecast: 15 Vehicle Additions Q1 2025',
+    summary: 'Fleet expanding 15 vehicles Q1 2025 (Jan-Mar) for Amazon Logistics contract (awarded Oct 2024, service start Feb 1). Fleet: 10× Ford Transit, 5× Mercedes Sprinter. Routes: I-580 corridor, Bay Bridge crossings. Higher toll intensity (6x daily vs fleet avg 3.8x). Forecasted cost per new vehicle: $1,456/month (72% above fleet avg $847). Total new toll cost: $21,840/month incremental = $262,080 annual. Budget amendment needed: +$240,436 (Feb-Dec partial year).',
+    category: 'Forecasting',
+    impact: 'High',
+    confidence: '99%',
+    detectionMethod: 'Capital planning integration + route toll intensity analysis + contract profitability modeling',
+    discoveredDate: 'November 12, 2024',
+    keyMetrics: {
+      newVehicles: { value: '15', label: 'Vehicles adding Q1 2025' },
+      annualIncrease: { value: '+$262,080', label: 'Annual toll cost increase from expansion' },
+      serviceStart: { value: 'Feb 1, 2025', label: 'Amazon contract service start' }
+    },
+    recommendations: [
+      {
+        title: '1. CFO approve budget amendment',
+        description: 'Approve +$240,436 toll budget increase funded by Amazon contract revenue.',
+        priority: 'High',
+        effort: '$240,436 budget amendment',
+        impact: 'Ensure contract profitability visibility',
+        timeline: '2 weeks'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$0 (expansion not yet occurred)',
+      contractRevenue: '$2.8M annually',
+      tollCostRatio: '9.4% (within <12% target)',
+      roi: 'Contract margin-positive'
+    }
+  },
+
+  'optimization-savings-roadmap': {
+    title: 'Optimization Savings Forecast: Implementation Roadmap',
+    summary: 'AI identified 6 optimization initiatives with quantified ROI. Phased implementation reduces annual costs by $387,428 (22% reduction). Rollout: (1) Ghost vehicle removal Nov 2024: $14,964/year. (2) Route optimization Dec 2024: $85,317/year. (3) Driver training Jan 2025: $165,805/year. (4) Off-peak scheduling Feb 2025: $47,240/year. (5) Billing recovery ongoing: $7,847+$12,400/year. (6) Quota redesign Q2 2025: $65,836/year. Total: $387,428/year savings. Implementation cost: $24,800. ROI: 16x year one.',
+    category: 'Forecasting',
+    impact: 'Critical',
+    confidence: '98%',
+    detectionMethod: 'AI comprehensive fleet analysis + ROI quantification + phased implementation planning',
+    discoveredDate: 'November 14, 2024',
+    keyMetrics: {
+      totalSavings: { value: '$387,428/year', label: 'Total forecasted annual savings' },
+      costReduction: { value: '22%', label: 'Cost reduction vs baseline' },
+      initiatives: { value: '6', label: 'Optimization initiatives identified' }
+    },
+    recommendations: [
+      {
+        title: '1. Approve optimization program budget',
+        description: 'CFO approve $24,800 for training, GPS config, policy updates, process changes.',
+        priority: 'High',
+        effort: '$24,800',
+        impact: '$387,428/year savings (16x ROI)',
+        timeline: 'Immediate'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$1,765,580/year baseline',
+      optimizedCost: '$1,378,152/year',
+      savings: '$387,428/year',
+      implementationCost: '$24,800',
+      roi: '1,561% year one'
+    }
+  },
+
+  'budget-breach-alert': {
+    title: 'Budget Breach Alert: FY2025 $127,840 Overage in 87 Days',
+    summary: 'Critical CFO alert: AI forecasts toll expense will breach FY2025 budget in 87 days (Feb 8, 2025) at current trajectory. Budget: $1,680,000 annually. Current run-rate: $154,820/month (10.6% over). Forecasted FY-end actual: $1,807,840 = $127,840 over budget (7.6% overage). Root causes: (1) Budget assumed flat costs, didnt account for Jan rate increase (+$130,668). (2) Amazon contract adding 15 vehicles mid-year (+$196,560). (3) New driver hiring + seasonal patterns. Options: Budget reallocation, optimization acceleration, or hybrid.',
+    category: 'Forecasting',
+    impact: 'Critical',
+    confidence: '97%',
+    detectionMethod: 'AI budget trajectory modeling + variance analysis + root cause decomposition',
+    discoveredDate: 'November 15, 2024',
+    keyMetrics: {
+      projectedOverage: { value: '+$127,840', label: 'Projected FY overage' },
+      breachDate: { value: '87 days', label: 'Until budget breach (Feb 8)' },
+      overBudgetPct: { value: '7.6%', label: 'Over budget percentage' }
+    },
+    recommendations: [
+      {
+        title: '1. Hybrid approach: Reallocation + optimization',
+        description: 'Reallocate $50K contingency + accelerate 3 highest-ROI optimizations.',
+        priority: 'Critical',
+        effort: '$50,000 reallocation',
+        impact: 'Stay within budget + sustainable improvement',
+        timeline: 'By Dec 15, 2024'
+      }
+    ],
+    roiAnalysis: {
+      currentTrajectory: '$1,807,840 FY-end',
+      budget: '$1,680,000',
+      overage: '$127,840',
+      hybridSolution: '$180,086 savings keeps within budget',
+      roi: 'Budget compliance + long-term savings'
+    }
+  }
+}

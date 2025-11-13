@@ -1,0 +1,361 @@
+  ,
+
+  'end-of-month-surge': {
+    title: 'End-of-Month Violation Surge: Delivery Quota Pressure',
+    summary: 'Speeding and red-light violations increase 63% during final week of each month compared to weeks 1-3 average. Pattern consistent across 11 consecutive months. Root cause: Monthly delivery quotas with performance bonuses create rushing behavior when drivers fall short by day 24. Week 4: 47 violations avg. Weeks 1-3: 29 violations avg. Annual excess: 864 violations = $109,728 costs. Recommendation: Rolling 90-day bonus window + safety score integration. Expected: 60% reduction, $65,836 annual savings.',
+    category: 'Behavioral Pattern',
+    impact: 'High',
+    confidence: '99%',
+    detectionMethod: 'AI temporal pattern analysis + driver compensation data correlation + statistical significance testing',
+    discoveredDate: 'October 12, 2024',
+    affectedAssets: [
+      { type: 'Drivers', count: '34 of 67', behavior: 'End-of-month rushing pattern' }
+    ],
+    timeline: [
+      { date: 'Jan 2023', event: 'Monthly quota system implemented - 180 deliveries/month for bonus eligibility' },
+      { date: 'Feb-Dec 2023', event: 'Violation rates elevated in week 4 each month, but pattern not yet recognized' },
+      { date: 'Oct 12, 2024', event: 'AI flags statistically significant (p<0.001) end-of-month violation spike across 11 consecutive months' },
+      { date: 'Oct 18, 2024', event: 'Correlation analysis links violation surge to driver compensation structure' }
+    ],
+    keyMetrics: {
+      violationSpike: { value: '+63%', label: 'Week 4 vs weeks 1-3 avg violation increase' },
+      week4Avg: { value: '47', label: 'Avg violations in final week of month' },
+      weeks13Avg: { value: '29', label: 'Avg violations in weeks 1-3 of month' },
+      annualCost: { value: '$109,728', label: 'Annual excess violation costs from pattern' }
+    },
+    detailedFindings: {
+      summary: 'AI analyzed 11 months of violation data and discovered clear end-of-month surge. This analysis would be impossible with manual review.',
+      implementation: 'Implement rolling 90-day bonus calculation instead of hard monthly cutoffs to reduce rushing behavior.'
+    },
+    businessContext: 'Quota system creates perverse incentives that increase accident risk and costs.',
+    rootCause: {
+      primary: 'Monthly hard-cutoff bonus system incentivizes unsafe rushing behavior',
+      contributing: ['180-delivery quota set without route difficulty consideration', 'All-or-nothing bonus structure', 'No safety score integration']
+    },
+    recommendations: [
+      {
+        title: '1. Redesign compensation: Rolling 90-day window',
+        description: 'Replace monthly quota with rolling 90-day average. Eliminates month-end cliff effect.',
+        priority: 'High',
+        effort: '8 hours (payroll system configuration)',
+        impact: 'Eliminate end-of-month rushing behavior',
+        timeline: '2 weeks'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$109,728/year',
+      savings: '$65,836/year',
+      paybackPeriod: '1.2 months',
+      implementationCost: '$7,200',
+      roi: '914% year one'
+    }
+  },
+
+  'rainy-day-toll-surge': {
+    title: 'Rainy Day Toll Surge: Highway Preference During Precipitation',
+    summary: 'Toll road usage increases 28% on rainy days compared to dry days. AI cross-referenced 14 months toll data with NOAA weather data. 127 rainy days showed $1,847 avg cost vs $1,443 dry days (28% premium). Root cause: GPS defaults to fastest-route mode using toll highways during rain. Time savings minimal (3.2 min avg) but cost significant ($4.20 premium/trip). Annual impact: $25,942 weather-driven excess. Recommendation: Weather-aware routing. Savings: $18,159/year.',
+    category: 'Environmental Pattern',
+    impact: 'Medium',
+    confidence: '98%',
+    detectionMethod: 'AI weather correlation analysis + GPS route pattern analysis + external NOAA data integration',
+    discoveredDate: 'November 1, 2024',
+    affectedAssets: [
+      { type: 'Routes', count: 'All routes', impact: 'Highway preference during precipitation' }
+    ],
+    timeline: [
+      { date: 'Sep 2023', event: 'Pattern begins but invisible without weather correlation' },
+      { date: 'Nov 1, 2024', event: 'AI cross-references toll data with NOAA weather station data, discovers 28% rainy-day premium' }
+    ],
+    keyMetrics: {
+      rainyDayPremium: { value: '+28%', label: 'Rainy day toll cost increase vs dry days' },
+      rainyDayAvg: { value: '$1,847', label: 'Avg daily toll cost on rainy days' },
+      dryDayAvg: { value: '$1,443', label: 'Avg daily toll cost on dry days' },
+      annualCost: { value: '$25,942', label: 'Weather-driven excess toll costs annually' }
+    },
+    detailedFindings: {
+      summary: 'Drivers default to toll highways during rain due to GPS routing and perceived safety. Actual time savings minimal.',
+      implementation: 'Configure GPS with weather-aware economical routing that uses surface streets unless time savings exceeds 10 minutes.'
+    },
+    businessContext: 'Behavioral response to weather creates unnecessary costs without meaningful operational benefit.',
+    rootCause: {
+      primary: 'GPS routing defaults to fastest-route during rain, prioritizing toll highways',
+      contributing: ['No weather-aware routing configuration', 'Driver perception that highways safer in rain', 'GPS does not factor toll costs']
+    },
+    recommendations: [
+      {
+        title: '1. Implement weather-aware economical routing',
+        description: 'Configure GPS to prefer toll-free routes during rain unless time savings >10 minutes.',
+        priority: 'High',
+        effort: '6 hours (GPS system configuration)',
+        impact: 'Eliminate 70% of weather-driven toll premium',
+        timeline: '1 week'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$25,942/year',
+      savings: '$18,159/year',
+      paybackPeriod: '0.9 months',
+      implementationCost: '$1,560',
+      roi: '1,164% year one'
+    }
+  },
+
+  'high-concentration-routes': {
+    title: 'High-Concentration Route Pattern: 4 Routes = 73% of Total Costs',
+    summary: 'Just 4 routes account for 73% of total annual toll costs ($127,340 of $174,465). AI clustering analysis revealed concentration. Routes serve high-volume customer contracts with premium SLAs. However: 3 of 4 routes have toll-free alternatives adding only 8-12 minutes, and customer SLAs allow 4-hour windows. 67% of trips on these routes have ≥4hr SLAs. Recommendation: Tiered routing (Premium <2hr, Standard ≥4hr). Expected: $85,317 annual savings while maintaining SLAs.',
+    category: 'Geographic Pattern',
+    impact: 'High',
+    confidence: '100%',
+    detectionMethod: 'AI route clustering analysis + customer SLA review + toll-free alternative mapping',
+    discoveredDate: 'October 25, 2024',
+    affectedAssets: [
+      { type: 'Route', id: 'Oakland-SJ Express via I-880', cost: '$18,723/month', vehicles: 19 },
+      { type: 'Route', id: 'East Bay Corridor via I-580/I-680', cost: '$14,203/month', vehicles: 14 },
+      { type: 'Route', id: 'Bridge Route via Bay Bridge', cost: '$12,847/month', vehicles: 11 },
+      { type: 'Route', id: 'Peninsula Run via CA-92 + I-280', cost: '$9,982/month', vehicles: 8 }
+    ],
+    timeline: [
+      { date: '2019-2020', event: 'Customer contracts established with premium SLA routing requirements' },
+      { date: 'Oct 25, 2024', event: 'AI clustering reveals 4 routes represent 73% of costs but only 18% of route count' },
+      { date: 'Oct 28, 2024', event: 'SLA analysis shows 67% of trips have ≥4hr windows allowing toll-free alternatives' }
+    ],
+    keyMetrics: {
+      concentration: { value: '73%', label: 'Costs from just 4 routes (of 22 total)' },
+      annualCost: { value: '$127,340', label: 'Annual cost from these 4 routes' },
+      potentialSavings: { value: '$85,317', label: 'Annual savings from tiered routing strategy' }
+    },
+    detailedFindings: {
+      summary: 'Pareto principle: 18% of routes drive 73% of costs. Most trips have SLA flexibility allowing cheaper alternatives.',
+      implementation: 'Implement two-tier routing: Premium (toll roads, <2hr SLA) and Standard (toll-free, ≥4hr SLA).'
+    },
+    businessContext: 'Current policy defaults to fastest routing without considering SLA flexibility or toll costs.',
+    rootCause: {
+      primary: 'Policy defaults to fastest routing regardless of SLA window or toll cost',
+      contributing: ['Customer contracts dont specify routing, only delivery timing', 'No tiered routing strategy', 'Dispatchers unaware of SLA flexibility']
+    },
+    recommendations: [
+      {
+        title: '1. Implement tiered routing strategy',
+        description: 'Premium routing (toll roads) only for <2hr SLA. Standard routing (toll-free) for ≥4hr SLA.',
+        priority: 'High',
+        effort: '12 hours (route planning + dispatcher training)',
+        impact: 'Reduce route concentration costs by 67%',
+        timeline: '3 weeks'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$127,340/year (4 routes)',
+      savings: '$85,317/year',
+      paybackPeriod: '0.4 months',
+      implementationCost: '$3,120',
+      roi: '2,734% year one'
+    }
+  },
+
+  'new-driver-premium': {
+    title: 'New Driver Toll Cost Premium: Experience Learning Curve Pattern',
+    summary: 'Drivers with <6 months tenure have 3.2x higher toll costs per delivery vs >18 months experience. New drivers (n=23): $8.47/delivery avg. Experienced (n=31): $2.64/delivery avg. Root cause: New drivers unfamiliar with toll-free alternatives, default to GPS fastest route. No formal route training exists. Annual impact: $276,342 excess costs from undertrained new drivers. Recommendation: 2-hour Route Economics Training workshop. Expected: Reduce premium from 3.2x to 1.4x (60% improvement) = $165,805 annual savings.',
+    category: 'Operational Pattern',
+    impact: 'High',
+    confidence: '97%',
+    detectionMethod: 'AI driver tenure correlation analysis + GPS route pattern analysis + driver interviews',
+    discoveredDate: 'November 3, 2024',
+    affectedAssets: [
+      { type: 'New Drivers', count: '23', avgTenure: '0-6 months', costPerDelivery: '$8.47' },
+      { type: 'Experienced Drivers', count: '31', avgTenure: '>18 months', costPerDelivery: '$2.64' }
+    ],
+    timeline: [
+      { date: 'Mar 2024', event: 'Hiring surge - 23 new drivers onboarded in 8-month period' },
+      { date: 'Apr-Oct 2024', event: 'New driver toll costs elevated but attributed to route assignments' },
+      { date: 'Nov 3, 2024', event: 'AI tenure correlation analysis reveals 3.2x cost premium for new drivers' }
+    ],
+    keyMetrics: {
+      costPremium: { value: '3.2x', label: 'New driver toll cost premium vs experienced' },
+      newDriverCost: { value: '$8.47', label: 'Avg toll cost per delivery (new drivers)' },
+      experiencedCost: { value: '$2.64', label: 'Avg toll cost per delivery (experienced)' },
+      annualWaste: { value: '$276,342', label: 'Annual excess costs from undertrained new drivers' }
+    },
+    detailedFindings: {
+      summary: 'Learning curve pattern clear. New drivers lack knowledge of toll-free alternatives that experienced drivers learned through trial-and-error over months.',
+      implementation: 'Implement 2-hour Route Economics Training during onboarding showing toll vs toll-free options for every service route.'
+    },
+    businessContext: 'Organic learning process takes 12-18 months. Formal training can compress to 3 months.',
+    rootCause: {
+      primary: 'No formal route training program - drivers learn organically through trial-and-error',
+      contributing: ['GPS doesnt factor toll costs', 'New drivers unfamiliar with area geography', 'Experienced drivers knowledge not documented', 'No route reference materials provided']
+    },
+    recommendations: [
+      {
+        title: '1. Create Route Economics Training program',
+        description: '2-hour workshop during onboarding showing toll vs toll-free alternatives for every route with time/cost tradeoffs.',
+        priority: 'High',
+        effort: '$4,800 (curriculum development + materials)',
+        impact: 'Reduce new driver premium from 3.2x to 1.4x within 3 months',
+        timeline: '6-week development'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$276,342/year',
+      savings: '$165,805/year',
+      paybackPeriod: '0.3 months',
+      implementationCost: '$4,800',
+      roi: '3,454% year one'
+    }
+  },
+
+  'toll-rate-increase-jan1': {
+    title: 'Toll Rate Increase: January 1 Peak Pricing Change',
+    summary: 'AI forecasts 23% effective toll cost increase beginning January 1, 2025 based on historical MassDOT rate schedules (18-22% increases every January past 4 years). Current monthly spend: $47,340. Forecasted January: $58,229. Annual impact: +$130,668. Mitigation: Pre-fund E-ZPass accounts to lock December pricing, shift peak trips to off-peak. Net impact reduced from +$130,668 to +$47,240 (64% mitigation).',
+    category: 'Forecasting',
+    impact: 'Critical',
+    confidence: '96%',
+    detectionMethod: 'AI predictive modeling + historical rate analysis + MassDOT board minutes review',
+    discoveredDate: 'November 10, 2024',
+    keyMetrics: {
+      rateIncrease: { value: '23%', label: 'Predicted effective rate increase Jan 1' },
+      annualImpact: { value: '+$130,668', label: 'Annual cost increase if unmitigated' },
+      effectiveDate: { value: 'Jan 1, 2025', label: 'Rate change effective date' }
+    },
+    recommendations: [
+      {
+        title: '1. Pre-fund E-ZPass accounts by Dec 15',
+        description: 'Lock in December pricing by pre-funding with $175,000 credit.',
+        priority: 'Immediate',
+        effort: '$175,000 upfront',
+        impact: 'Save 5.2% vs rate increase',
+        timeline: 'By Dec 15, 2024'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$47,340/month baseline',
+      savings: '$83,428/year (64% mitigation)',
+      implementationCost: '$0 (pre-funding is not a cost)',
+      roi: 'Infinite (pure savings)'
+    }
+  },
+
+  'q4-holiday-surge': {
+    title: 'Q4 Holiday Surge Forecast: +41% Volume October-December',
+    summary: 'Seasonal model predicts 41% toll volume increase Q4 2024 vs Q3 based on 4-year pattern (2021: +38%, 2022: +43%, 2023: +41%). Drivers: E-commerce holiday surge (+67% orders from top 3 retail clients), weather impact (rain/snow triggers highway preference), seasonal staffing (8-12 temp drivers with 3.2x cost premium). Q3 actual: $134,890. Q4 forecast: $190,195. Budget gap: $45,195. Mitigation: Seasonal driver training ($4,800) saves $18,900.',
+    category: 'Forecasting',
+    impact: 'High',
+    confidence: '94%',
+    detectionMethod: 'AI seasonal pattern analysis + client order volume correlation + historical 4-year trend',
+    discoveredDate: 'November 8, 2024',
+    keyMetrics: {
+      volumeIncrease: { value: '+41%', label: 'Q4 volume increase forecast' },
+      forecastedSpend: { value: '$190,195', label: 'Q4 forecasted toll spend' },
+      budgetGap: { value: '$45,195', label: 'Budget gap requiring CFO action' }
+    },
+    recommendations: [
+      {
+        title: '1. Approve budget reallocation by Oct 15',
+        description: 'CFO approve $45,195 from contingency to toll line item.',
+        priority: 'Immediate',
+        effort: '$45,195 reallocation',
+        impact: 'Avoid mid-quarter emergency funding',
+        timeline: 'By Oct 15'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$134,890 Q3 baseline',
+      savings: '$18,900 (via seasonal training)',
+      implementationCost: '$4,800',
+      roi: '394% for Q4'
+    }
+  },
+
+  'fleet-expansion-q1': {
+    title: 'Fleet Expansion Forecast: 15 Vehicle Additions Q1 2025',
+    summary: 'Fleet expanding 15 vehicles Q1 2025 (Jan-Mar) for Amazon Logistics contract (awarded Oct 2024, service start Feb 1). Fleet: 10× Ford Transit, 5× Mercedes Sprinter. Routes: I-580 corridor, Bay Bridge crossings. Higher toll intensity (6x daily vs fleet avg 3.8x). Forecasted cost per new vehicle: $1,456/month (72% above fleet avg $847). Total new toll cost: $21,840/month incremental = $262,080 annual. Budget amendment needed: +$240,436 (Feb-Dec partial year).',
+    category: 'Forecasting',
+    impact: 'High',
+    confidence: '99%',
+    detectionMethod: 'Capital planning integration + route toll intensity analysis + contract profitability modeling',
+    discoveredDate: 'November 12, 2024',
+    keyMetrics: {
+      newVehicles: { value: '15', label: 'Vehicles adding Q1 2025' },
+      annualIncrease: { value: '+$262,080', label: 'Annual toll cost increase from expansion' },
+      serviceStart: { value: 'Feb 1, 2025', label: 'Amazon contract service start' }
+    },
+    recommendations: [
+      {
+        title: '1. CFO approve budget amendment',
+        description: 'Approve +$240,436 toll budget increase funded by Amazon contract revenue.',
+        priority: 'High',
+        effort: '$240,436 budget amendment',
+        impact: 'Ensure contract profitability visibility',
+        timeline: '2 weeks'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$0 (expansion not yet occurred)',
+      contractRevenue: '$2.8M annually',
+      tollCostRatio: '9.4% (within <12% target)',
+      roi: 'Contract margin-positive'
+    }
+  },
+
+  'optimization-savings-roadmap': {
+    title: 'Optimization Savings Forecast: Implementation Roadmap',
+    summary: 'AI identified 6 optimization initiatives with quantified ROI. Phased implementation reduces annual costs by $387,428 (22% reduction). Rollout: (1) Ghost vehicle removal Nov 2024: $14,964/year. (2) Route optimization Dec 2024: $85,317/year. (3) Driver training Jan 2025: $165,805/year. (4) Off-peak scheduling Feb 2025: $47,240/year. (5) Billing recovery ongoing: $7,847+$12,400/year. (6) Quota redesign Q2 2025: $65,836/year. Total: $387,428/year savings. Implementation cost: $24,800. ROI: 16x year one.',
+    category: 'Forecasting',
+    impact: 'Critical',
+    confidence: '98%',
+    detectionMethod: 'AI comprehensive fleet analysis + ROI quantification + phased implementation planning',
+    discoveredDate: 'November 14, 2024',
+    keyMetrics: {
+      totalSavings: { value: '$387,428/year', label: 'Total forecasted annual savings' },
+      costReduction: { value: '22%', label: 'Cost reduction vs baseline' },
+      initiatives: { value: '6', label: 'Optimization initiatives identified' }
+    },
+    recommendations: [
+      {
+        title: '1. Approve optimization program budget',
+        description: 'CFO approve $24,800 for training, GPS config, policy updates, process changes.',
+        priority: 'High',
+        effort: '$24,800',
+        impact: '$387,428/year savings (16x ROI)',
+        timeline: 'Immediate'
+      }
+    ],
+    roiAnalysis: {
+      currentCost: '$1,765,580/year baseline',
+      optimizedCost: '$1,378,152/year',
+      savings: '$387,428/year',
+      implementationCost: '$24,800',
+      roi: '1,561% year one'
+    }
+  },
+
+  'budget-breach-alert': {
+    title: 'Budget Breach Alert: FY2025 $127,840 Overage in 87 Days',
+    summary: 'Critical CFO alert: AI forecasts toll expense will breach FY2025 budget in 87 days (Feb 8, 2025) at current trajectory. Budget: $1,680,000 annually. Current run-rate: $154,820/month (10.6% over). Forecasted FY-end actual: $1,807,840 = $127,840 over budget (7.6% overage). Root causes: (1) Budget assumed flat costs, didnt account for Jan rate increase (+$130,668). (2) Amazon contract adding 15 vehicles mid-year (+$196,560). (3) New driver hiring + seasonal patterns. Options: Budget reallocation, optimization acceleration, or hybrid.',
+    category: 'Forecasting',
+    impact: 'Critical',
+    confidence: '97%',
+    detectionMethod: 'AI budget trajectory modeling + variance analysis + root cause decomposition',
+    discoveredDate: 'November 15, 2024',
+    keyMetrics: {
+      projectedOverage: { value: '+$127,840', label: 'Projected FY overage' },
+      breachDate: { value: '87 days', label: 'Until budget breach (Feb 8)' },
+      overBudgetPct: { value: '7.6%', label: 'Over budget percentage' }
+    },
+    recommendations: [
+      {
+        title: '1. Hybrid approach: Reallocation + optimization',
+        description: 'Reallocate $50K contingency + accelerate 3 highest-ROI optimizations.',
+        priority: 'Critical',
+        effort: '$50,000 reallocation',
+        impact: 'Stay within budget + sustainable improvement',
+        timeline: 'By Dec 15, 2024'
+      }
+    ],
+    roiAnalysis: {
+      currentTrajectory: '$1,807,840 FY-end',
+      budget: '$1,680,000',
+      overage: '$127,840',
+      hybridSolution: '$180,086 savings keeps within budget',
+      roi: 'Budget compliance + long-term savings'
+    }
+  }
