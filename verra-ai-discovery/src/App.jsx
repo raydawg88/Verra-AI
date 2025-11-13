@@ -3,7 +3,7 @@ import { Theme } from '@radix-ui/themes'
 import ProductSelectionPage from './pages/ProductSelectionPage'
 import MIRADashboard from './pages/MIRADashboard'
 import ConsentPage from './pages/ConsentPage'
-import AIDiscoveryPage from './components/AIDiscoveryPage'
+import AIDiscoveryPageFull from './components/AIDiscoveryPageFull'
 import AIDiscoveryPageLite from './components/AIDiscoveryPageLite'
 import AILoadingScreen from './components/AILoadingScreen'
 import './App.css'
@@ -104,7 +104,7 @@ function App() {
       )}
 
       {productFlow === 'full' && currentView === 'ai-beta' && (
-        <AIDiscoveryPage onBackToDashboard={handleBackToDashboard} />
+        <AIDiscoveryPageFull onNavigateToClassic={handleBackToDashboard} />
       )}
 
       {/* LITE FLOW: consent → loading → ai-insights ↔ mira dashboard */}

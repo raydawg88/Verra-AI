@@ -13,7 +13,7 @@ export default function ChatPanel({ activePage, insightContext, initialQuestion 
     if (insightContext) {
       return `I've analyzed "${insightContext.title}" in detail. What would you like to know? I can explain the root causes, discuss implementation strategies, compare with industry benchmarks, or dive deeper into the data.`
     }
-    return "Hi Matt! I'm your AI fleet analyst. I've analyzed 2.3M data points from your fleet. Ask me anything about your tolling, violations, spending patterns, or vehicle performance."
+    return "Hi Jadine! I'm your AI fleet analyst. I've analyzed 2.3M data points from your fleet. Ask me anything about your tolling, violations, spending patterns, or vehicle performance."
   }
 
   const [messages, setMessages] = useState([
@@ -22,7 +22,7 @@ export default function ChatPanel({ activePage, insightContext, initialQuestion 
       role: 'assistant',
       text: insightContext
         ? `I've analyzed "${insightContext.title}" in detail. What would you like to know? I can explain the root causes, discuss implementation strategies, compare with industry benchmarks, or dive deeper into the data.`
-        : "Hi Matt! I'm your AI fleet analyst. I've analyzed 2.3M data points from your fleet. Ask me anything about your tolling, violations, spending patterns, or vehicle performance."
+        : "Hi Jadine! I'm your AI fleet analyst. I've analyzed 2.3M data points from your fleet. Ask me anything about your tolling, violations, spending patterns, or vehicle performance."
     }
   ])
 
@@ -144,7 +144,9 @@ export default function ChatPanel({ activePage, insightContext, initialQuestion 
     variant="ghost"
     style={{
       background: 'white',
-      height: '600px',
+      height: 'calc(100vh - 240px)',
+      minHeight: '400px',
+      maxHeight: '650px',
       display: 'flex',
       flexDirection: 'column',
       border: '1px solid var(--gray-4)',
@@ -271,7 +273,7 @@ export default function ChatPanel({ activePage, insightContext, initialQuestion 
     </Card>
 
     {/* Suggestion Buttons Below Chat */}
-    <Flex direction="column" gap="2">
+    <Flex direction="column" gap="2" style={{ marginTop: '16px' }}>
       <Text size="1" weight="bold" style={{ color: 'var(--gray-10)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
         Suggestions
       </Text>
@@ -281,26 +283,27 @@ export default function ChatPanel({ activePage, insightContext, initialQuestion 
           onClick={() => sendSeededPrompt(prompt)}
           style={{
             padding: '10px 14px',
-            background: 'white',
-            border: '1px solid var(--gray-5)',
+            background: 'var(--indigo-9)',
+            border: 'none',
             borderRadius: 'var(--radius-3)',
             fontSize: '13px',
             textAlign: 'left',
             cursor: 'pointer',
             transition: 'all 0.2s ease',
-            color: 'var(--gray-12)',
-            fontWeight: 500
+            color: 'white',
+            fontWeight: 500,
+            boxShadow: '0 1px 2px rgba(0, 0, 0, 0.08)'
           }}
           className="seeded-prompt"
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'var(--indigo-2)'
-            e.currentTarget.style.borderColor = 'var(--indigo-6)'
+            e.currentTarget.style.background = 'var(--indigo-10)'
             e.currentTarget.style.transform = 'translateX(4px)'
+            e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.12)'
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'white'
-            e.currentTarget.style.borderColor = 'var(--gray-5)'
+            e.currentTarget.style.background = 'var(--indigo-9)'
             e.currentTarget.style.transform = 'translateX(0)'
+            e.currentTarget.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.08)'
           }}
         >
           {prompt}

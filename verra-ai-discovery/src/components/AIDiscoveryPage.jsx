@@ -81,7 +81,7 @@ export default function AIDiscoveryPage({ onBackToDashboard }) {
             {/* Welcome Section - Spans columns 2 & 3 */}
             <Box>
               <Heading size="8" mb="3" style={{ fontWeight: 700, color: 'var(--gray-12)' }}>
-                Welcome back, Matt
+                Welcome back, Jadine
               </Heading>
               <Text size="5" style={{ color: 'var(--gray-11)' }}>
                 We found <strong style={{ color: 'var(--gray-12)' }}>5 things</strong> you should take a look at with the last round of analysis.

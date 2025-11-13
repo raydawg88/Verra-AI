@@ -1,40 +1,37 @@
 import { useState, useEffect } from 'react'
-import { Box, Flex, Badge, Heading, Text } from '@radix-ui/themes'
-import SidebarNav from './SidebarNav'
+import { Box, Flex, Badge, Heading, Text, Button } from '@radix-ui/themes'
+import SidebarNavFull from './SidebarNavFull'
 import ChatPanel from './ChatPanel'
 import HomePage from '../pages/HomePage'
 import OverviewPage from '../pages/OverviewPage'
 import AnomaliesPage from '../pages/AnomaliesPage'
 import PatternsPage from '../pages/PatternsPage'
 import ForecastingPage from '../pages/ForecastingPage'
+import TollingOverviewPageFull from '../pages/full/TollingOverviewPageFull'
+import TollingDeepDivePageFull from '../pages/full/TollingDeepDivePageFull'
+import ViolationsOverviewPageFull from '../pages/full/ViolationsOverviewPageFull'
+import ViolationsDeepDivePageFull from '../pages/full/ViolationsDeepDivePageFull'
+import TransactionsPageFull from '../pages/full/TransactionsPageFull'
+import SavingsPageFull from '../pages/full/SavingsPageFull'
 import InsightDetailView from './InsightDetailView'
 import { insightDetails } from '../data/insightDetails'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
-export default function AIDiscoveryPageLite({ onNavigateToMIRA }) {
+export default function AIDiscoveryPageFull({ onNavigateToClassic }) {
   const [activePage, setActivePage] = useState('overview')
   const [activeDetailView, setActiveDetailView] = useState(null)
 
   // Scroll to top whenever page or detail view changes
   useEffect(() => {
-    // Scroll to top immediately (not smooth to ensure it happens)
     window.scrollTo(0, 0)
-    // Also try to scroll the document element and body for better browser compatibility
     document.documentElement.scrollTop = 0
     document.body.scrollTop = 0
   }, [activePage, activeDetailView])
 
-  // When user clicks non-AI sections, go back to original MIRA dashboard
+  // Handle navigation
   const handleNavigation = (pageId) => {
-    // AI-POWERED sections stay in this interface
-    const aiSections = ['overview', 'insights', 'anomalies', 'patterns', 'forecasting']
-
-    if (aiSections.includes(pageId)) {
-      setActivePage(pageId)
-      setActiveDetailView(null) // Close detail view when navigating
-    } else {
-      // Non-AI sections go back to original dashboard with that section
-      onNavigateToMIRA(pageId)
-    }
+    setActivePage(pageId)
+    setActiveDetailView(null)
   }
 
   // Handle opening detail views
@@ -75,6 +72,36 @@ export default function AIDiscoveryPageLite({ onNavigateToMIRA }) {
           title: 'Predictive Insights',
           subtitle: 'AI-powered forecasts to help you plan ahead and prevent issues.'
         }
+      case 'tolling-overview':
+        return {
+          title: 'Tolling Overview',
+          subtitle: 'High-level toll spending metrics and insights across your fleet.'
+        }
+      case 'tolling-deep-dive':
+        return {
+          title: 'Tolling Deep Dive',
+          subtitle: 'Detailed toll transaction analysis and route efficiency insights.'
+        }
+      case 'violations-overview':
+        return {
+          title: 'Violations Overview',
+          subtitle: 'Fleet-wide violation metrics and driver safety performance.'
+        }
+      case 'violations-deep-dive':
+        return {
+          title: 'Violations Deep Dive',
+          subtitle: 'Detailed violation analysis and driver-specific performance data.'
+        }
+      case 'transactions':
+        return {
+          title: 'Transactions',
+          subtitle: 'Search and analyze your complete transaction history.'
+        }
+      case 'savings':
+        return {
+          title: 'Savings Opportunities',
+          subtitle: 'Ranked optimization opportunities with ROI analysis.'
+        }
       default:
         return {
           title: 'AI Home',
@@ -101,6 +128,18 @@ export default function AIDiscoveryPageLite({ onNavigateToMIRA }) {
         return <PatternsPage onOpenDetail={handleOpenDetail} />
       case 'forecasting':
         return <ForecastingPage onOpenDetail={handleOpenDetail} />
+      case 'tolling-overview':
+        return <TollingOverviewPageFull onOpenDetail={handleOpenDetail} />
+      case 'tolling-deep-dive':
+        return <TollingDeepDivePageFull onOpenDetail={handleOpenDetail} />
+      case 'violations-overview':
+        return <ViolationsOverviewPageFull onOpenDetail={handleOpenDetail} />
+      case 'violations-deep-dive':
+        return <ViolationsDeepDivePageFull onOpenDetail={handleOpenDetail} />
+      case 'transactions':
+        return <TransactionsPageFull onOpenDetail={handleOpenDetail} />
+      case 'savings':
+        return <SavingsPageFull onOpenDetail={handleOpenDetail} />
       default:
         return <HomePage onOpenDetail={handleOpenDetail} />
     }
@@ -138,6 +177,20 @@ export default function AIDiscoveryPageLite({ onNavigateToMIRA }) {
             <Badge color="indigo" variant="soft" size="2" style={{ fontWeight: 700 }}>
               BETA
             </Badge>
+            <Button
+              variant="outline"
+              size="2"
+              color="green"
+              onClick={onNavigateToClassic}
+              style={{
+                marginLeft: '16px',
+                cursor: 'pointer',
+                fontWeight: 600
+              }}
+            >
+              <ArrowBackIcon style={{ width: 16, height: 16, marginRight: '4px' }} />
+              Switch to Classic View
+            </Button>
           </Flex>
           <Flex align="center" gap="2">
             <Text size="2" style={{ color: 'var(--gray-10)', fontWeight: 500 }}>
@@ -169,7 +222,7 @@ export default function AIDiscoveryPageLite({ onNavigateToMIRA }) {
             position: 'sticky',
             top: '120px'
           }}>
-            <SidebarNav activePage={activePage} onNavigate={handleNavigation} />
+            <SidebarNavFull activePage={activePage} onNavigate={handleNavigation} />
           </Box>
 
           {/* Right Side Container - 90% (Welcome Section + Content + Chat) */}
@@ -195,18 +248,16 @@ export default function AIDiscoveryPageLite({ onNavigateToMIRA }) {
                 {renderPage()}
               </Box>
 
-              {/* Chat Panel - 30% - Only show on list pages, hide on detail views */}
-              {!activeDetailView && (
-                <Box style={{
-                  flex: '0 0 30%',
-                  minWidth: '400px',
-                  maxWidth: '500px',
-                  position: 'sticky',
-                  top: '120px'
-                }}>
-                  <ChatPanel activePage={activePage} />
-                </Box>
-              )}
+              {/* Chat Panel - 30% - Show on ALL pages */}
+              <Box style={{
+                flex: '0 0 30%',
+                minWidth: '400px',
+                maxWidth: '500px',
+                position: 'sticky',
+                top: '120px'
+              }}>
+                <ChatPanel activePage={activePage} />
+              </Box>
             </Flex>
           </Flex>
         </Flex>
